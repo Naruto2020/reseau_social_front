@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { from } from 'rxjs';
 
 import {BailService} from '../../partages/bail.service';
+import {environment} from 'src/environments/environment';
 
 @Component({
   selector: 'app-profil-set',
@@ -13,6 +14,7 @@ import {BailService} from '../../partages/bail.service';
   styleUrls: ['./profil-set.component.css']
 })
 export class ProfilSetComponent implements OnInit {
+  imgSite:string = environment.siteUrl;
   userDisplayName:string = "";
 
   listeImages:any;

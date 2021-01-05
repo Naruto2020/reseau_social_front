@@ -7,6 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 
 import {BailService} from '../../partages/bail.service';
+import {environment} from 'src/environments/environment';
 
 @Component({
   selector: 'app-user-home',
@@ -23,6 +24,8 @@ export class UserHomeComponent implements OnInit {
 
 
   titre:String = "$wap-It";
+
+  imgSite:string = environment.siteUrl;
   
   classActive = 'active';
   userDisplayName:string = "";

@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { from } from 'rxjs';
 
 import {BailService} from '../../partages/bail.service';
+import {environment} from 'src/environments/environment';
 
 @Component({
   selector: 'app-user-set',
@@ -13,6 +14,7 @@ import {BailService} from '../../partages/bail.service';
   styleUrls: ['./user-set.component.css']
 })
 export class UserSetComponent implements OnInit {
+  imgSite:string = environment.siteUrl;
 
   userDisplayName:string = "";
 

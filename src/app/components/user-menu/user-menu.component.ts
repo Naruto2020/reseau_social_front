@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import {BailService} from '../../partages/bail.service';
 import { Router } from '@angular/router';
 
+import {environment} from 'src/environments/environment';
+
 @Component({
   selector: 'app-user-menu',
   templateUrl: './user-menu.component.html',
@@ -11,6 +13,8 @@ import { Router } from '@angular/router';
 export class UserMenuComponent implements OnInit {
 
   titre:String = "$wap-It";
+
+  imgSite:string = environment.siteUrl;
   userDisplayName:string = "";
   url1:string ;
 
@@ -27,8 +31,8 @@ export class UserMenuComponent implements OnInit {
         for(let j=0; j<tab.length; j++){
           console.log("testyyy",typeof(tab[j]));
           if(tab[j].loadBy === localStorage.getItem("loggedUser")){
-            console.log("image >>",`https://127.0.0.1:3000/${tab[j].photo}`);
-            this.url1 = `https://127.0.0.1:3000/${tab[j].photo}`;
+            console.log("image >>",`${this.imgSite}/${tab[j].photo}`);
+            this.url1 = `${this.imgSite}/${tab[j].photo}`;
           }
           
          }

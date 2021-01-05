@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { from } from 'rxjs';
 
 import {BailService} from '../../partages/bail.service';
+import {environment} from 'src/environments/environment';
 
 @Component({
   selector: 'app-user-profil',
@@ -15,6 +16,7 @@ import {BailService} from '../../partages/bail.service';
 export class UserProfilComponent implements OnInit {
 
   titre:String = "$wap-It";
+  imgSite:string = environment.siteUrl;
   // variable qui va stocker le fichier image background et de profil
   images:string ;
   url:string ; //"http://127.0.0.1:3000/public/uploads/2020-12-23T16_23_57.110Zsanfrancisco.jpg";
@@ -62,8 +64,8 @@ export class UserProfilComponent implements OnInit {
          for(let j=0; j<tab.length; j++){
            //console.log(tab[j]);
            if(tab[j].loadBy === localStorage.getItem("loggedUser")){
-             console.log("image >>",`https://127.0.0.1:3000/${tab[j].photo}`);
-             this.url = `https://127.0.0.1:3000/${tab[j].photo}`;
+             console.log("image >>",`${this.imgSite}/${tab[j].photo}`);
+             this.url = `${this.imgSite}/${tab[j].photo}`;
            }
            
           }
@@ -88,8 +90,8 @@ export class UserProfilComponent implements OnInit {
         for(let j=0; j<tab.length; j++){
           console.log("testyyy",typeof(tab[j]));
           if(tab[j].loadBy === localStorage.getItem("loggedUser")){
-            console.log("image >>",`https://127.0.0.1:3000/${tab[j].photo}`);
-            this.url1 = `https://127.0.0.1:3000/${tab[j].photo}`;
+            console.log("image >>",`${this.imgSite}/${tab[j].photo}`);
+            this.url1 = `${this.imgSite}/${tab[j].photo}`;
           }
           
          }
@@ -155,7 +157,7 @@ export class UserProfilComponent implements OnInit {
         this.bailService.uploadImage(this.formData).subscribe(res =>{
           console.log(res["photo"]);
           this.alert = false;
-          this.url = `https://127.0.0.1:3000/${res["photo"]}`;
+          this.url = `${this.imgSite}/${res["photo"]}`;
           console.log(this.url);
           return res;
   
@@ -170,7 +172,7 @@ export class UserProfilComponent implements OnInit {
         this.bailService.uploadImage1(this.formData).subscribe(res =>{
           console.log(res["photo"]);
           this.alert1 = false;
-          this.url1 = `https://127.0.0.1:3000/${res["photo"]}`;
+          this.url1 = `${this.imgSite}/${res["photo"]}`;
           console.log(this.url1);
           return res;
         });
