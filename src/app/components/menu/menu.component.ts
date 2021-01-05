@@ -25,8 +25,8 @@ export class MenuComponent implements OnInit {
         for(let j=0; j<tab.length; j++){
           console.log("testyyy",typeof(tab[j]));
           if(tab[j].loadBy === localStorage.getItem("loggedUser")){
-            console.log("image >>",`http://127.0.0.1:3000/${tab[j].photo}`);
-            this.url1 = `http://127.0.0.1:3000/${tab[j].photo}`;
+            console.log("image >>",`https://127.0.0.1:3000/${tab[j].photo}`);
+            this.url1 = `https://127.0.0.1:3000/${tab[j].photo}`;
           }
           
          }

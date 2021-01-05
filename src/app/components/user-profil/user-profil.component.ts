@@ -62,8 +62,8 @@ export class UserProfilComponent implements OnInit {
          for(let j=0; j<tab.length; j++){
            //console.log(tab[j]);
            if(tab[j].loadBy === localStorage.getItem("loggedUser")){
-             console.log("image >>",`http://127.0.0.1:3000/${tab[j].photo}`);
-             this.url = `http://127.0.0.1:3000/${tab[j].photo}`;
+             console.log("image >>",`https://127.0.0.1:3000/${tab[j].photo}`);
+             this.url = `https://127.0.0.1:3000/${tab[j].photo}`;
            }
            
           }
@@ -88,8 +88,8 @@ export class UserProfilComponent implements OnInit {
         for(let j=0; j<tab.length; j++){
           console.log("testyyy",typeof(tab[j]));
           if(tab[j].loadBy === localStorage.getItem("loggedUser")){
-            console.log("image >>",`http://127.0.0.1:3000/${tab[j].photo}`);
-            this.url1 = `http://127.0.0.1:3000/${tab[j].photo}`;
+            console.log("image >>",`https://127.0.0.1:3000/${tab[j].photo}`);
+            this.url1 = `https://127.0.0.1:3000/${tab[j].photo}`;
           }
           
          }
@@ -155,7 +155,7 @@ export class UserProfilComponent implements OnInit {
         this.bailService.uploadImage(this.formData).subscribe(res =>{
           console.log(res["photo"]);
           this.alert = false;
-          this.url = `http://127.0.0.1:3000/${res["photo"]}`;
+          this.url = `https://127.0.0.1:3000/${res["photo"]}`;
           console.log(this.url);
           return res;
   
@@ -170,7 +170,7 @@ export class UserProfilComponent implements OnInit {
         this.bailService.uploadImage1(this.formData).subscribe(res =>{
           console.log(res["photo"]);
           this.alert1 = false;
-          this.url1 = `http://127.0.0.1:3000/${res["photo"]}`;
+          this.url1 = `https://127.0.0.1:3000/${res["photo"]}`;
           console.log(this.url1);
           return res;
         });
