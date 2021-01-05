@@ -33,7 +33,7 @@
 
 <div class="container" *ngIf="alert1">
 
-  <div class=" profilImg">  <img src="https://127.0.0.1:3000/{{userFoundImg}}" alt="" > 
+  <div class=" profilImg">  <img src="{{imgSite}}/{{userFoundImg}}" alt="" > 
   <h1>{{userFoundName}}</h1>
   </div>
     
@@ -85,14 +85,14 @@
         <ul class="album">
           <li *ngFor="let img of listeImages">
             
-           <span *ngIf="userFoundName == img.loadBy"> <a><img src="https://127.0.0.1:3000/{{img.photo}}" alt="#"></a></span>
+           <span *ngIf="userFoundName == img.loadBy"> <a><img src="{{imgSite}}/{{img.photo}}" alt="#"></a></span>
            &nbsp; 
           </li>          
         </ul>
         <ul class="album">
           <li *ngFor="let img of listeImagesPro">
             
-           <span *ngIf="userFoundName == img.loadBy"> <a routerLink="/profil-user"><img src="https://127.0.0.1:3000/{{img.photo}}" alt=""></a></span>
+           <span *ngIf="userFoundName == img.loadBy"> <a routerLink="/profil-user"><img src="{{imgSite}}/{{img.photo}}" alt=""></a></span>
            &nbsp;
             
           </li>
