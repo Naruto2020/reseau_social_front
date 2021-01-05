@@ -2,16 +2,25 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+const adressH = "http://swapengin.herokuapp.com/comptes/users";
+const adressH1 = "http://swapengin.herokuapp.com/comptes/images";
+const adressH2 = "http://swapengin.herokuapp.com/comptes/imagePros";
+const adressH3 = "http://swapengin.herokuapp.com/comptes/login";
+const adressH4 = "http://swapengin.herokuapp.com/comptes/sendmail";
+const adressH5 = "http://swapengin.herokuapp.com/comptes/reset";
+const adressH6 = "http://swapengin.herokuapp.com/comptes/forgotPassword";
+const adressH7 = "http://swapengin.herokuapp.com/comptes";
+
 export const environment = {
   production: false,
-  bddUrl: "http://127.0.0.1:3000/comptes/users",
-  picUrl: "http://127.0.0.1:3000/comptes/images",
-  picUrl1: "http://127.0.0.1:3000/comptes/imagePros",
-  logUrl: "http://127.0.0.1:3000/comptes/login",
-  emailUrl: "http://127.0.0.1:3000/comptes/sendmail",
-  resetUrl: "http://127.0.0.1:3000/comptes/reset",
-  emailPUrl: "http://127.0.0.1:3000/comptes/forgotPassword",
-  searchUrl : "http://127.0.0.1:3000/comptes",
+  bddUrl: adressH || "http://127.0.0.1:3000/comptes/users",
+  picUrl: adressH1 || "http://127.0.0.1:3000/comptes/images",
+  picUrl1: adressH2 || "http://127.0.0.1:3000/comptes/imagePros",
+  logUrl: adressH3 || "http://127.0.0.1:3000/comptes/login",
+  emailUrl: adressH4 || "http://127.0.0.1:3000/comptes/sendmail",
+  resetUrl: adressH5 || "http://127.0.0.1:3000/comptes/reset",
+  emailPUrl: adressH6 || "http://127.0.0.1:3000/comptes/forgotPassword",
+  searchUrl : adressH7 || "http://127.0.0.1:3000/comptes",
 };
 
 /*
