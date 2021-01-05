@@ -49,7 +49,7 @@ const routes: Routes = [
   {path:"listProfils/:_id", component:ListesComponent, canActivate:[AuthGuard], data:['admin']},
   {path: "updateProfils/:_id", component : AdminUpdateComponent,canActivate:[AuthGuard], data:['admin']},
   {path:"accueil_admin", component:HomeAdminComponent,canActivate:[AuthGuard], data:['admin']},
-  {path:"createProfils", component:AddProfilComponent, canActivate:[AuthGuard], data:['admin']},
+  {path:"createProfils", component:AddProfilComponent},
   {path:"menu", component:MenuComponent,canActivate:[AuthGuard], data:['admin']},
   {path:"profil/:username", component:ProfilComponent,canActivate:[AuthGuard], data:['admin']},
   {path:"profil-info", component:ProfilFormComponent,canActivate:[AuthGuard], data:['admin']},

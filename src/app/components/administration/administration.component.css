@@ -18,4 +18,5 @@ h1 {
 }
 button {
   float: right;
+  margin-right: 5px;
 }
