@@ -19,5 +19,5 @@ export const environment = {
   resetUrl: adressH5 || "https://127.0.0.1:3000/comptes/reset",
   emailPUrl: adressH6 || "https://127.0.0.1:3000/comptes/forgotPassword",
   searchUrl : adressH7 || "https://127.0.0.1:3000/comptes",
-  //siteUrl : adressH8 || "https://127.0.0.1:3000",
+  siteUrl : adressH8 || "https://127.0.0.1:3000",
 };

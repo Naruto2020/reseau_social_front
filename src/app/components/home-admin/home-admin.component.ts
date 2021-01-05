@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 import {BailService} from '../../partages/bail.service';
 import {environment} from 'src/environments/environment';
 
-//const imgSite = environment.siteUrl;
+const imgSite = environment.siteUrl;
 
 @Component({
   selector: 'app-home-admin',
@@ -17,8 +17,8 @@ import {environment} from 'src/environments/environment';
 export class HomeAdminComponent implements OnInit {
   titre:String = "$wap-It";
 
-  address0 = "https://swapengin.herokuapp.com"
-  imgSite:string = this.address0 || "http://127.0.0.1:3000";
+  //address0 = "https://swapengin.herokuapp.com"
+  imgSite:string;
   
   classActive = 'active';
   userDisplayName:string = "";

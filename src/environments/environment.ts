@@ -22,7 +22,7 @@ export const environment = {
   resetUrl: adressH5 || "http://127.0.0.1:3000/comptes/reset",
   emailPUrl: adressH6 || "http://127.0.0.1:3000/comptes/forgotPassword",
   searchUrl : adressH7 || "http://127.0.0.1:3000/comptes",
-  //siteUrl : adressH8 || "http://127.0.0.1:3000",
+  siteUrl : adressH8 || "http://127.0.0.1:3000",
 };
 
 /*
