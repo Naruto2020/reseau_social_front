@@ -1,0 +1,44 @@
+<div class="container">
+
+      
+    <div class="jumbotron">
+        
+            <div class="col-12 pt-1 head">
+              
+              <a class="text" routerLink="/profil-user/:{{userDisplayName}}"> <img src="../../../assets/images/profil.png" alt="#" /> {{titre}}</a>
+  
+              <form class="form-inline my-2 my-lg-0" *ngIf>
+                <input class="form-control mr-sm-2" type="search" placeholder="recherche" aria-label="recherche">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                
+              </form>
+              <nav>
+                <ul>
+                  <li><a routerLink="/accueil"><img src="../../../assets/images/home.jpg" alt="#"></a></li>
+                  <li><a href=""><img src="../../../assets/images/reseaux.png" alt="#"></a></li>
+                  <li><a href=""><img src="../../../assets/images/messages.png" alt="#"></a></li>
+                  <li><a href=""><img src="../../../assets/images/notif.png" alt="#"></a></li>
+                  <li class="deroul"><a routerLink="/menu-user"><img src="../../../assets/images/menu.png" alt="#"></a>
+
+                  </li>
+                </ul>
+              </nav>
+  
+           
+    </div>
+  
+  </div>
+
+  <div class="alert alert-ligth" role="alert">
+    <button type="button" class="btn btn-secondary btn-lg btn-block" routerLink="/profil-user/:{{userDisplayName}}"> <img src="{{url1}}" width="40px" height="40px" alt=""> Profil</button>
+    <button type="button" class="btn btn-secondary btn-lg btn-block" (click)="logout()"> <img src="../../../assets/images/messages.png" alt=""> Méssages</button>
+    <button type="button" class="btn btn-secondary btn-lg btn-block" (click)="logout()"> <img src="../../../assets/images/messages.png" alt=""> Discussions instantanées</button>
+    <button type="button" class="btn btn-secondary btn-lg btn-block" (click)="logout()"> <img src="../../../assets/images/reseaux.png" alt=""> Amis</button>
+    <button type="button" class="btn btn-danger btn-lg btn-block" (click)="logout()" id="deco"> <img src="../../../assets/images/power.jpg" alt=""> Déconnexion</button>
+    
+  </div>
+  
+
+</div>  
+
+

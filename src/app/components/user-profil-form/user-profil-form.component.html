@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="jumbotron">
+      <button type="button" class="btn btn-info" routerLink="/profil-user/:{{userDisplayName}}">Retour</button>
+      <h1>Info </h1>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Nom</th>
+          <th scope="col">Prenom</th>
+          <th scope="col">Pseudo</th>
+          <th scope="col">Email</th>
+          <th scope="col">Age</th>
+          <th scope="col">Genre</th>
+          <th scope="col">Préférences</th>
+          <th scope="col">Présentation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let profil of listesProfils'>
+                      
+          <td *ngIf="userDisplayName == profil.username"> {{profil.nom}} </td>
+          <td *ngIf="userDisplayName == profil.username"> {{profil.prenom}} </td> 
+          <td *ngIf="userDisplayName == profil.username"> {{profil.username}} </td>
+          <td *ngIf="userDisplayName == profil.username"> {{profil.mail}} </td>
+          <td *ngIf="userDisplayName == profil.username"> {{profil.age}} </td>
+          <td *ngIf="userDisplayName == profil.username"> {{profil.genre}} </td>
+          <td *ngIf="userDisplayName == profil.username"> {{profil.preferences}} </td>
+          <td *ngIf="userDisplayName == profil.username"> {{profil.presentation}} </td>
+              
+          <td *ngIf="userDisplayName == profil.username">
+            <button>
+              <i
+                routerLink="/updateUsers/{{ profil._id }}"
+                class="fa fa-edit"
+                style="font-size: 20px; color: green"
+              ></i>
+            </button>
+          </td>
+        </tr>
+                    
+              
+      </tbody>
+    </table>
+  </div>
+  

@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="jumbotron">
+      <button type="button" class="btn btn-info" routerLink="/profil/:{{userDisplayName}}">Retour</button>
+      <h1>Info profil</h1>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Images arriere </th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let img of listeImages'>
+                      
+          <td *ngIf="userDisplayName == img.loadBy"> <img src="http://127.0.0.1:3000/{{img.photo}}" alt=""></td>
+              
+          <td *ngIf="userDisplayName == img.loadBy">
+            <button (click)="cancelImgBack()">
+              <i
+                routerLink="/profil-info-img/{{ img._id }}"
+                class="fa fa-trash"
+                style="font-size: 20px; color: red"
+              ></i>
+            </button>
+          </td>
+        </tr>
+                    
+              
+      </tbody>
+    </table>
+    <br/> <br/>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Images profils</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let img of listeImagesPro'>
+                      
+          <td *ngIf="userDisplayName == img.loadBy"> <img src="http://127.0.0.1:3000/{{img.photo}}" alt=""></td>
+              
+          <td *ngIf="userDisplayName == img.loadBy">
+            <button>
+              <i
+                routerLink="/updateProfils/{{ img._id }}"
+                class="fa fa-trash"
+                style="font-size: 20px; color: red"
+              ></i>
+            </button>
+          </td>
+        </tr>
+                    
+              
+      </tbody>
+    </table>
+  </div>

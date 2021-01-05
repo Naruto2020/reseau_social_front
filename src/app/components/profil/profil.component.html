@@ -1,0 +1,145 @@
+<div class="container">
+
+  <div class="jumbotron">
+      
+          <div class="col-12 pt-1 head">
+            
+            <a class="text" routerLink="/profil/:{{userDisplayName}}"> <img src="../../../assets/images/profil.png" alt="#" /> {{titre}} <br/> {{userDisplayName}}</a>
+  
+            <form class="form-inline my-2 my-lg-0" *ngIf>
+              <input class="form-control mr-sm-2" type="search" placeholder="recherche" aria-label="recherche">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              
+            </form>
+            <nav>
+              <ul>
+                <li><a routerLink="/accueil_admin"><img src="../../../assets/images/home.jpg" alt="#"></a></li>
+                <li><a href=""><img src="../../../assets/images/reseaux.png" alt="#"></a></li>
+                <li><a href=""><img src="../../../assets/images/messages.png" alt="#"></a></li>
+                <li><a href=""><img src="../../../assets/images/notif.png" alt="#"></a></li>
+                <li><a routerLink="/menu"><img src="../../../assets/images/menu.png" alt="#"></a>
+  
+                </li>
+              </ul>
+            </nav>
+  
+         
+          </div>
+  
+  </div>
+  <div class="back"> <img [src]="url" alt="#" ></div>
+  <div class="camera1"> <a routerLink="/profil/:{{userDisplayName}}" (click)="affiche()"><img src="../../../assets/images/camera.jpg" alt="logo caméra"></a></div>
+
+  <div class="imgProfil"> <img [src]="url1" alt=""> </div>
+  <div class="camera2"> <a routerLink="/profil/:{{userDisplayName}}" (click)="affiche1()"> <img src="../../../assets/images/camera.jpg" alt="logo caméra"></a> </div>
+  <br/> <br/> <br/> <br/>
+  <div>
+    <form [formGroup]="addImage" *ngIf="alert">
+      <div class="form-group">
+        <label for="exampleFormControlFile1"></label>
+        <input type="file"  multiple (change)="selectImage($event)"   >
+        <br/>
+        <input type="text" *ngIf class="form-control" formControlName="loadBy" placeholder="LoadBy" value="{{userDisplayName}}" >
+        <br/> <br/> <br/> <br/>
+        <button type="submit" value="Enregistrer" class="btn btn-primary" (click)="chargement()">Télécharger</button> &nbsp;
+        <button type="submit" value="fermer" class="btn btn-primary" (click)="fermerAlert()">fermer</button>
+      </div>
+
+    </form>
+  </div>
+  <div>
+    <form *ngIf="alert1">
+      <div class="form-group">
+        <label for="exampleFormControlFile1"></label>
+        <input type="file"  multiple (change)="selectImage($event)"   >
+        <br/>
+        <input type="text" *ngIf class="form-control" formControlName="loadBy" placeholder="LoadBy" value="{{userDisplayName}}" >
+        <br/> <br/> <br/> <br/>
+        <button type="submit" value="Enregistrer" class="btn btn-primary" (click)="chargement1()">Télécharger</button> &nbsp;
+        <button type="submit" value="fermer" class="btn btn-primary" (click)="fermerAlert()">fermer</button>
+      </div>
+
+    </form>
+  </div>
+  <div>
+    <h1>{{userDisplayName}}</h1>
+  </div>
+
+  <div class="container presentation">
+    <div>
+      <h2>A propos</h2>
+      <span> <a routerLink="/profil-info"><img src="../../../assets/images/genre.png"alt="#"></a>  &nbsp; {{aProp1}}</span> <br/>
+      <span> <a routerLink="/profil-info"><img src="../../../assets/images/aniv.png"alt="#"></a> &nbsp; {{aProp2}} </span> <br/>
+      <span> <a routerLink="/profil-info"><img src="../../../assets/images/preferences.jpg" alt="#"></a>&nbsp;{{aProp3}} </span><br/> <br/>
+      <span> <a routerLink="/profil-info"><img src="../../../assets/images/speech.png"alt="#"></a>&nbsp;{{aProp4}} </span> 
+
+    </div>
+      
+    
+
+    <!-- <ul>
+      <li *ngFor="let pro of listesProfils">
+        <span *ngIf="userDisplayName == pro.username"> <a href=""><img src="../../../assets/images/genre.png"alt="#"></a>&nbsp; {{pro.genre}}</span> <br/> <br/>
+        <span *ngIf="userDisplayName == pro.username"> <a href=""><img src="../../../assets/images/aniv.png"alt="#"></a> &nbsp;  {{pro.age}}</span> <br/> <br/>
+        <span *ngIf="userDisplayName == pro.username"> <a href=""><img src="../../../assets/images/preferences.jpg" alt="#"></a>&nbsp; {{pro.preferences}}</span> <br/> <br/>
+        <span *ngIf="userDisplayName == pro.username"> <a href=""><img src="../../../assets/images/speech.png"alt="#"></a>&nbsp; {{pro.presentation}}</span> <br/> <br/>
+      </li>
+    </ul> -->
+      
+    <div>
+      <h2>mes Amis</h2>
+      
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur culpa numquam possimus id,    minimadeserunt hic cumque iure voluptatibus animi, enim odit explicabo earum omnis, error ab similique sunt Loremipsum dolor sit amet consectetur adipisicing elit. Velit rem cumque suscipit toto
+        ipsum dolor sit amet consectetur adipisicing elit. Velit rem cumque suscipit toto
+      </p>
+
+    </div>
+
+    
+  </div>
+
+  <div class="container images">     
+    <h2>Mes photos</h2> 
+    <div class="maj"> 
+      <a routerLink="/profil-info-img/:_id"> <img src="../../../assets/images/maj.jpg" alt=""></a> 
+    </div>  
+    <div class="maj1"> 
+      <a routerLink="/profil-info-img/:_id"> <img src="../../../assets/images/maj.jpg" alt=""></a> 
+    </div>  
+    <ul class="album">
+      <li *ngFor="let img of listeImages">
+        
+       <span *ngIf="userDisplayName == img.loadBy"> <a routerLink="/profil"><img src="http://127.0.0.1:3000/{{img.photo}}" alt="#"></a></span>
+       &nbsp; 
+      </li>          
+    </ul>
+    <ul class="album">
+      <li *ngFor="let img of listeImagesPro">
+        
+       <span *ngIf="userDisplayName == img.loadBy"> <a routerLink="/profil"><img src="http://127.0.0.1:3000/{{img.photo}}" alt=""></a></span>
+       &nbsp;
+        
+      </li>
+    </ul>
+
+  </div>
+</div>  
+
+      
+
+
+
+    
+  
+
+
+  
+
+
+    
+
+        
+
+
+

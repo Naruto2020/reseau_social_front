@@ -1,0 +1,73 @@
+<div class="container"> 
+  <div class="jumbotron">
+    <button type="button" class="btn btn-info" routerLink="/admin">Retour</button>
+    <h1>Bienvenue sur la page d'accueil Administration </h1>
+  </div>
+
+  <div
+    *ngIf="alert1"
+    class="alert alert-danger alert-dismissible fade show"
+    role="alert"
+  >
+    <strong>success !</strong> Veillez remplir tous les champs ...<button
+      (click)="fermerAlert()"
+      type="button"
+      class="close"
+      data-dismiss="alert"
+      aria-label="Close"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  
+  <div
+    *ngIf="alert2"
+    class="alert alert-danger alert-dismissible fade show"
+    role="alert"
+  >
+    <strong>success !</strong> Pseudo et/ou Mot de passe inccorecte ...<button
+      (click)="fermerAlert()"
+      type="button"
+      class="close"
+      data-dismiss="alert"
+      aria-label="Close"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <div class="container">
+      <div class="row">
+          <div class="col-12">
+              <form class="container" [formGroup]="goToProfil">
+                <div class="form-row">
+                    <div class="col">
+                        <input type="text"  class="form-control" formControlName="username" placeholder="Pseudo" >
+                    </div>
+                    <div class="col">
+                        <input type="password" class="form-control" formControlName="password"  placeholder="Mot de passe">
+                    </div>
+  
+                </div>
+                <br/>
+                <div class="form-group" *ngIf>
+                    <label for="genre">Niveau</label> <br/>
+                    <select class="form-control" formControlName="niveau" id="">
+                      <option value="admin" selected>Admin</option>
+                      <option value="user">user</option>
+                      <option value="visit">Visit </option>
+                    </select>
+                    
+                </div>
+                <br/>
+
+                <button type="submit" value="mot de passe oublié ?" class="btn btn-secondary" (click)="reinit()">mot de passe oublié ?</button> &nbsp;
+                <button type="submit" value="Enregistrer" class="btn btn-primary" (click)="connexion()">Connexion</button> 
+              </form> &nbsp;
+              
+          </div>
+      </div>
+  </div> 
+</div>
+
+

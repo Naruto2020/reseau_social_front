@@ -1,0 +1,283 @@
+/* Taille du logo principal*/
+nav ul img {
+  height: 35px;
+}
+
+a {
+  font-size: 30px;
+}
+.text {
+  text-decoration: none;
+}
+.text img {
+  border-top: 4px solid blue;
+  height: 60px;
+}
+
+.text img:hover {
+  color: skyblue;
+  border-bottom: 2px solid blue;
+}
+
+.form-inline input {
+  position: absolute;
+  top: 38px;
+  left: 240px;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.form-inline button {
+  display: none;
+}
+/*gesttion des logos secondaires*/
+
+.head {
+  display: flex;
+  justify-content: space-between;
+}
+nav ul {
+  list-style-type: none;
+}
+nav ul li {
+  float: left;
+  width: 20%;
+  text-align: center;
+  padding: 25px;
+}
+
+nav a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  border-bottom: 2px solid transparent;
+  padding: 10px 0px;
+}
+nav a:hover {
+  color: skyblue;
+  border-bottom: 2px solid blue;
+}
+.deroul img {
+  border-top: 4px solid blue;
+}
+.alert a {
+  text-decoration: none;
+}
+
+/*gestion des champs */
+.alert button {
+  text-align: left;
+}
+.alert button img {
+  height: 40px;
+}
+
+/* gestion contenu page profil*/
+
+.contenu div {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+.back {
+  background-color: grey;
+  border: 1px solid grey;
+  border-radius: 8px 8px 0 0;
+  height: 300px;
+}
+.camera1 {
+  background-color: white;
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 80%;
+  top: 40%;
+  text-align: center;
+  padding-top: 5px;
+  padding-right: 10px;
+}
+.camera1 a img {
+  height: 30px;
+  padding-left: 10px;
+  padding-top: 8px;
+}
+
+.camera2 {
+  background-color: white;
+  border-radius: 35px;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 56%;
+  top: 73%;
+}
+.camera2 a img {
+  position: absolute;
+  left: 20%;
+  top: 20%;
+  height: 20px;
+}
+.camera2 button {
+  text-align: right;
+  width: 10px;
+  padding-left: 30px;
+}
+.imgProfil {
+  background-color: beige;
+  border: solid 5px white;
+  border-radius: 200px;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 450px;
+  left: 44%;
+}
+.back img {
+  height: 100%;
+  width: 100%;
+  border-radius: 8px 8px 0 0;
+}
+
+.imgProfil img {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+}
+
+/* profil et amis*/
+/*.presentation {
+  display: flex;
+  justify-content: space-between;
+}*/
+
+.presentation div {
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin: 5px;
+  height: 50%;
+  width: 100%;
+}
+
+/*.presentation ul li {
+  list-style: none;
+}*/
+
+.presentation div img {
+  height: 40px;
+}
+
+/* pour centrer le username*/
+h1 {
+  text-align: center;
+}
+.album {
+  display: flex;
+  list-style: none;
+}
+.album img {
+  height: 80px;
+  width: 80px;
+}
+
+.images .album {
+  /*border: 1px solid gray;
+  border-radius: 5px;
+  margin: 5px;*/
+  width: 100%;
+  height: 100%;
+}
+h2 {
+  margin: 20px;
+}
+.images .maj img {
+  height: 20px;
+}
+.maj {
+  position: absolute;
+  top: 155%;
+  left: 82%;
+}
+.images .maj1 img {
+  height: 20px;
+}
+.maj1 {
+  position: absolute;
+  top: 166%;
+  left: 82%;
+}
+
+/* *** *** Les media queries *** *** */
+@media screen and (max-width: 1024px) {
+  img {
+    height: 40px;
+  }
+  #headImg a img {
+    float: left;
+    height: 18px;
+    margin: 12px;
+  }
+  /*.form-inline input {
+    font-size: 10px;
+  }*/
+  .form-inline input {
+    position: absolute;
+    top: 90px;
+    left: 150px; /* 80 */
+    width: 260px;
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  nav a:hover {
+    color: skyblue;
+    border-bottom: 2px solid transparent;
+  }
+  a {
+    font-size: 18px;
+  }
+
+  .camera1 {
+    background-color: white;
+    border-radius: 40px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 85%;
+    top: 40%;
+    text-align: center;
+    padding-top: 5px;
+    padding-right: 10px;
+  }
+
+  .camera2 {
+    background-color: white;
+    border-radius: 28px;
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    left: 62%;
+    top: 86%;
+  }
+
+  .imgProfil {
+    background-color: beige;
+    border: solid 5px white;
+    border-radius: 120px;
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    top: 445px;
+    left: 190px;
+  }
+
+  .maj {
+    position: absolute;
+    top: 202%;
+    left: 82%;
+  }
+
+  .maj1 {
+    position: absolute;
+    top: 220%;
+    left: 82%;
+  }
+}

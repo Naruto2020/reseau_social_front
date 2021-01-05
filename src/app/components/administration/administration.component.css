@@ -1,0 +1,21 @@
+/* Taille du logo*/
+img {
+  height: 60px;
+}
+a {
+  font-size: 30px;
+}
+.text {
+  text-decoration: none;
+}
+h1 {
+  text-align: center;
+}
+
+#boutons {
+  margin-right: 200px;
+  margin-left: 200px;
+}
+button {
+  float: right;
+}

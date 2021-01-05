@@ -1,0 +1,105 @@
+
+<div class="container">
+ 
+    
+    <div class="jumbotron">
+        
+            <div class="col-12 pt-1 head">
+              
+              <a class="text" routerLink="/profil-user/:{{userDisplayName}}"> <img src="../../../assets/images/profil.png" alt="#"/> {{titre}}</a> 
+  
+              <form class="form-inline my-2 my-lg-0" [formGroup]="goToUser">
+                <input class="form-control mr-sm-2" type="search" placeholder="recherche" formControlName="nom" aria-label="recherche">
+                <button class="btn btn-outline-success my-2 my-sm-0 " type="submit" (click)="connexion()">Search</button>
+                
+              </form>
+              <nav>
+                <ul>
+                  <li><a class="deroul" routerLink="/accueil"><img src="../../../assets/images/home.jpg" alt="#"></a></li>
+                  <li><a routerLink="/nom"><img src="../../../assets/images/reseaux.png" alt="#"></a></li>
+                  <li><a href=""><img src="../../../assets/images/messages.png" alt="#"></a></li>
+                  <li><a href=""><img src="../../../assets/images/notif.png" alt="#"></a></li>
+                  <li ><a routerLink="/menu-user"><img src="../../../assets/images/menu.png" alt="#"></a>
+  
+                  </li>
+                </ul>
+              </nav>
+  
+           
+    </div>
+    
+    
+</div>
+  
+<div class="container" *ngIf="alert1">
+
+    <div class=" profilImg">  <img src="http://127.0.0.1:3000/{{userFoundImg}}" alt="" > 
+    <h1>{{userFoundName}}</h1>
+    </div>
+      
+      <div class="container presentation">
+        <div class="about">
+
+          <h2>A propos</h2>
+          <form [formGroup]="addAmis">
+
+           <!-- <div class="form-group">
+              <label>sendBy*</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder=" {{userDisplayName}} "
+                formControlName="sendBy"
+                value=" {{userDisplayName}} "
+              />
+            </div>
+            <div class="form-group">
+              <label>acceptBy*</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="{{userFoundName}}"
+                formControlName="acceptBy"
+                value="{{userFoundName}}"
+              />
+            </div>-->
+
+
+
+
+            <input class="form-control mr-sm-2"  type="hidden" placeholder=" {{userDisplayName}} "  formControlName="amis"  ngModel="{{userDisplayName}}">
+
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"  (click)="demande()">+</button>
+          </form>
+            
+          <!-- <h2><a routerLink="/accueil" (click)="demande()">+</a></h2> -->
+          <span> <a><img src="../../../assets/images/genre.png"alt="#"></a>  &nbsp; {{userFoundGenre}}</span> <br/>
+          <span> <a><img src="../../../assets/images/aniv.png"alt="#"></a> &nbsp; {{userFoundAge}} </span> <br/>
+          <span> <a><img src="../../../assets/images/preferences.jpg" alt="#"></a>&nbsp; {{userFoundChoix}} </span><br/> <br/>
+          <span> <a><img src="../../../assets/images/speech.png"alt="#"></a>&nbsp;{{userFoundAbout}} </span> 
+
+        </div>
+
+        <div class="myTof">
+          <h2>Mes photos</h2>
+          <ul class="album">
+            <li *ngFor="let img of listeImages">
+              
+             <span *ngIf="userFoundName == img.loadBy"> <a routerLink="/profil-user"><img src="http://127.0.0.1:3000/{{img.photo}}" alt="#"></a></span>
+             &nbsp; 
+            </li>          
+          </ul>
+          <ul class="album">
+            <li *ngFor="let img of listeImagesPro">
+              
+             <span *ngIf="userFoundName == img.loadBy"> <a routerLink="/profil-user"><img src="http://127.0.0.1:3000/{{img.photo}}" alt=""></a></span>
+             &nbsp;
+              
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+</div>
+    

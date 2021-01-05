@@ -1,0 +1,75 @@
+<div class="container">
+
+  <div class="jumbotron">
+    <button type="button" class="btn btn-info" routerLink="/page_accueil">Retour</button>
+    <h1>Liste des comptes Utilisateurs</h1>
+  </div>
+  
+  <div
+  *ngIf="alert"
+  class="alert alert-success alert-dismissible fade show"
+  role="alert"
+  >
+  <strong>success!</strong> le profil a bien été supprimé .
+  <button
+  (click)="fermerAlert()"
+  type="button"
+  class="close"
+  data-dismiss="alert"
+  aria-label="Close"
+  >
+  <span aria-hidden="true">&times;</span>
+  </button>
+  </div>
+  
+  <div class="container">
+
+    <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Prenom</th>
+        <th scope="col">Pseudo</th>
+        <th scope="col">mail</th>
+        <th scope="col">Niveau</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let profil of listesProfils'>
+        
+        <td> {{profil._id}} </td>
+        <td> {{profil.nom}} </td>
+        <td> {{profil.prenom}} </td> 
+        <td> {{profil.username}} </td>
+        <td> {{profil.mail}} </td>
+        <td> {{profil.niveau}} </td>
+        
+        <td>
+          <button>
+            <i
+            routerLink="/updateProfils/{{ profil._id }}"
+            class="fa fa-edit"
+            style="font-size: 20px; color: green"
+            ></i>
+          </button>
+        </td>
+        &nbsp; &nbsp;
+        <td>
+          <button (click)="cancelProfil()">
+            <i
+            routerLink="/listProfils/{{profil._id}} "
+            class="fa fa-trash"
+            style="font-size: 20px; color: red"
+            ></i>
+          </button>
+        </td>
+      </tr>
+      
+      
+    </tbody>
+    </table>
+  </div>
+  
+</div>
+  

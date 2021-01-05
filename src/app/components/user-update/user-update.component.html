@@ -1,0 +1,200 @@
+<div class="jumbotron">
+    <button type="button" class="btn btn-info" routerLink="/profil-user-info">Retour profils</button>
+    <h1>Mettre a jour le profil</h1>
+  </div>
+  <div
+  *ngIf="alert"
+  class="alert alert-success alert-dismissible fade show"
+  role="alert"
+>
+  <strong>success !</strong> le profil a bien été créer et enregistré!
+  <button
+    (click)="fermerAlert()"
+    type="button"
+    class="close"
+    data-dismiss="alert"
+    aria-label="Close"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div
+  *ngIf="soumissionNomPrePseu"
+  class="alert alert-danger alert-dismissible fade show"
+  role="alert"
+>
+  <strong>Erreur ! </strong> l'un des champs Nom, Prenom, ou Pseudo n'est pas/ou est mal remplit (minimum 2 caratères) ...
+  <button
+    (click)="fermerAlert()"
+    type="button"
+    class="close"
+    data-dismiss="alert"
+    aria-label="Close"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div
+  *ngIf="soumissionMdpGenMail"
+  class="alert alert-danger alert-dismissible fade show"
+  role="alert"
+>
+  <strong>Erreur ! </strong> l'un des champs Mot de passe (minimum 8 caractères) et/ou E-mail n'est pas/ou est mal remplit ...
+  <button
+    (click)="fermerAlert()"
+    type="button"
+    class="close"
+    data-dismiss="alert"
+    aria-label="Close"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div
+  *ngIf="soumissionAgePrefNiv"
+  class="alert alert-danger alert-dismissible fade show"
+  role="alert"
+>
+  <strong>Erreur ! </strong> le champ Niveau (0 , 5 ou 10) n'est pas/ou est mal remplit ...
+  <button
+    (click)="fermerAlert()"
+    type="button"
+    class="close"
+    data-dismiss="alert"
+    aria-label="Close"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div class="container"> 
+  <div class="row"> 
+    <div class="col-12"> 
+
+      <form [formGroup]="editProfil" (ngSubmit)="mettreAjour()">
+
+       <!--  <div class="form-group">
+          <label for="exampleFormControlFile1">votre photo</label>
+          <input type="file"  multiple (change)="selectImage($event)" class="form-control-file" required>
+        
+        </div> -->
+
+        <div class="form-group">
+          <label>Nom</label>
+          <input
+            type="text"
+            class="form-control"
+            required
+            formControlName="nom"
+          />
+        </div>
+        <div class="form-group">
+          <label>Prénom</label>
+          <input
+            type="text"
+            class="form-control"
+            required
+            formControlName="prenom"
+          />
+        </div>
+      
+        <div class="form-group">
+          <label>Pseudo</label>
+          <input
+            type="text"
+            class="form-control"
+            required
+            formControlName="username"
+          />
+        </div>  
+
+        <div class="form-group">
+          <label>E-mail</label>
+          <input
+            type="email"
+            class="form-control"
+            placeholder="Ex : xxx@aaa.com"
+            required
+            formControlName="mail"
+          />
+        </div>
+        <div class="form-group">
+          <label>Mot de passe</label>
+          <input
+            type="password"
+            class="form-control"
+            placeholder="8 carractères minimum"
+            required
+            formControlName="password"
+          />
+        </div>
+        <div class="form-group">
+          <label>Âge</label>
+          <input
+            type="number"
+            class="form-control"
+            formControlName="age"
+          />
+        </div>
+        <div class="form-group">
+          <label>Coordonnées</label>
+          <input
+            type="tel"
+            class="form-control"
+            placeholder="Ex 0600101020"
+            formControlName="coordonnees"
+          />
+        </div>
+        <div class="form-group">
+          <label for="genre">Genre</label> <br/>
+          <select class="form-control" formControlName="genre" id="">
+            <option value="homme">Homme</option>
+            <option value="femme">Femme</option>
+          </select>
+          
+        </div>
+        <div class="form-group">
+          <label for="genre">Préférences</label> <br/>
+          <select class="form-control" formControlName="preferences" id="">
+            <option value="homme">Homme</option>
+            <option value="femme">Femme</option>
+          </select>
+          
+        </div>
+        <div class="form-group">
+          <label for="genre">Niveau</label> <br/>
+          <select class="form-control" formControlName="niveau" id="">
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+            <option value="visit">Visit </option>
+          </select>
+          
+        </div>
+
+        <div class=" form-group">
+          <label for="presenter">Présentez vous </label>
+          <textarea class="form-control" formControlName="presentation"   rows="3" > ...</textarea>
+        </div>
+        <button type="submit" value="Enregistrer" class="btn btn-primary">Enregistrer</button>
+      </form>
+    </div>
+  </div> 
+  
+ </div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

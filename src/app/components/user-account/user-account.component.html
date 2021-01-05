@@ -1,0 +1,193 @@
+<div class="container">
+    <div class="jumbotron">
+      <button type="button" class="btn btn-info" routerLink="">Retour</button>
+      <h1>Creer un compte</h1>
+    </div>
+    <div
+      *ngIf="alert"
+      class="alert alert-success alert-dismissible fade show"
+      role="alert"
+    >
+      <strong>success !</strong> le profil a bien été créer et enregistré Vous pouvez maintenant vous connectez!
+      <button
+        (click)="fermerAlert()"
+        type="button"
+        class="close"
+        data-dismiss="alert"
+        aria-label="Close"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    
+    <div
+      *ngIf="soumissionNomPrePseu"
+      class="alert alert-danger alert-dismissible fade show"
+      role="alert"
+    >
+      <strong>Erreur ! </strong> l'un des champs Nom, Prenom, ou Pseudo n'est pas/ou est mal remplit (minimum 2 caratères) ...
+      <button
+        (click)="fermerAlert()"
+        type="button"
+        class="close"
+        data-dismiss="alert"
+        aria-label="Close"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div
+      *ngIf="soumissionMdpGenMail"
+      class="alert alert-danger alert-dismissible fade show"
+      role="alert"
+    >
+      <strong>Erreur ! </strong> l'un des champs Mot de passe (minimum 8 caractères) ou E-mail(e-mail valide) n'est pas/ou est mal remplit ...
+      <button
+        (click)="fermerAlert()"
+        type="button"
+        class="close"
+        data-dismiss="alert"
+        aria-label="Close"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <p>les champs avec (*)  sont obligatoire !</p>
+    
+          <form [formGroup]="addProfil" (ngSubmit)="soumettre()">
+    
+           <!-- <div class="form-group">
+              <label for="exampleFormControlFile1"></label>
+              <input type="file"  multiple (change)="selectImage($event)" class="form-control-file" r>
+            
+            </div> -->
+    
+            <div class="form-group">
+              <label>Nom*</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder=" votre nom "
+                formControlName="nom"
+              />
+            </div>
+            <div class="form-group">
+              <label>Prénom*</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="votre prénom"
+                formControlName="prenom"
+              />
+            </div>
+          
+            <div class="form-group">
+              <label>Pseudo*</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="votre pseudo"
+                formControlName="username"
+              />
+            </div>  
+    
+            <div class="form-group">
+              <label>E-mail*</label>
+              <input
+                type="email"
+                class="form-control"
+                placeholder="votre email"
+                formControlName="mail"
+              />
+            </div>
+            <div class="form-group">
+              <label>Mot de passe*</label>
+              <input
+                type="password"
+                class="form-control"
+                placeholder="votre mot de passe"
+                formControlName="password"
+              />
+            </div>
+            <div class="form-group">
+              <label>Âge</label>
+              <input
+                type="number"
+                class="form-control"
+                placeholder="votre âge"
+                formControlName="age"
+              />
+            </div>
+            <div class="form-group">
+              <label>Coordonnées</label>
+              <input
+                type="tel"
+                class="form-control"
+                placeholder="Vos coordonnees"
+                formControlName="coordonnees"
+              />
+            </div>
+            <div class="form-group">
+              <label for="genre">Genre</label> <br/>
+              <select class="form-control" formControlName="genre">
+                <option value="homme">Homme</option>
+                <option value="femme">Femme</option>
+              </select>
+              
+            </div>
+            <div class="form-group">
+              <label for="genre">Préférences</label> <br/>
+              <select class="form-control" formControlName="preferences">
+                <option value="homme">Homme</option>
+                <option value="femme">Femme</option>
+              </select>
+              
+            </div>
+            <div class="form-group" *ngIf>
+                <label>Niveau*</label>
+                <input type="text" *ngIf class="form-control" formControlName="niveau" placeholder="user"  >
+                
+            </div>
+    
+            <div class=" form-group">
+              <label for="presenter">Présentez vous </label>
+              <textarea class="form-control" formControlName="presentation"   rows="3" > ...</textarea>
+            </div>
+  
+            <div class="form-group"*ngIf>
+              <label>Reset</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder=""
+                formControlName="reset"
+              />
+            </div> 
+            <button type="submit" value="Enregistrer" class="btn btn-primary">Enregistrer</button>
+          </form>
+        </div>
+      </div> 
+      
+    </div>
+  
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
