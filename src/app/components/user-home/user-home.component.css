@@ -143,10 +143,10 @@ h1 {
   }
   .head form input {
     position: absolute;
-    top: 70px;
+    top: 60px;
     left: 150px; /* 80 */
-    width: 180px;
-    font-size: 15px;
+    width: 160px;
+    font-size: 11px;
     margin-bottom: 10px;
   }
   nav a:hover {
@@ -163,6 +163,6 @@ h1 {
     float: left;
     width: 13%;
     text-align: center;
-    padding: 10px;
+    padding: 15px;
   }
 }
