@@ -31,4 +31,10 @@ a {
   .jumbotron div {
     margin-left: 0;
   }
+  .d-flex a {
+    font-size: 13px;
+  }
+  .d-flex {
+    margin-left: 50px;
+  }
 }
