@@ -204,6 +204,9 @@ h1 {
     margin: 5px;
     width: 50%;
   }
+  h2 {
+    display: none;
+  }
 
   .album img {
     height: 40px;
