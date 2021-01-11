@@ -212,6 +212,9 @@ h2 {
     display: flex;
     justify-content: space-around;
   }
+  .text img {
+    height: 30px;
+  }
   img {
     height: 40px;
   }
@@ -246,7 +249,7 @@ h2 {
     float: left;
     width: 10%;
     text-align: center;
-    padding: 11px;
+    padding: 12px;
   }
 
   .back {
