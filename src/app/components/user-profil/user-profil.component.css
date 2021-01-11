@@ -281,6 +281,12 @@ h2 {
     left: 56%;
     top: 68%;
   }
+  .camera2 a img {
+    position: absolute;
+    left: 20%;
+    top: 20%;
+    height: 15px;
+  }
 
   .imgProfil {
     background-color: beige;
@@ -290,7 +296,7 @@ h2 {
     height: 90px;
     position: absolute;
     top: 280px;
-    left: 170px;
+    left: 150px;
   }
 
   .maj {
