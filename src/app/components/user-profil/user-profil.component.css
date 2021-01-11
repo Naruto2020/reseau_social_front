@@ -265,7 +265,7 @@ h2 {
     width: 40px;
     height: 40px;
     position: absolute;
-    left: 85%;
+    left: 80%;
     top: 40%;
     text-align: center;
     padding-top: 5px;
@@ -278,8 +278,8 @@ h2 {
     width: 27px;
     height: 27px;
     position: absolute;
-    left: 54%;
-    top: 48%;
+    left: 56%;
+    top: 68%;
   }
 
   .imgProfil {
@@ -290,7 +290,7 @@ h2 {
     height: 90px;
     position: absolute;
     top: 280px;
-    left: 190px;
+    left: 170px;
   }
 
   .maj {
@@ -303,5 +303,8 @@ h2 {
     position: absolute;
     top: 220%;
     left: 82%;
+  }
+  .presentation div img {
+    height: 20px;
   }
 }
