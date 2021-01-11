@@ -33,6 +33,7 @@ export class UserProfilComponent implements OnInit {
   aProp2:string;
   aProp3:string;
   aProp4:string;
+  aProp5:string;
   majTof:string;
  
 
@@ -121,7 +122,10 @@ export class UserProfilComponent implements OnInit {
             this.aProp2 = obj.age;
             this.aProp3 = obj.preferences;
             this.aProp4 = obj.presentation;
+            this.aProp5 = obj.amis;
             this.majTof = obj._id;
+
+            console.log("lolita",this.aProp5);
 
           }
         }

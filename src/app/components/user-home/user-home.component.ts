@@ -34,6 +34,8 @@ export class UserHomeComponent implements OnInit {
   alert1:boolean = false;
   alert2:boolean = false;
 
+  alredy:boolean = true;
+
   userFoundName;
   userFoundAge;
   userFoundGenre;
@@ -42,11 +44,23 @@ export class UserHomeComponent implements OnInit {
   userFoundImg;
   userFoundBack;
   userFoundNom;
+  userFoundAmis;
 
+  aProp1:string;
+  aProp2:string;
+  aProp3:string;
+  aProp4:string;
+  aProp5:string;
+  pote;
+  pote1;
+  pote2;
+
+  
   
   listeImages:any;
   listeImagesPro:any;
   listesProfils:any;
+  friend:any;
 
 
   goToUser = new FormGroup({
@@ -65,16 +79,12 @@ export class UserHomeComponent implements OnInit {
     
     this.userDisplayName = localStorage.getItem("loggedUser");
     this.userDisName = sessionStorage.getItem("loggedUser");
-    /*this.bailService.showProfils().subscribe(res =>{
-      //this.listesProfils = res;
-      //console.log(res);
-      
-    });*/
-
-    this.bailService.findFriends(this.goToUser.get("nom").value).subscribe(res =>{
+    
+    // gestion de la recherche utilisateur pour demande d'amis 
+    /*this.bailService.findFriends(this.goToUser.get("nom").value).subscribe(res =>{
       //console.log(this.goToUser.get("nom").value);
      
-       console.log("losa",res["preferences"]);
+       console.log("losaaaa",res["preferences"]);
        this.goToUser.reset({});
        this.userFoundName = res["username"];
        this.userFoundAge = res["age"];
@@ -82,30 +92,68 @@ export class UserHomeComponent implements OnInit {
        this.userFoundAbout = res["presentation"];
        this.userFoundChoix = res["preferences"];
        this.userFoundNom = res["nom"];
+       this.userFoundAmis = res["amis"];
        this.alert1 = true;
        return res;
-     });
+    });*/
+
+
+    // gestion du status de la demande d'amis 
+    this.bailService.showProfils().subscribe((res) =>{
+      //console.log(">>>",res);
+      this.listesProfils = res;
+      // on transforme l 'obet res en tableau cle/valeur representant chaques Ut de la BDD 
+      let newR = Object.keys(res).map(function(cle) {
+        return [Number(cle), res[cle]];
+      });
+      //console.log("new ...",newR);
+      //console.log(Object.entries(res));
+      // on boucle sur le nouveau tableau pour recupérer chaque UT 
+      /*for(let i=0; i< newR.length; i++){
+        console.log("yooo",newR[i]);
+        let tab = newR[i];
+        for(let j=0; j<tab.length;j++){
+          console.log("isolaaaaa",tab[j].username);
+          this.pote = tab[j];
+          //this.pote1 = tab[j].username;
+          console.log("--->>>",this.userFoundName);
+          //let objId = tab[j]._id;
+          if(this.pote.username === this.userFoundName){
+            this.aProp1 = this.pote.genre;
+            this.aProp2 = this.pote.age;
+            this.aProp3 = this.pote.preferences;
+            this.aProp4 = this.pote.presentation;
+            this.aProp5 = this.pote.amis;
+           
+          }
+
+        }
+      }*/
+
+    });
+    
   
   }
 
 
-
+  
+  
   connexion(){
-    
     console.log(this.goToUser.get("nom").value);
     this.bailService.findFriends(this.goToUser.get("nom").value).subscribe(res =>{
      //console.log(this.goToUser.get("nom").value);
     
-      console.log("losa",res["preferences"]);
-      this.goToUser.reset({});
+      console.log("losaaaa",res["amis"]);
+      /*this.goToUser.reset({});
       this.userFoundName = res["username"];
       this.userFoundAge = res["age"];
       this.userFoundGenre = res["genre"];
       this.userFoundAbout = res["presentation"];
       this.userFoundChoix = res["preferences"];
       this.userFoundNom = res["nom"];
+      this.userFoundAmis = res["amis"];
       this.alert1 = true;
-      return res;
+      return res;*/
     });
     
     this.bailService.displayImage().subscribe((res) =>{
@@ -180,10 +228,12 @@ export class UserHomeComponent implements OnInit {
       return res;
     });
 
+    
     /*this.bailService.ajoutAmis(this.addAmis.value).subscribe(res =>{
       console.log(res);
     });*/
 
   }
+
   
 }

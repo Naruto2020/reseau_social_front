@@ -43,34 +43,17 @@
         <h2>A propos</h2>
         <form [formGroup]="addAmis">
 
-          <!-- <div class="form-group">
-             <label>sendBy*</label>
-             <input
-               type="text"
-               class="form-control"
-               placeholder=" {{userDisplayName}} "
-               formControlName="sendBy"
-               value=" {{userDisplayName}} "
-             />
-           </div>
-           <div class="form-group">
-             <label>acceptBy*</label>
-             <input
-               type="text"
-               class="form-control"
-               placeholder="{{userFoundName}}"
-               formControlName="acceptBy"
-               value="{{userFoundName}}"
-             />
-           </div>-->
+          <input class="form-control mr-sm-2"  type="hidden" placeholder=" {{userDisplayName}} "  formControlName="amis"  ngModel="{{userDisplayName}}">
 
-
-
-
-           <input class="form-control mr-sm-2"  type="hidden" placeholder=" {{userDisplayName}} "  formControlName="amis"  ngModel="{{userDisplayName}}">
-
-           <button class="btn btn-outline-success my-2 my-sm-0" type="submit"  (click)="demande()">+</button>
-         </form>
+          <div *ngIf="pote2 !== userFoundName ; else info">
+              
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"  (click)="demande()">+ {{pote1}} </button>
+          </div>
+          <ng-template #info>
+            <p>invitation envoyée</p>
+            <button class="btn btn-outline-success my-2 my-sm-0">annuler</button>
+          </ng-template>
+        </form>
 
 
         <span> <a><img src="../../../assets/images/genre.png"alt="#"></a>  &nbsp; {{userFoundGenre}}</span> <br/>

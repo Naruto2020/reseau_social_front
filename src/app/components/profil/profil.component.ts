@@ -34,6 +34,7 @@ export class ProfilComponent implements OnInit {
   aProp2:string;
   aProp3:string;
   aProp4:string;
+  aProp5:string;
   majTof:string;
  
 
@@ -75,6 +76,7 @@ export class ProfilComponent implements OnInit {
          this.url = `http://127.0.0.1:3000/${res[Object.keys(res)[Object.keys(res).length - 1]].photo}`;
 
        }*/
+
   
     });
 
@@ -112,17 +114,27 @@ export class ProfilComponent implements OnInit {
         //console.log("yooo",newR[i]);
         let tab = newR[i];
         for(let j=0; j<tab.length;j++){
-          console.log(tab[j].username);
+          
           let obj = tab[j];
           //let objId = tab[j]._id;
-          if(tab[j].username === localStorage.getItem("loggedUser")){
+          if(obj.username === localStorage.getItem("loggedUser")){
             this.aProp1 = obj.genre;
             this.aProp2 = obj.age;
             this.aProp3 = obj.preferences;
             this.aProp4 = obj.presentation;
+            this.aProp5 = obj.amis;
             this.majTof = obj._id;
 
+            console.log("lolll",this.aProp5);
           }
+
+          
+          function alredyExist(element) {
+            return tab[j].amis.element = localStorage.getItem("loggedUser");
+          }
+
+          //console.log(tab[j].amis.every(alredyExist));
+
         }
       }  
 

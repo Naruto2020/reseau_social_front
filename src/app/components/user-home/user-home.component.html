@@ -69,7 +69,14 @@
 
             <input class="form-control mr-sm-2"  type="hidden" placeholder=" {{userDisplayName}} "  formControlName="amis"  ngModel="{{userDisplayName}}">
 
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"  (click)="demande()">+</button>
+            <div *ngIf="pote2 !== userFoundName ; else info">
+              
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"  (click)="demande()">+ {{userFoundAmis}} </button>
+            </div>
+            <ng-template #info>
+              <p>invitation envoyée</p>
+              <button class="btn btn-outline-success my-2 my-sm-0">annuler</button>
+            </ng-template>
           </form>
             
           <!-- <h2><a routerLink="/accueil" (click)="demande()">+</a></h2> -->
@@ -77,6 +84,7 @@
           <span> <a><img src="../../../assets/images/aniv.png"alt="#"></a> &nbsp; {{userFoundAge}} </span> <br/>
           <span> <a><img src="../../../assets/images/preferences.jpg" alt="#"></a>&nbsp; {{userFoundChoix}} </span><br/> <br/>
           <span> <a><img src="../../../assets/images/speech.png"alt="#"></a>&nbsp;{{userFoundAbout}} </span> 
+          <span> {{userFoundAmis}} </span>
 
         </div>
 
