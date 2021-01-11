@@ -144,7 +144,7 @@ export class UserHomeComponent implements OnInit {
      //console.log(this.goToUser.get("nom").value);
     
       console.log("losaaaa",res["amis"]);
-      /*this.goToUser.reset({});
+      this.goToUser.reset({});
       this.userFoundName = res["username"];
       this.userFoundAge = res["age"];
       this.userFoundGenre = res["genre"];
@@ -153,7 +153,7 @@ export class UserHomeComponent implements OnInit {
       this.userFoundNom = res["nom"];
       this.userFoundAmis = res["amis"];
       this.alert1 = true;
-      return res;*/
+      return res;
     });
     
     this.bailService.displayImage().subscribe((res) =>{
