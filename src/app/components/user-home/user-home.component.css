@@ -130,6 +130,10 @@ h1 {
 /* *** *** Les media queries *** *** */
 
 @media screen and (max-width: 1024px) {
+  .head {
+    display: flex;
+    justify-content: space-around;
+  }
   img {
     height: 40px;
   }
@@ -141,7 +145,7 @@ h1 {
     position: absolute;
     top: 70px;
     left: 150px; /* 80 */
-    width: 200px;
+    width: 180px;
     font-size: 15px;
     margin-bottom: 10px;
   }
@@ -157,8 +161,8 @@ h1 {
   }
   nav ul li {
     float: left;
-    width: 15%;
+    width: 13%;
     text-align: center;
-    padding: 15px;
+    padding: 10px;
   }
 }
