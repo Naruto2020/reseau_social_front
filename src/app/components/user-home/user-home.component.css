@@ -139,9 +139,9 @@ h1 {
   }
   .head form input {
     position: absolute;
-    top: 90px;
+    top: 70px;
     left: 150px; /* 80 */
-    width: 280px;
+    width: 230px;
     font-size: 15px;
     margin-bottom: 10px;
   }
@@ -154,5 +154,11 @@ h1 {
   }
   .head nav img {
     height: 20px;
+  }
+  nav ul li {
+    float: left;
+    width: 15%;
+    text-align: center;
+    padding: 22px;
   }
 }
