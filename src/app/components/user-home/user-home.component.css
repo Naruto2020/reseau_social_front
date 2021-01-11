@@ -191,7 +191,11 @@ h1 {
     margin: 5px;
     width: 50%;
   }
-  /*.presentation .myTof {
+  /*h1 {
+    text-align: center;
+    font-size: 5px;
+  }*/
+  .presentation .myTof {
     position: absolute;
     top: 85%;
     left: 25%;
@@ -199,7 +203,7 @@ h1 {
     border-radius: 5px;
     margin: 5px;
     width: 50%;
-  }*/
+  }
 
   .album img {
     height: 40px;
