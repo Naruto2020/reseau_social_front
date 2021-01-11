@@ -240,9 +240,16 @@ h2 {
   }
   nav ul li {
     float: left;
-    width: 10%;
+    width: 8%;
     text-align: center;
     padding: 10px;
+  }
+
+  .back {
+    background-color: grey;
+    border: 1px solid grey;
+    border-radius: 8px 8px 0 0;
+    height: 150px;
   }
 
   .camera1 {
@@ -271,11 +278,11 @@ h2 {
   .imgProfil {
     background-color: beige;
     border: solid 5px white;
-    border-radius: 120px;
-    width: 120px;
-    height: 120px;
+    border-radius: 90px;
+    width: 90px;
+    height: 90px;
     position: absolute;
-    top: 445px;
+    top: 280px;
     left: 190px;
   }
 
