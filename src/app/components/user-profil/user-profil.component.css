@@ -208,6 +208,10 @@ h2 {
 
 /* *** *** Les media queries *** *** */
 @media screen and (max-width: 1024px) {
+  .head {
+    display: flex;
+    justify-content: space-around;
+  }
   img {
     height: 40px;
   }
@@ -240,9 +244,9 @@ h2 {
   }
   nav ul li {
     float: left;
-    width: 8%;
+    width: 10%;
     text-align: center;
-    padding: 10px;
+    padding: 12px;
   }
 
   .back {
@@ -267,12 +271,12 @@ h2 {
 
   .camera2 {
     background-color: white;
-    border-radius: 28px;
-    width: 28px;
-    height: 28px;
+    border-radius: 27px;
+    width: 27px;
+    height: 27px;
     position: absolute;
-    left: 62%;
-    top: 86%;
+    left: 54%;
+    top: 48%;
   }
 
   .imgProfil {
