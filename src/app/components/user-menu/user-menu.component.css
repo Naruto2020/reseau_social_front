@@ -72,6 +72,10 @@ nav a:hover {
 }
 /* Les media queries */
 @media screen and (max-width: 1024px) {
+  .head {
+    display: flex;
+    justify-content: space-around;
+  }
   img {
     height: 40px;
   }
@@ -97,5 +101,15 @@ nav a:hover {
   }
   a {
     font-size: 18px;
+  }
+
+  .head nav img {
+    height: 20px;
+  }
+  nav ul li {
+    float: left;
+    width: 10%;
+    text-align: center;
+    padding: 12px;
   }
 }
