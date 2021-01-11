@@ -1,5 +1,5 @@
 @media screen and (max-width: 1024px) {
-  /* .tab {
-    width: 100%;
-  }*/
+  .tab {
+    font-size: 10px;
+  }
 }
