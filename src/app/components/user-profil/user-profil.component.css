@@ -219,12 +219,12 @@ h2 {
   /*.form-inline input {
       font-size: 10px;
     }*/
-  .form-inline input {
+  .head form input {
     position: absolute;
-    top: 90px;
-    left: 150px; /* 80 */
-    width: 260px;
-    font-size: 15px;
+    top: 60px;
+    left: 120px; /* 80 */
+    width: 150px;
+    font-size: 11px;
     margin-bottom: 10px;
   }
   nav a:hover {
@@ -233,6 +233,16 @@ h2 {
   }
   a {
     font-size: 18px;
+  }
+
+  .head nav img {
+    height: 20px;
+  }
+  nav ul li {
+    float: left;
+    width: 10%;
+    text-align: center;
+    padding: 12px;
   }
 
   .camera1 {
