@@ -9,10 +9,13 @@ a {
   text-decoration: none;
 }
 
-div {
+/*div {
   margin-left: 50px;
   margin-right: 50px;
   margin-top: 50px;
+}*/
+.jumbotron {
+  margin-top: 60px;
 }
 
 @media screen and (max-width: 1024px) {
@@ -22,8 +25,10 @@ div {
   a {
     font-size: 20px;
   }
+  .nav-scroller {
+    display: none;
+  }
   .jumbotron div {
     margin-left: 0;
-    font-size: 20px;
   }
 }
