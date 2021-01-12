@@ -71,7 +71,8 @@ nav a:hover {
   height: 40px;
 }
 /* Les media queries */
-@media screen and (max-width: 1024px) {
+/*  @media screen and (max-width: 1024px)*/
+@media all and (max-device-width: 480px) {
   .head {
     display: flex;
     justify-content: space-around;
