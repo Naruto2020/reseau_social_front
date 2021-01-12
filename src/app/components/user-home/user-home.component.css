@@ -184,8 +184,8 @@ h1 {
   }
   .presentation .about {
     position: absolute;
-    top: 65%;
-    left: 25%;
+    top: 59%;
+    left: 15%;
     border: 1px solid grey;
     border-radius: 5px;
     margin: 5px;
@@ -198,7 +198,7 @@ h1 {
   .presentation .myTof {
     position: absolute;
     top: 85%;
-    left: 25%;
+    left: 15%;
     border: 1px solid grey;
     border-radius: 5px;
     margin: 5px;
