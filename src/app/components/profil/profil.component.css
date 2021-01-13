@@ -207,7 +207,121 @@ h2 {
 }
 
 /* *** *** Les media queries *** *** */
-@media screen and (max-width: 1024px) {
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .head {
+    display: flex;
+    justify-content: space-around;
+  }
+  .text img {
+    height: 50px;
+  }
+  img {
+    height: 40px;
+  }
+  #headImg a img {
+    float: left;
+    height: 18px;
+    margin: 12px;
+  }
+
+  .head form input {
+    position: absolute;
+    top: 60px;
+    left: 120px;
+    width: 150px;
+    font-size: 11px;
+    margin-bottom: 10px;
+  }
+  nav a:hover {
+    color: skyblue;
+    border-bottom: 2px solid transparent;
+  }
+  a {
+    font-size: 18px;
+  }
+
+  .head nav img {
+    height: 40px;
+  }
+  nav ul li {
+    float: left;
+    width: 20%;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .back {
+    background-color: grey;
+    border: 1px solid grey;
+    border-radius: 8px 8px 0 0;
+    height: 270px;
+  }
+
+  .camera1 {
+    background-color: white;
+    border-radius: 40px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 87%;
+    top: 26%;
+    text-align: center;
+    padding-top: 2px;
+    padding-right: 10px;
+  }
+
+  .camera2 {
+    background-color: white;
+    border-radius: 27px;
+    width: 27px;
+    height: 27px;
+    position: absolute;
+    left: 54%;
+    top: 38%;
+  }
+  .camera2 a img {
+    position: absolute;
+    left: 20%;
+    top: 20%;
+    height: 15px;
+  }
+
+  .imgProfil {
+    background-color: beige;
+    border: solid 5px white;
+    border-radius: 200px;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 390px;
+    left: 270px;
+  }
+
+  .maj {
+    position: absolute;
+    top: 97%;
+    left: 78%;
+  }
+
+  .maj1 {
+    position: absolute;
+    top: 97%;
+    left: 84%;
+  }
+  .presentation div img {
+    height: 20px;
+  }
+}
+
+@media all and (max-device-width: 480px) {
+  .head {
+    display: flex;
+    justify-content: space-around;
+  }
+  .text img {
+    height: 30px;
+  }
   img {
     height: 40px;
   }
@@ -234,6 +348,21 @@ h2 {
   a {
     font-size: 18px;
   }
+  .head nav img {
+    height: 20px;
+  }
+  nav ul li {
+    float: left;
+    width: 11%;
+    text-align: center;
+    padding: 12px;
+  }
+  .back {
+    background-color: grey;
+    border: 1px solid grey;
+    border-radius: 8px 8px 0 0;
+    height: 150px;
+  }
 
   .camera1 {
     background-color: white;
@@ -241,43 +370,52 @@ h2 {
     width: 40px;
     height: 40px;
     position: absolute;
-    left: 85%;
-    top: 40%;
+    left: 80%;
+    top: 28%;
     text-align: center;
-    padding-top: 5px;
+    /*padding-top: 3px;*/
     padding-right: 10px;
   }
 
   .camera2 {
     background-color: white;
-    border-radius: 28px;
-    width: 28px;
-    height: 28px;
+    border-radius: 27px;
+    width: 27px;
+    height: 27px;
     position: absolute;
-    left: 62%;
-    top: 86%;
+    left: 58%;
+    top: 45%;
+  }
+  .camera2 a img {
+    position: absolute;
+    left: 20%;
+    top: 20%;
+    height: 15px;
   }
 
   .imgProfil {
     background-color: beige;
     border: solid 5px white;
-    border-radius: 120px;
-    width: 120px;
-    height: 120px;
+    border-radius: 110px;
+    width: 110px;
+    height: 110px;
     position: absolute;
-    top: 445px;
-    left: 190px;
+    top: 280px;
+    left: 135px;
   }
 
   .maj {
     position: absolute;
-    top: 202%;
-    left: 82%;
+    top: 134%;
+    left: 75%;
   }
 
   .maj1 {
     position: absolute;
-    top: 220%;
-    left: 82%;
+    top: 134%;
+    left: 84%;
+  }
+  .presentation div img {
+    height: 20px;
   }
 }

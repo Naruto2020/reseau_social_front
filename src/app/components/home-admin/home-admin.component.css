@@ -117,7 +117,106 @@ h1 {
 }
 
 /* *** ***  Les media queries *** ***  */
-@media screen and (max-width: 1024px) {
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .head {
+    display: flex;
+    justify-content: space-around;
+  }
+  img {
+    height: 40px;
+  }
+  .text img {
+    height: 50px;
+  }
+
+  form input {
+    font-size: 10px;
+  }
+  .head form input {
+    position: absolute;
+    top: 80px;
+    left: 280px; /* 80 */
+    width: 310px;
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  .head form button {
+    display: none;
+  }
+  nav a:hover {
+    color: skyblue;
+    border-bottom: 2px solid transparent;
+  }
+  a {
+    font-size: 18px;
+  }
+  .head nav img {
+    height: 40px;
+  }
+  nav ul li {
+    float: left;
+    width: 20%;
+    text-align: center;
+    padding: 15px;
+  }
+  .head button {
+    display: block;
+    position: absolute;
+    left: 94%;
+    top: 80%;
+    font-size: 2px;
+  }
+  .profilImg {
+    background-color: beige;
+    border: solid 2px skyblue;
+    border-radius: 80px;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 33%;
+    left: 35%;
+  }
+  .presentation .about {
+    position: absolute;
+    top: 59%;
+    left: 15%;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin: 5px;
+    width: 70%;
+  }
+  /*h1 {
+    text-align: center;
+    font-size: 5px;
+  }*/
+  .presentation .myTof {
+    position: absolute;
+    top: 85%;
+    left: 15%;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin: 5px;
+    width: 70%;
+  }
+  h2 {
+    display: none;
+  }
+
+  .album img {
+    height: 50px;
+    width: 50px;
+  }
+  .presentation div img {
+    height: 20px;
+  }
+}
+
+@media all and (max-device-width: 480px) {
+  .head {
+    display: flex;
+    justify-content: space-around;
+  }
   img {
     height: 40px;
   }
@@ -127,10 +226,10 @@ h1 {
   }
   .head form input {
     position: absolute;
-    top: 90px;
-    left: 150px; /* 80 */
-    width: 280px;
-    font-size: 15px;
+    top: 60px;
+    left: 120px; /* 80 */
+    width: 150px;
+    font-size: 11px;
     margin-bottom: 10px;
   }
   nav a:hover {
@@ -139,5 +238,64 @@ h1 {
   }
   a {
     font-size: 18px;
+  }
+  .head nav img {
+    height: 20px;
+  }
+  nav ul li {
+    float: left;
+    width: 10%;
+    text-align: center;
+    padding: 12px;
+  }
+  .head button {
+    display: block;
+    position: absolute;
+    left: 94%;
+    top: 80%;
+    font-size: 2px;
+  }
+  .profilImg {
+    background-color: beige;
+    border: solid 2px skyblue;
+    border-radius: 80px;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 33%;
+    left: 35%;
+  }
+  .presentation .about {
+    position: absolute;
+    top: 59%;
+    left: 15%;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin: 5px;
+    width: 70%;
+  }
+  /*h1 {
+    text-align: center;
+    font-size: 5px;
+  }*/
+  .presentation .myTof {
+    position: absolute;
+    top: 85%;
+    left: 15%;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin: 5px;
+    width: 70%;
+  }
+  h2 {
+    display: none;
+  }
+
+  .album img {
+    height: 50px;
+    width: 50px;
+  }
+  .presentation div img {
+    height: 20px;
   }
 }
