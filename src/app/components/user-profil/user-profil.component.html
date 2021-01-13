@@ -112,7 +112,7 @@
       <ul class="album">
         <li *ngFor="let img of listeImages">
           
-         <span *ngIf="userDisplayName == img.loadBy"> <a routerLink="/profil-user"><img src="{{imgSite}}/{{img.photo}}" alt="#"></a></span>
+         <span *ngIf="userDisplayName == img.loadBy"> <a routerLink="/profil-user-infoImg/:_id"><img src="{{imgSite}}/{{img.photo}}" alt="#"></a></span>
          &nbsp; 
         </li>          
       </ul>
@@ -120,7 +120,7 @@
       <ul class="album">
         <li *ngFor="let img of listeImagesPro">
           
-         <span *ngIf="userDisplayName == img.loadBy"> <a routerLink="/profil-user"><img src="{{imgSite}}/{{img.photo}}" alt=""></a></span>
+         <span *ngIf="userDisplayName == img.loadBy"> <a routerLink="/profil-user-infoImg/:_id"><img src="{{imgSite}}/{{img.photo}}" alt=""></a></span>
          &nbsp;
           
         </li>

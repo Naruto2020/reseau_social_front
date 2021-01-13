@@ -299,16 +299,19 @@ h2 {
   }
 
   .maj {
+    display: none;
     position: absolute;
     top: 97%;
     left: 78%;
   }
 
   .maj1 {
+    display: none;
     position: absolute;
     top: 97%;
     left: 84%;
   }
+
   .presentation div img {
     height: 20px;
   }
@@ -407,12 +410,14 @@ h2 {
   }
 
   .maj {
+    display: none;
     position: absolute;
     top: 134%;
     left: 75%;
   }
 
   .maj1 {
+    display: none;
     position: absolute;
     top: 134%;
     left: 84%;
