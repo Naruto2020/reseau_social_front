@@ -12,8 +12,8 @@ const adressH8 = "https://swapengin.herokuapp.com";
 export const environment = {
   production: true,
   bddUrl: adressH || "https://127.0.0.1:3000/comptes/users",
-  picUrl: adressH1 || "https://127.0.0.1:3000/compte/images",
-  picUrl1: adressH2 || "https://127.0.0.1:3000/compte/imagePros",
+  picUrl: adressH1 || "https://127.0.0.1:3000/comptes/images",
+  picUrl1: adressH2 || "https://127.0.0.1:3000/comptes/imagePros",
   logUrl: adressH3 || "https://127.0.0.1:3000/comptes/login",
   emailUrl: adressH4 || "https://127.0.0.1:3000/comptes/sendmail",
   resetUrl: adressH5 || "https://127.0.0.1:3000/comptes/reset",
