@@ -49,7 +49,7 @@ export class UserSetComponent implements OnInit {
     console.log(this.router.snapshot.params._id);
     this.bailService.deleteImgPro(this.router.snapshot.params._id).subscribe(res =>{
       this.bailService.displayImage1().subscribe(res =>{
-        //this.listeImagesPro = res;
+        this.listeImagesPro = res;
         console.log(res);
       });
       return res;
