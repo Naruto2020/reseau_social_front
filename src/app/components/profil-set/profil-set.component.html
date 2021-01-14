@@ -43,9 +43,9 @@
           <td *ngIf="userDisplayName == img.loadBy"> <img src="{{imgSite}}/{{img.photo}}" alt=""></td>
               
           <td *ngIf="userDisplayName == img.loadBy">
-            <button>
+            <button (click)="cancelImgPro()" >
               <i
-                routerLink="/updateProfils/{{ img._id }}"
+                routerLink="/profil-info-img/{{ img._id }}"
                 class="fa fa-trash"
                 style="font-size: 20px; color: red"
               ></i>

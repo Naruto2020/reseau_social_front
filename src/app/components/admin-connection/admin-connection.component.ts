@@ -17,7 +17,7 @@ export class AdminConnectionComponent implements OnInit {
   goToProfil = new FormGroup({
     username : new FormControl(""),
     password : new FormControl(""),
-    niveau : new FormControl("")
+    niveau : new FormControl("admin")
   });
 
   listesProfils:any;
@@ -25,6 +25,7 @@ export class AdminConnectionComponent implements OnInit {
   alert2 : boolean = false;
  // username:string;
  // password:string;
+ //level:string="user";
 
   constructor(private bail:BailService, private router: Router, private route : ActivatedRoute) { }
 
@@ -42,7 +43,8 @@ export class AdminConnectionComponent implements OnInit {
 
       // connexion et authentification 
       this.bail.connecter(this.goToProfil.value).subscribe((res,)=>{
-        console.log(res);
+        console.log("fala",res);
+        console.log(this.goToProfil.value)
         console.log(res[Object.keys(res)[Object.keys(res).length - 1]].username);
         if(this.goToProfil.get("username").value  === res.user.username && this.goToProfil.get("password").value === res.user.password && this.goToProfil.get("niveau").value === res.user.niveau  && res.isAuthenticated === true){
           // gestion du stockage des données dans la session du nav 

@@ -43,5 +43,15 @@ export class ProfilSetComponent implements OnInit {
       return res;
     });
   }
+  cancelImgPro(){
+    console.log(this.router.snapshot.params._id);
+    this.bailService.deleteImgPro(this.router.snapshot.params._id).subscribe(res =>{
+      this.bailService.displayImage1().subscribe(res =>{
+        //this.listeImagesPro = res;
+        console.log(res);
+      });
+      return res;
+    });
+  }
 
 }

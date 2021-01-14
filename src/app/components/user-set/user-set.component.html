@@ -6,7 +6,7 @@
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">Images arriere </th>
+          <th scope="col">Album arriere plan </th>
 
         </tr>
       </thead>
@@ -23,6 +23,7 @@
                 style="font-size: 20px; color: red"
               ></i>
             </button>
+
           </td>
         </tr>
                     
@@ -33,7 +34,7 @@
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">Images profils</th>
+          <th scope="col">Album profils</th>
 
         </tr>
       </thead>
@@ -43,9 +44,9 @@
           <td *ngIf="userDisplayName == img.loadBy"> <img src="{{imgSite}}/{{img.photo}}" alt=""></td>
               
           <td *ngIf="userDisplayName == img.loadBy">
-            <button>
+            <button (click)="cancelImgPro()">
               <i
-                routerLink="/updateUsers/{{ img._id }}"
+                routerLink="/profil-user-infoImg/{{ img._id }}"
                 class="fa fa-trash"
                 style="font-size: 20px; color: red"
               ></i>
