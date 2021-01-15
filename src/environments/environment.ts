@@ -4,7 +4,7 @@
 
 const adressH = "http://swapengin.herokuapp.com/comptes/users";
 const adressH1 = "http://swapengin.herokuapp.com/comptes/images";
-//const adressH2 = "http://swapengin.herokuapp.com/comptes/imagePros";
+const adressH2 = "http://swapengin.herokuapp.com/comptes/imagePros";
 const adressH3 = "http://swapengin.herokuapp.com/comptes/login";
 const adressH4 = "http://swapengin.herokuapp.com/comptes/sendmail";
 const adressH5 = "http://swapengin.herokuapp.com/comptes/reset";
@@ -16,7 +16,7 @@ export const environment = {
   production: false,
   bddUrl: adressH || "http://127.0.0.1:3000/comptes/users",
   picUrl: adressH1 || "http://127.0.0.1:3000/comptes/images",
-  picUrl1: /*adressH2 ||*/ "http://127.0.0.1:3000/comptes/imagePros",
+  picUrl1: "http://127.0.0.1:3000/comptes/imagePros" || adressH2,
   logUrl: adressH3 || "http://127.0.0.1:3000/comptes/login",
   emailUrl: adressH4 || "http://127.0.0.1:3000/comptes/sendmail",
   resetUrl: adressH5 || "http://127.0.0.1:3000/comptes/reset",

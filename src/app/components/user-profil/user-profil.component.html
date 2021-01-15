@@ -30,7 +30,7 @@
     <div class="back"> <img [src]="url" alt="#" ></div>
     <div class="camera1"> <a routerLink="/profil-user/:{{userDisplayName}}" (click)="affiche()"><img src="../../../assets/images/camera.jpg" alt="logo caméra"></a></div>
   
-    <div class="imgProfil"> <img [src]="url1" alt="" > </div>
+    <div class="imgProfil"> <img [src]="url1" alt="#"/> </div>
     <div class="camera2"> <a routerLink="/profil-user/:{{userDisplayName}}" (click)="affiche1()"> <img src="../../../assets/images/camera.jpg" alt="logo caméra"></a> </div>
     <br/> <br/> <br/> <br/>
     <div>
@@ -48,7 +48,7 @@
       </form>
     </div>
     <div>
-      <form *ngIf="alert1">
+      <form [formGroup]="addImagePro" *ngIf="alert1">
         <div class="form-group">
           <label for="exampleFormControlFile1"></label>
           <input type="file"  multiple (change)="selectImage($event)"   >

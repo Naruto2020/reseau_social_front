@@ -48,6 +48,11 @@ export class UserProfilComponent implements OnInit {
     photo : new FormControl(""),
     loadBy : new FormControl("")
   });
+  addImagePro = new FormGroup({
+    _id : new FormControl(""),
+    photo : new FormControl(""),
+    loadBy : new FormControl("")
+  });
 
   constructor(private bailService:BailService, private router: ActivatedRoute, private route: Router) { }
 
@@ -63,19 +68,19 @@ export class UserProfilComponent implements OnInit {
         console.log("haaa",Object.entries(res)[i]);
          let tab = Object.entries(res)[i];
          for(let j=0; j<tab.length; j++){
-           //console.log(tab[j]);
+           console.log("poll",tab[j]);
            if(tab[j].loadBy === localStorage.getItem("loggedUser")){
-             console.log("image >>",`${this.imgSite}/${tab[j].photo}`);
+             console.log("imagero >>",`${this.imgSite}/${tab[j].photo}`);
              this.url = `${this.imgSite}/${tab[j].photo}`;
-           }
+            }
            
           }
        
         }
-       /*if(res[Object.keys(res)[Object.keys(res).length - 1]].loadBy === localStorage.getItem("loggedUser")){
-         this.url = `http://127.0.0.1:3000/${res[Object.keys(res)[Object.keys(res).length - 1]].photo}`;
+       {
+         //this.url = `http://127.0.0.1:3000/${res[Object.keys(res)[Object.keys(res).length - 1]].photo}`;
 
-       }*/
+       }
   
     });
 
@@ -85,14 +90,15 @@ export class UserProfilComponent implements OnInit {
       this.listeImagesPro = res;
       //this.url1 = "";
       console.log("ici c est img profil -->",  res[Object.keys(res)[Object.keys(res).length - 1]].photo);
-      console.log(Object.entries(res));
+      console.log("tableau...",Object.entries(res));
       for(let i=0; i< Object.entries(res).length; i++){
         let tab = Object.entries(res)[i];
+        console.log("qtf",tab);
         for(let j=0; j<tab.length; j++){
-          console.log("testyyy",typeof(tab[j]));
+          console.log("testyyy",(tab[j]));
           if(tab[j].loadBy === localStorage.getItem("loggedUser")){
             console.log("image >>",`${this.imgSite}/${tab[j].photo}`);
-            this.url1 = `${this.imgSite}/${tab[j].photo}`;
+            this.url1 = `http://127.0.0.1:3000/${tab[j].photo}`;
           }
           
          }
@@ -125,7 +131,7 @@ export class UserProfilComponent implements OnInit {
             this.aProp5 = obj.amis;
             this.majTof = obj._id;
 
-            console.log("lolita",this.aProp5);
+            console.log("lolitapaz",this.aProp5);
 
           }
         }
@@ -161,8 +167,8 @@ export class UserProfilComponent implements OnInit {
         this.bailService.uploadImage(this.formData).subscribe(res =>{
           console.log(res["photo"]);
           this.alert = false;
-          this.url = `${this.imgSite}/${res["photo"]}`;
-          console.log(this.url);
+          this.url =`${this.imgSite}/${res["photo"]}`;
+          console.log("chargement ...",this.url);
           return res;
   
         });
@@ -170,11 +176,12 @@ export class UserProfilComponent implements OnInit {
         
       }
   
+      formData1 = new FormData();
       chargement1(){
-        this.formData.append("photo",this.images);
-        this.formData.append("loadBy", localStorage.getItem("loggedUser"));
-        this.bailService.uploadImage1(this.formData).subscribe(res =>{
-          console.log(res["photo"]);
+        this.formData1.append("photo",this.images);
+        this.formData1.append("loadBy", localStorage.getItem("loggedUser"));
+        this.bailService.uploadImage1(this.formData1).subscribe(res =>{
+          console.log("Profil",res["photo"]);
           this.alert1 = false;
           this.url1 = `${this.imgSite}/${res["photo"]}`;
           console.log(this.url1);
