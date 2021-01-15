@@ -14,10 +14,10 @@ import { AddProfilComponent } from './components/add-profil/add-profil.component
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // import du module socket io
-import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+//import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 
 // configuration du socket io 
-const config: SocketIoConfig = { url: 'https://localhost:3000', options: {} };
+//const config: SocketIoConfig = { url: 'https://localhost:3000', options: {} };
 
 
 import { MatInputModule } from '@angular/material/input';
@@ -94,7 +94,7 @@ import { UserFriendComponent } from './components/user-friend/user-friend.compon
     MatCardModule,
     MatFormFieldModule,
     MaterialFileInputModule,
-    SocketIoModule.forRoot(config)
+    //SocketIoModule.forRoot(config)
   ],
   providers: [],
   bootstrap: [AppComponent],
