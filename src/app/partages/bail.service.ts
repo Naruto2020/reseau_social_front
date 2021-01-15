@@ -124,7 +124,7 @@ export class BailService {
 
   // requête pour supprimer l'image profil
   deleteImgPro(id):Observable<any>{
-    return this.http.delete(`${photoUrl1}/${id}`);
+    return this.http.delete(`${photoUrl1}/${id}` || 'https://swapengin.herokuapp.com/imagePros' );
   }
 
   /************************************************************
