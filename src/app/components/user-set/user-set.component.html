@@ -39,14 +39,14 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor='let img of listeImagesPro'>
+        <tr *ngFor='let imag of listeImagesPro'>
                       
-          <td *ngIf="userDisplayName == img.loadBy"> <img src="{{imgSite}}/{{img.photo}}" alt=""></td>
+          <td *ngIf="userDisplayName == imag.loadBy"> <img src="{{imgSite}}/{{imag.photo}}" alt=""></td>
               
-          <td *ngIf="userDisplayName == img.loadBy">
+          <td *ngIf="userDisplayName == imag.loadBy">
             <button (click)="cancelImgPro()">
               <i
-                routerLink="/profil-user-infoImg/{{ img._id }}"
+                routerLink="/profil-user-infoImg/{{ imag._id }}"
                 class="fa fa-trash"
                 style="font-size: 20px; color: red"
               ></i>
