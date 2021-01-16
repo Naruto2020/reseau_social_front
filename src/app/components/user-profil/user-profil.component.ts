@@ -98,7 +98,7 @@ export class UserProfilComponent implements OnInit {
           console.log("testyyy",(tab[j]));
           if(tab[j].loadBy === localStorage.getItem("loggedUser")){
             console.log("image >>",`${this.imgSite}/${tab[j].photo}`);
-            this.url1 = `http://127.0.0.1:3000/${tab[j].photo}`;
+            this.url1 = `${this.imgSite}/${tab[j].photo}`;
           }
           
          }
