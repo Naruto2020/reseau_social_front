@@ -62,7 +62,7 @@ export class UserProfilComponent implements OnInit {
       console.log(res)
        this.listeImages = res;
        //this.url = "";
-       console.log("ici c est img Back -->",  res[Object.keys(res)[Object.keys(res).length - 1]].loadBy);
+       console.log("ici c est img Back -->",  res[Object.keys(res)[Object.keys(res).length - 2]]);
        console.log(Object.entries(res));
        for(let i=0; i< Object.entries(res).length; i++){
         console.log("haaa",Object.entries(res)[i]);
@@ -86,7 +86,7 @@ export class UserProfilComponent implements OnInit {
 
 
     
-    this.bailService.displayImage1().subscribe((res)=>{
+    this.bailService.displayImage().subscribe((res)=>{
       this.listeImagesPro = res;
       //this.url1 = "";
       console.log("ici c est img profil -->",  res[Object.keys(res)[Object.keys(res).length - 1]].photo);
@@ -180,7 +180,7 @@ export class UserProfilComponent implements OnInit {
       chargement1(){
         this.formData1.append("photo",this.images);
         this.formData1.append("loadBy", localStorage.getItem("loggedUser"));
-        this.bailService.uploadImage1(this.formData1).subscribe(res =>{
+        this.bailService.uploadImage(this.formData1).subscribe(res =>{
           console.log("Profil",res["photo"]);
           this.alert1 = false;
           this.url1 = `${this.imgSite}/${res["photo"]}`;
