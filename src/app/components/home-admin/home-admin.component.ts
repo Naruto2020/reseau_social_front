@@ -170,7 +170,7 @@ export class HomeAdminComponent implements OnInit {
       }
     });
 
-    this.bailService.displayImage1().subscribe((res) =>{
+    /*this.bailService.displayImage1().subscribe((res) =>{
       this.listeImagesPro = res;
       console.log(this.userFoundName);
       //this.listesProfils = res;
@@ -190,7 +190,7 @@ export class HomeAdminComponent implements OnInit {
           }
         }
       }
-    });
+    });*/
     
     
   }

@@ -178,7 +178,7 @@ export class UserHomeComponent implements OnInit {
       }
     });
 
-    this.bailService.displayImage1().subscribe((res) =>{
+    /*this.bailService.displayImage1().subscribe((res) =>{
       this.listeImagesPro = res;
       console.log(this.userFoundName);
       //this.listesProfils = res;
@@ -198,7 +198,7 @@ export class UserHomeComponent implements OnInit {
           }
         }
       }
-    });
+    });*/
     
     //this.route.navigate(["/{}"]);
     
