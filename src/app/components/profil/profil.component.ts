@@ -82,7 +82,7 @@ export class ProfilComponent implements OnInit {
 
 
     
-    this.bailService.displayImage1().subscribe((res)=>{
+    this.bailService.displayImage().subscribe((res)=>{
       this.listeImagesPro = res;
       //this.url1 = "";
       console.log("ici c est img profil -->",  res[Object.keys(res)[Object.keys(res).length - 1]].photo);
@@ -181,7 +181,7 @@ export class ProfilComponent implements OnInit {
     chargement1(){
       this.formData.append("photo",this.images);
       this.formData.append("loadBy", localStorage.getItem("loggedUser"));
-      this.bailService.uploadImage1(this.formData).subscribe(res =>{
+      this.bailService.uploadImage(this.formData).subscribe(res =>{
         console.log(res["photo"]);
         this.alert1 = false;
         this.url1 = `${this.imgSite}/${res["photo"]}`;

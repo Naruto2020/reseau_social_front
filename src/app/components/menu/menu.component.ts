@@ -22,7 +22,7 @@ export class MenuComponent implements OnInit {
   constructor(private bail:BailService, private router: Router) { }
 
   ngOnInit(): void {
-    this.bail.displayImage1().subscribe(res =>{
+    this.bail.displayImage().subscribe(res =>{
       this.listeImagesPro = res;
       for(let i=0; i< Object.entries(res).length; i++){
         let tab = Object.entries(res)[i];
