@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="jumbotron">
+        
+        <div class="col-12 pt-1 head">
+          
+          <a class="text" routerLink="/profil-user/:{{userDisplayName}}"> <img src="../../../assets/images/profil.png" alt="#"/> {{titre}}</a> 
+
+     
+            
+          <nav>
+            <ul>
+              <li><a  routerLink="/accueil"><img src="../../../assets/images/home.jpg" alt="#"></a></li>
+              <li><a routerLink="/nom"><img src="../../../assets/images/reseaux.png" alt="#"></a></li>
+              <li><a href=""><img src="../../../assets/images/messages.png" alt="#"></a></li>
+              <li><a class="deroul" routerLink="/notifications"><img src="../../../assets/images/notif.png" alt="#"></a></li>
+              <li ><a routerLink="/menu-user"><img src="../../../assets/images/menu.png" alt="#"></a>
+
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="notif" *ngIf="compteur !== 0"><span>{{compteur}}</span> </div>
+    </div>
+    <div class="container" >
+      <!-- <div class=" profilImgA" *ngFor="let pic of userFoundBack">          
+          <img  src="{{imgSite}}/{{pic[1].photo}}" alt="" >
+          <br/> 
+
+      </div> -->
+      <tr *ngFor="let amigo of userFoundName">
+        
+        <td>
+          <hr/>
+          {{amigo}} &nbsp;
+          <button type="submit" value="Enregistrer" class="btn btn-primary">Confirmer</button> &nbsp;
+          <button type="submit" value="mot de passe oublié ?" class="btn btn-secondary">supprimer</button>
+
+        </td>
+      </tr>
+    </div>
+</div>

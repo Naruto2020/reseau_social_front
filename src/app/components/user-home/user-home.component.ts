@@ -84,7 +84,7 @@ export class UserHomeComponent implements OnInit {
     /*this.bailService.findFriends(this.goToUser.get("nom").value).subscribe(res =>{
       //console.log(this.goToUser.get("nom").value);
      
-       console.log("losaaaa",res["preferences"]);
+       console.log("!!!",res);
        this.goToUser.reset({});
        this.userFoundName = res["username"];
        this.userFoundAge = res["age"];
@@ -100,7 +100,7 @@ export class UserHomeComponent implements OnInit {
 
     // gestion du status de la demande d'amis 
     this.bailService.showProfils().subscribe((res) =>{
-      //console.log(">>>",res);
+      console.log(">>>",res);
       this.listesProfils = res;
       // on transforme l 'obet res en tableau cle/valeur representant chaques Ut de la BDD 
       let newR = Object.keys(res).map(function(cle) {
@@ -109,26 +109,32 @@ export class UserHomeComponent implements OnInit {
       //console.log("new ...",newR);
       //console.log(Object.entries(res));
       // on boucle sur le nouveau tableau pour recupérer chaque UT 
-      /*for(let i=0; i< newR.length; i++){
-        console.log("yooo",newR[i]);
-        let tab = newR[i];
+      for(let i=0; i< newR.length; i++){
+        console.log("yooo",newR[i][1].amis);
+        let tab = newR[i][1].amis;
         for(let j=0; j<tab.length;j++){
-          console.log("isolaaaaa",tab[j].username);
+          //console.log("isolaaaaa",tab[j]);
           this.pote = tab[j];
-          //this.pote1 = tab[j].username;
-          console.log("--->>>",this.userFoundName);
+          console.log("wath",this.pote);
+          /*let newR1 = Object.keys(res).map(function(cle) {
+            return [Number(cle), res[cle]];
+          });*/
+         /*console.log("tesstyf", newR1)
+         for(let k=0; k<newR1.length; k++){
+           console.log("checky", newR1[k]);
+         }*/
           //let objId = tab[j]._id;
-          if(this.pote.username === this.userFoundName){
+          /*if(this.pote.username === this.userFoundName){
             this.aProp1 = this.pote.genre;
             this.aProp2 = this.pote.age;
             this.aProp3 = this.pote.preferences;
             this.aProp4 = this.pote.presentation;
             this.aProp5 = this.pote.amis;
            
-          }
+          }*/
 
         }
-      }*/
+      }
 
     });
     
@@ -143,7 +149,7 @@ export class UserHomeComponent implements OnInit {
     this.bailService.findFriends(this.goToUser.get("nom").value).subscribe(res =>{
      //console.log(this.goToUser.get("nom").value);
     
-      console.log("losaaaa",res["amis"]);
+      console.log("losaaaa",res);
       this.goToUser.reset({});
       this.userFoundName = res["username"];
       this.userFoundAge = res["age"];

@@ -35,6 +35,8 @@ export class UserProfilComponent implements OnInit {
   aProp4:string;
   aProp5:string;
   majTof:string;
+
+  userFoundload;
  
 
   listeImages:any;
@@ -42,6 +44,7 @@ export class UserProfilComponent implements OnInit {
   listesProfils:any;
 
   userDisplayName:string = "";
+  compteur = 0;
 
   addImage = new FormGroup({
     _id : new FormControl(""),
@@ -117,6 +120,14 @@ export class UserProfilComponent implements OnInit {
       //console.log("new ...",newR);
       //console.log(Object.entries(res));
       for(let i=0; i< newR.length; i++){
+        let tabA = newR[i][1].amis;
+        this.userFoundload = newR[i][1].username;
+        if(this.userDisplayName === this.userFoundload){
+          for(let j=0; j<tabA.length;j++){
+            this.compteur += 1;
+          }
+
+        }
         //console.log("yooo",newR[i]);
         let tab = newR[i];
         for(let j=0; j<tab.length;j++){

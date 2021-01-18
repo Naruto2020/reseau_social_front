@@ -20,14 +20,9 @@ a {
   font-size: 15px;
   margin-bottom: 10px;
 }
-.head form button {
+.head button {
   display: none;
 }
-
-.deroul img {
-  border-top: 4px solid blue;
-}
-
 /*gesttion des logos secondaires*/
 
 .head {
@@ -55,6 +50,11 @@ nav a:hover {
   color: skyblue;
   border-bottom: 2px solid blue;
 }
+.deroul img {
+  border-top: 4px solid blue;
+}
+
+/* gestion affichage recherche amis  */
 
 .profilImg {
   background-color: beige;
@@ -111,13 +111,24 @@ h1 {
   width: 80px;
 }
 
+/*.about h2 a {
+  position: absolute;
+  left: 95%;
+  text-decoration: none;
+}*/
+
 .about form {
   position: absolute;
   left: 90%;
 }
 
-/* *** ***  Les media queries *** ***  */
+/*.presentation  button {
+  position: absolute;
+  left: 90%;
+}*/
 
+/* *** *** Les media queries *** *** */
+/*  @media screen and (max-width: 1024px)*/
 @media all and (min-width: 768px) and (max-width: 1024px) {
   .head {
     display: flex;

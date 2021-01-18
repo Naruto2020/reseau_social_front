@@ -72,6 +72,51 @@ nav a:hover {
 }
 /* Les media queries */
 /*  @media screen and (max-width: 1024px)*/
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .head {
+    display: flex;
+    justify-content: space-around;
+  }
+  img {
+    height: 40px;
+  }
+  .text img {
+    height: 50px;
+  }
+
+  form input {
+    font-size: 10px;
+  }
+  .head form input {
+    position: absolute;
+    top: 80px;
+    left: 280px; /* 80 */
+    width: 310px;
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  .head form button {
+    display: none;
+  }
+  nav a:hover {
+    color: skyblue;
+    border-bottom: 2px solid transparent;
+  }
+  a {
+    font-size: 18px;
+  }
+  .head nav img {
+    height: 40px;
+  }
+  nav ul li {
+    float: left;
+    width: 20%;
+    text-align: center;
+    padding: 15px;
+  }
+}
+
 @media all and (max-device-width: 480px) {
   .head {
     display: flex;

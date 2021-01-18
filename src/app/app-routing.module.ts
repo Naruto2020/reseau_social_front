@@ -18,6 +18,7 @@ import {MenuComponent} from './components/menu/menu.component';
 import {ProfilComponent} from './components/profil/profil.component';
 import {ProfilFormComponent} from './components/profil-form/profil-form.component';
 import {ProfilSetComponent} from './components/profil-set/profil-set.component';
+import {AdminNotifComponent} from './components/admin-notif/admin-notif.component';
 
 /***********************************************************************************
  * ***** ***** gestion des routes utilisateurs ***** ****
@@ -32,7 +33,7 @@ import {UserProfilComponent} from './components/user-profil/user-profil.componen
 import {UserProfilFormComponent} from './components/user-profil-form/user-profil-form.component';
 import {UserUpdateComponent} from './components/user-update/user-update.component';
 import {UserSetComponent} from './components/user-set/user-set.component';
-import {UserFriendComponent} from './components/user-friend/user-friend.component';
+import {UserNotifComponent} from './components/user-notif/user-notif.component';
 
 import { AuthGuard} from './guards/auth.guard';
 import {AuthUserGuard} from './guards/auth-user.guard';
@@ -54,6 +55,7 @@ const routes: Routes = [
   {path:"profil/:username", component:ProfilComponent,canActivate:[AuthGuard], data:['admin']},
   {path:"profil-info", component:ProfilFormComponent,canActivate:[AuthGuard], data:['admin']},
   {path:"profil-info-img/:_id", component:ProfilSetComponent,canActivate:[AuthGuard], data:['admin']},
+  {path:"admin-notifications", component:AdminNotifComponent,canActivate:[AuthGuard], data:['admin']},
   
   /* *** *** gestion des routes Utilisateur *** *** */
   
@@ -66,7 +68,7 @@ const routes: Routes = [
   {path:"profil-user-info", component:UserProfilFormComponent, canActivate:[AuthUserGuard], data:['user']},
   {path:"updateUsers/:_id", component:UserUpdateComponent, canActivate:[AuthUserGuard], data:['user']},
   {path:"profil-user-infoImg/:_id", component:UserSetComponent, canActivate:[AuthUserGuard], data:['user']},
-  {path:":nom", component:UserFriendComponent, canActivate:[AuthUserGuard], data:['user']},
+  {path:"notifications", component:UserNotifComponent, canActivate:[AuthUserGuard], data:['user']},
 ];
 
 @NgModule({

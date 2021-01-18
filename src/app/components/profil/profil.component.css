@@ -146,21 +146,22 @@ nav a:hover {
 
 /* profil et amis*/
 /*.presentation {
-  display: flex;
-  justify-content: space-between;
-}*/
+    display: flex;
+    justify-content: space-between;
+  }*/
 
 .presentation div {
   border: 1px solid grey;
   border-radius: 5px;
-  margin: 5px;
+  /*margin: 5px;*/
   height: 50%;
   width: 100%;
+  padding-left: 10px;
 }
 
 /*.presentation ul li {
-  list-style: none;
-}*/
+    list-style: none;
+  }*/
 
 .presentation div img {
   height: 40px;
@@ -181,8 +182,8 @@ h1 {
 
 .images .album {
   /*border: 1px solid gray;
-  border-radius: 5px;
-  margin: 5px;*/
+    border-radius: 5px;
+    margin: 5px;*/
   width: 100%;
   height: 100%;
 }
@@ -207,7 +208,6 @@ h2 {
 }
 
 /* *** *** Les media queries *** *** */
-
 @media all and (min-width: 768px) and (max-width: 1024px) {
   .head {
     display: flex;
@@ -299,16 +299,19 @@ h2 {
   }
 
   .maj {
+    display: none;
     position: absolute;
     top: 97%;
     left: 78%;
   }
 
   .maj1 {
+    display: none;
     position: absolute;
     top: 97%;
     left: 84%;
   }
+
   .presentation div img {
     height: 20px;
   }
@@ -331,14 +334,14 @@ h2 {
     margin: 12px;
   }
   /*.form-inline input {
-    font-size: 10px;
-  }*/
-  .form-inline input {
+      font-size: 10px;
+    }*/
+  .head form input {
     position: absolute;
-    top: 90px;
-    left: 150px; /* 80 */
-    width: 260px;
-    font-size: 15px;
+    top: 60px;
+    left: 120px; /* 80 */
+    width: 150px;
+    font-size: 11px;
     margin-bottom: 10px;
   }
   nav a:hover {
@@ -348,15 +351,17 @@ h2 {
   a {
     font-size: 18px;
   }
+
   .head nav img {
     height: 20px;
   }
   nav ul li {
     float: left;
-    width: 11%;
+    width: 20%;
     text-align: center;
     padding: 12px;
   }
+
   .back {
     background-color: grey;
     border: 1px solid grey;
@@ -405,12 +410,14 @@ h2 {
   }
 
   .maj {
+    display: none;
     position: absolute;
     top: 134%;
     left: 75%;
   }
 
   .maj1 {
+    display: none;
     position: absolute;
     top: 134%;
     left: 84%;

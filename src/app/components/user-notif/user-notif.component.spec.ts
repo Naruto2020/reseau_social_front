@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserFriendComponent } from './user-friend.component';
+import { UserNotifComponent } from './user-notif.component';
 
-describe('UserFriendComponent', () => {
-  let component: UserFriendComponent;
-  let fixture: ComponentFixture<UserFriendComponent>;
+describe('UserNotifComponent', () => {
+  let component: UserNotifComponent;
+  let fixture: ComponentFixture<UserNotifComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UserFriendComponent ]
+      declarations: [ UserNotifComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UserFriendComponent);
+    fixture = TestBed.createComponent(UserNotifComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -18,13 +18,13 @@
                   <li><a class="deroul" routerLink="/accueil"><img src="../../../assets/images/home.jpg" alt="#"></a></li>
                   <li><a routerLink="/nom"><img src="../../../assets/images/reseaux.png" alt="#"></a></li>
                   <li><a href=""><img src="../../../assets/images/messages.png" alt="#"></a></li>
-                  <li><a href=""><img src="../../../assets/images/notif.png" alt="#"></a></li>
+                  <li><a routerLink="/notifications"><img src="../../../assets/images/notif.png" alt="#"></a></li>
                   <li ><a routerLink="/menu-user"><img src="../../../assets/images/menu.png" alt="#"></a>
   
                   </li>
                 </ul>
               </nav>
-  
+            </div>
            
     </div>
     
@@ -69,12 +69,12 @@
 
             <input class="form-control mr-sm-2"  type="hidden" placeholder=" {{userDisplayName}} "  formControlName="amis"  ngModel="{{userDisplayName}}">
 
-            <div *ngIf="pote2 !== userFoundName ; else info">
+            <div *ngIf="pote == userDisplayName ; else info">
               
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"  (click)="demande()">+ {{userFoundAmis}} </button>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"  (click)="demande()">+ {{userFoundAge}}  </button>
             </div>
             <ng-template #info>
-              <p>invitation envoyée</p>
+              <p>invitation reçue</p>
               <button class="btn btn-outline-success my-2 my-sm-0">annuler</button>
             </ng-template>
           </form>

@@ -46,7 +46,8 @@ import { UserProfilComponent } from './components/user-profil/user-profil.compon
 import { UserProfilFormComponent } from './components/user-profil-form/user-profil-form.component';
 import { UserUpdateComponent } from './components/user-update/user-update.component';
 import { UserSetComponent } from './components/user-set/user-set.component';
-import { UserFriendComponent } from './components/user-friend/user-friend.component';
+import { UserNotifComponent } from './components/user-notif/user-notif.component';
+import { AdminNotifComponent } from './components/admin-notif/admin-notif.component';
 
 
 
@@ -76,7 +77,8 @@ import { UserFriendComponent } from './components/user-friend/user-friend.compon
     UserProfilFormComponent,
     UserUpdateComponent,
     UserSetComponent,
-    UserFriendComponent
+    UserNotifComponent,
+    AdminNotifComponent
     
   ],
   imports: [
