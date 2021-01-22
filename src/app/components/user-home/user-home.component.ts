@@ -45,6 +45,7 @@ export class UserHomeComponent implements OnInit {
   userFoundBack;
   userFoundNom;
   userFoundAmis;
+  userFoundload;
 
   aProp1:string;
   aProp2:string;
@@ -55,7 +56,8 @@ export class UserHomeComponent implements OnInit {
   pote1;
   pote2;
 
-  
+  compteur = 0;
+
   
   listeImages:any;
   listeImagesPro:any;
@@ -112,26 +114,12 @@ export class UserHomeComponent implements OnInit {
       for(let i=0; i< newR.length; i++){
         console.log("yooo",newR[i][1].amis);
         let tab = newR[i][1].amis;
-        for(let j=0; j<tab.length;j++){
-          //console.log("isolaaaaa",tab[j]);
-          this.pote = tab[j];
-          console.log("wath",this.pote);
-          /*let newR1 = Object.keys(res).map(function(cle) {
-            return [Number(cle), res[cle]];
-          });*/
-         /*console.log("tesstyf", newR1)
-         for(let k=0; k<newR1.length; k++){
-           console.log("checky", newR1[k]);
-         }*/
-          //let objId = tab[j]._id;
-          /*if(this.pote.username === this.userFoundName){
-            this.aProp1 = this.pote.genre;
-            this.aProp2 = this.pote.age;
-            this.aProp3 = this.pote.preferences;
-            this.aProp4 = this.pote.presentation;
-            this.aProp5 = this.pote.amis;
-           
-          }*/
+        this.userFoundload = newR[i][1].username;
+        if(this.userDisplayName === this.userFoundload){
+          for(let j=0; j<tab.length;j++){
+            this.compteur +=1; 
+  
+          }
 
         }
       }

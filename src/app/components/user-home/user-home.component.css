@@ -76,21 +76,27 @@ nav a:hover {
 .presentation .about {
   position: absolute;
   top: 400px;
-  left: 25%;
+  left: 15%;
   border: 1px solid grey;
   border-radius: 5px;
   margin: 5px;
-  width: 50%;
+  width: 70%;
 }
 
 .presentation .myTof {
   position: absolute;
   top: 85%;
-  left: 25%;
+  left: 15%;
   border: 1px solid grey;
   border-radius: 5px;
   margin: 5px;
-  width: 50%;
+  width: 70%;
+}
+p {
+  color: skyblue;
+  font-weight: bold;
+  position: absolute;
+  left: 87%;
 }
 
 .presentation div img {
@@ -117,15 +123,32 @@ h1 {
   text-decoration: none;
 }*/
 
-.about form {
+/*.about form {
   position: absolute;
-  left: 90%;
+  left: 70%;
+}*/
+
+.btn2 {
+  position: absolute;
+  left: 92%;
+  top: 40%;
+}
+.btn3 {
+  position: absolute;
+  left: 84%;
+  top: 40%;
 }
 
-/*.presentation  button {
+.notif {
+  background-color: red;
+  border-radius: 20px;
+  width: 20px;
+  height: 20px;
   position: absolute;
-  left: 90%;
-}*/
+  left: 75%;
+  top: 16%;
+  text-align: center;
+}
 
 /* *** *** Les media queries *** *** */
 /*  @media screen and (max-width: 1024px)*/
@@ -181,21 +204,21 @@ h1 {
   .profilImg {
     background-color: beige;
     border: solid 2px skyblue;
-    border-radius: 80px;
-    width: 80px;
-    height: 80px;
+    border-radius: 100px;
+    width: 100px;
+    height: 100px;
     position: absolute;
-    top: 33%;
-    left: 35%;
+    top: 28%;
+    left: 44%;
   }
   .presentation .about {
     position: absolute;
-    top: 59%;
-    left: 15%;
+    top: 42%;
+    left: 10%;
     border: 1px solid grey;
     border-radius: 5px;
     margin: 5px;
-    width: 70%;
+    width: 80%;
   }
   /*h1 {
     text-align: center;
@@ -203,12 +226,32 @@ h1 {
   }*/
   .presentation .myTof {
     position: absolute;
-    top: 85%;
-    left: 15%;
+    top: 54%;
+    left: 10%;
     border: 1px solid grey;
     border-radius: 5px;
     margin: 5px;
-    width: 70%;
+    width: 80%;
+  }
+  p {
+    color: skyblue;
+    font-weight: bold;
+    font-size: 1em;
+    position: absolute;
+    left: 78%;
+  }
+
+  .btn2 {
+    position: absolute;
+    left: 74%;
+    font-size: 1em;
+    top: 30%;
+  }
+  .btn3 {
+    position: absolute;
+    left: 85%;
+    font-size: 1em;
+    top: 30%;
   }
   h2 {
     display: none;
@@ -220,6 +263,23 @@ h1 {
   }
   .presentation div img {
     height: 20px;
+  }
+
+  .notif {
+    background-color: red;
+    border-radius: 20px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 73%;
+    top: 8%;
+    text-align: center;
+    font-size: 18px;
+  }
+  .notif span {
+    position: absolute;
+    left: 3px;
+    top: 1px;
   }
 }
 
@@ -273,17 +333,17 @@ h1 {
     width: 80px;
     height: 80px;
     position: absolute;
-    top: 33%;
-    left: 35%;
+    top: 20%;
+    left: 38%;
   }
   .presentation .about {
     position: absolute;
-    top: 59%;
-    left: 15%;
+    top: 34%;
+    left: 5%;
     border: 1px solid grey;
     border-radius: 5px;
     margin: 5px;
-    width: 70%;
+    width: 90%;
   }
   /*h1 {
     text-align: center;
@@ -291,13 +351,34 @@ h1 {
   }*/
   .presentation .myTof {
     position: absolute;
-    top: 85%;
-    left: 15%;
+    top: 50%;
+    left: 5%;
     border: 1px solid grey;
     border-radius: 5px;
     margin: 5px;
-    width: 70%;
+    width: 90%;
   }
+
+  p {
+    color: skyblue;
+    font-weight: bold;
+    font-size: 0.8em;
+    position: absolute;
+    left: 70%;
+  }
+  .btn2 {
+    position: absolute;
+    left: 66%;
+    font-size: 0.7em;
+    top: 30%;
+  }
+  .btn3 {
+    position: absolute;
+    left: 82%;
+    font-size: 0.7em;
+    top: 30%;
+  }
+
   h2 {
     display: none;
   }
@@ -308,5 +389,22 @@ h1 {
   }
   .presentation div img {
     height: 20px;
+  }
+
+  .notif {
+    background-color: red;
+    border-radius: 12px;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    left: 67%;
+    top: 8%;
+    text-align: center;
+    font-size: 10px;
+  }
+  .notif span {
+    position: absolute;
+    left: 3px;
+    top: -3px;
   }
 }

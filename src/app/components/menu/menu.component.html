@@ -23,11 +23,12 @@
                   </li>
                 </ul>
               </nav>
-  
+            </div>
+            <div class="notif" *ngIf="compteur !== 0"><span>{{compteur}}</span> </div>
            
-    </div>
-  
   </div>
+  
+
 
   <div class="alert alert-ligth" role="alert">
     <button type="button" class="btn btn-secondary btn-lg btn-block" routerLink="/profil/:{{userDisplayName}}"> <img src="{{url1}}" width="40px" height="40px" alt=""> Profil</button>

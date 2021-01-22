@@ -109,7 +109,7 @@ export class UserProfilComponent implements OnInit {
        }
       //this.url1 = `http://127.0.0.1:3000/${res[Object.keys(res)[Object.keys(res).length - 1]].photo}`;
     });
-      
+     // gestion des notif  
     this.bailService.showProfils().subscribe((res) =>{
       //console.log(">>>",res);
       this.listesProfils = res;
@@ -142,7 +142,7 @@ export class UserProfilComponent implements OnInit {
             this.aProp5 = obj.amis;
             this.majTof = obj._id;
 
-            console.log("lolitapaz",this.aProp5);
+            //console.log("lolitapaz",this.aProp5);
 
           }
         }

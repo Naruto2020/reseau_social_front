@@ -26,6 +26,7 @@ export class ProfilComponent implements OnInit {
   url3:string;
   url4:string;
 
+  compteur = 0;
   alert:boolean = false;
   alert1:boolean = false;
   connecter:boolean = false;
@@ -43,6 +44,7 @@ export class ProfilComponent implements OnInit {
   listesProfils:any;
 
   userDisplayName:string = "";
+  userFoundload;
 
   addImage = new FormGroup({
     _id : new FormControl(""),
@@ -102,19 +104,29 @@ export class ProfilComponent implements OnInit {
       //this.url1 = `http://127.0.0.1:3000/${res[Object.keys(res)[Object.keys(res).length - 1]].photo}`;
     });
       
-    this.bailService.showProfils().subscribe((res) =>{
+     // gestion des notif  
+     this.bailService.showProfils().subscribe((res) =>{
       //console.log(">>>",res);
       this.listesProfils = res;
+      // on transforme le l'objet en tableau key/value
       let newR = Object.keys(res).map(function(cle) {
         return [Number(cle), res[cle]];
       });
       //console.log("new ...",newR);
       //console.log(Object.entries(res));
       for(let i=0; i< newR.length; i++){
+        let tabA = newR[i][1].amis;
+        this.userFoundload = newR[i][1].username;
+        if(this.userDisplayName === this.userFoundload){
+          for(let j=0; j<tabA.length;j++){
+            this.compteur += 1;
+          }
+
+        }
         //console.log("yooo",newR[i]);
         let tab = newR[i];
         for(let j=0; j<tab.length;j++){
-          
+          console.log(tab[j].username);
           let obj = tab[j];
           //let objId = tab[j]._id;
           if(obj.username === localStorage.getItem("loggedUser")){
@@ -125,24 +137,15 @@ export class ProfilComponent implements OnInit {
             this.aProp5 = obj.amis;
             this.majTof = obj._id;
 
-            console.log("lolll",this.aProp5);
+            //console.log("lolitapaz",this.aProp5);
+
           }
-
-          
-          function alredyExist(element) {
-            return tab[j].amis.element = localStorage.getItem("loggedUser");
-          }
-
-          //console.log(tab[j].amis.every(alredyExist));
-
         }
       }  
 
     });
     this.userDisplayName = localStorage.getItem("loggedUser");
-
   }
-
   //on selectionne l'image à ajoutée 
   affiche(){
     this.alert = true;

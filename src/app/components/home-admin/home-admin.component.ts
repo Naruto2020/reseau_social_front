@@ -25,6 +25,7 @@ export class HomeAdminComponent implements OnInit {
   userDisName:string = "";
 
   alert1:boolean = false;
+  compteur = 0;
 
   userFoundName;
   userFoundAge;
@@ -34,6 +35,7 @@ export class HomeAdminComponent implements OnInit {
   userFoundImg;
   userFoundBack;
   userFoundNom;
+  userFoundload;
 
 
   aProp1:string;
@@ -69,7 +71,7 @@ export class HomeAdminComponent implements OnInit {
      
     });*/
 
-    this.bailService.findFriends(this.goToUser.get("nom").value).subscribe(res =>{
+    /*this.bailService.findFriends(this.goToUser.get("nom").value).subscribe(res =>{
       //console.log(this.goToUser.get("nom").value);
      
        console.log("losa",res["preferences"]);
@@ -82,12 +84,12 @@ export class HomeAdminComponent implements OnInit {
        this.userFoundNom = res["nom"];
        this.alert1 = true;
        return res;
-     });
+    });*/
 
 
     // gestion du status de la demande d'amis 
     this.bailService.showProfils().subscribe((res) =>{
-      //console.log(">>>",res);
+      console.log(">>>",res);
       this.listesProfils = res;
       // on transforme l 'obet res en tableau cle/valeur representant chaques Ut de la BDD 
       let newR = Object.keys(res).map(function(cle) {
@@ -97,30 +99,17 @@ export class HomeAdminComponent implements OnInit {
       //console.log(Object.entries(res));
       // on boucle sur le nouveau tableau pour recupérer chaque UT 
       for(let i=0; i< newR.length; i++){
-        console.log("yooo",newR[i]);
-        let tab = newR[i];
-        for(let j=0; j<tab.length;j++){
-          console.log("isola",tab[j].username);
-          this.pote = tab[j];
-          //this.pote1 = tab[j].username;
-          //let objId = tab[j]._id;
-          if(this.pote.username === localStorage.getItem("loggedUser")){
-            this.aProp1 = this.pote.genre;
-            this.aProp2 = this.pote.age;
-            this.aProp3 = this.pote.preferences;
-            this.aProp4 = this.pote.presentation;
-            this.aProp5 = this.pote.amis;
-           
-            for(let k=0; k < this.aProp5.length; k++){
-              //this.pote2 = this.aProp5[k];
-              //console.log("qps",this.pote2.length);
-              console.log("mercoooooooooooon");
-              
-            }
+        console.log("yooo",newR[i][1].amis);
+        let tab = newR[i][1].amis;
+        this.userFoundload = newR[i][1].username;
+        if(this.userDisplayName === this.userFoundload){
+          for(let j=0; j<tab.length;j++){
+            this.compteur +=1; 
+  
           }
 
         }
-      }  
+      }
 
     });
   }

@@ -17,11 +17,41 @@ export class MenuComponent implements OnInit {
   imgSite:string = environment.siteUrl;
   url1:string ;
 
+  userFoundload;
+  compteur = 0;
+
   listeImagesPro:any;
+  listesProfils:any;
 
   constructor(private bail:BailService, private router: Router) { }
 
   ngOnInit(): void {
+
+    // gestion du status de la demande d'amis 
+    this.bail.showProfils().subscribe((res) =>{
+      console.log(">>>",res);
+      this.listesProfils = res;
+      // on transforme l 'obet res en tableau cle/valeur representant chaques Ut de la BDD 
+      let newR = Object.keys(res).map(function(cle) {
+        return [Number(cle), res[cle]];
+      });
+      //console.log("new ...",newR);
+      //console.log(Object.entries(res));
+      // on boucle sur le nouveau tableau pour recupérer chaque UT 
+      for(let i=0; i< newR.length; i++){
+        console.log("yooo",newR[i][1].amis);
+        let tab = newR[i][1].amis;
+        this.userFoundload = newR[i][1].username;
+        if(this.userDisplayName === this.userFoundload){
+          for(let j=0; j<tab.length;j++){
+            this.compteur +=1; 
+          
+          }
+        
+        }
+      }
+        
+    });
     this.bail.displayImage().subscribe(res =>{
       this.listeImagesPro = res;
       for(let i=0; i< Object.entries(res).length; i++){

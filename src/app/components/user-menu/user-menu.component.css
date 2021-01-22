@@ -70,6 +70,17 @@ nav a:hover {
 .alert button img {
   height: 40px;
 }
+
+.notif {
+  background-color: red;
+  border-radius: 20px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 75%;
+  top: 16%;
+  text-align: center;
+}
 /* Les media queries */
 /*  @media screen and (max-width: 1024px)*/
 
@@ -114,6 +125,22 @@ nav a:hover {
     width: 20%;
     text-align: center;
     padding: 15px;
+  }
+  .notif {
+    background-color: red;
+    border-radius: 20px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 73%;
+    top: 8%;
+    text-align: center;
+    font-size: 18px;
+  }
+  .notif span {
+    position: absolute;
+    left: 3px;
+    top: 1px;
   }
 }
 
@@ -160,5 +187,21 @@ nav a:hover {
   }
   .alert button img {
     height: 20px;
+  }
+  .notif {
+    background-color: red;
+    border-radius: 12px;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    left: 67%;
+    top: 8%;
+    text-align: center;
+    font-size: 10px;
+  }
+  .notif span {
+    position: absolute;
+    left: 3px;
+    top: -3px;
   }
 }
