@@ -133,21 +133,22 @@
       <tr *ngFor="let post of listesPoste">
         <td>
           <hr/>
-          {{post.message}} &nbsp;         
+          {{post.message}} &nbsp;  &nbsp; &nbsp;       
             <i
             routerLink="/updateUser-publications/{{post._id}}"
             class="fa fa-edit"
             style="font-size: 20px; color: grey"
-            ></i> &nbsp;
-
-            <i
-            routerLink="/profil-user/{{post._id}}"
-            (click)="supprime()"
-            class="fa fa-trash"
-            style="font-size: 20px; color: red"
-            ></i>
+            ></i> 
 
           <br/> <p>posté par : <strong> {{post.loadBy}} le {{post.date}}</strong>  </p> 
+        </td>
+        <td>
+          <i
+          routerLink="/profil-user/{{post._id}}"
+          (click)="supprime()"
+          class="fa fa-trash"
+          style="font-size: 20px; color: red"
+          ></i>
         </td>
 
       </tr>
