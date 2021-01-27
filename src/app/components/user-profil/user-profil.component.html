@@ -135,12 +135,13 @@
           <hr/>
           {{post.message}} &nbsp;         
             <i
-            routerLink="/updateUser-publications/{{ post._id }}"
+            routerLink="/updateUser-publications/{{post._id}}"
             class="fa fa-edit"
             style="font-size: 20px; color: grey"
+            (click)="supprime()"
             ></i> &nbsp;
             <i
-            routerLink="/profil-user/{{post._id}} "
+            routerLink="/profil-user/{{post._id}}"
             class="fa fa-trash"
             style="font-size: 20px; color: red"
             ></i>

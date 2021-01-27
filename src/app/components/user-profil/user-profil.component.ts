@@ -155,15 +155,7 @@ export class UserProfilComponent implements OnInit {
     this.bailService.displayPost().subscribe(res =>{
       console.log("posteee",res);
       this.listesPoste = res;
-      // on transforme le l'objet en tableau key/value
-      let newR = Object.keys(res).map(function(cle) {
-        return [Number(cle), res[cle]];
-      });
-      //console.log("postiiit",newR);
-      for(let i=0; i<newR.length; i++){
-        
-
-      };
+   
     });
     this.userDisplayName = localStorage.getItem("loggedUser");
   }
@@ -216,6 +208,19 @@ export class UserProfilComponent implements OnInit {
         });
       }
   
+      supprime(){
+        this.bailService.deletePost(this.router.snapshot.params._id).subscribe(res =>{
+          this.bailService.displayPost().subscribe(res =>{
+            console.log("posteee",res);
+            this.listesPoste = res;
+         
+          });
+          return res;
+
+        });
+
+      }
+
       fermerAlert(){
         this.alert = false;
         this.alert1 = false;
