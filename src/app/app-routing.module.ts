@@ -36,6 +36,7 @@ import {UserUpdateComponent} from './components/user-update/user-update.componen
 import {UserSetComponent} from './components/user-set/user-set.component';
 import {UserNotifComponent} from './components/user-notif/user-notif.component';
 import {PublicationsComponent} from './components/publications/publications.component';
+import {UpdatePublicationsComponent} from './components/update-publications/update-publications.component';
 
 import { AuthGuard} from './guards/auth.guard';
 import {AuthUserGuard} from './guards/auth-user.guard';
@@ -72,6 +73,7 @@ const routes: Routes = [
   {path:"profil-user-infoImg/:_id", component:UserSetComponent, canActivate:[AuthUserGuard], data:['user']},
   {path:"notifications", component:UserNotifComponent, canActivate:[AuthUserGuard], data:['user']},
   {path:"publications", component:PublicationsComponent, canActivate:[AuthUserGuard], data:['user']},
+  {path:"updateUser-publications/:_id", component:UpdatePublicationsComponent, canActivate:[AuthUserGuard], data:['user']},
 ];
 
 @NgModule({

@@ -37,6 +37,7 @@ export class UpdatePublicationsComponent implements OnInit {
   });
 
   ngOnInit(): void {
+    console.log("tessst",this.router.snapshot.params._id);
     this.userDisplayName = localStorage.getItem("loggedUser");
     this.bailService.curentPost(this.router.snapshot.params._id).subscribe(res =>{
       this.partage = new FormGroup({
@@ -48,6 +49,18 @@ export class UpdatePublicationsComponent implements OnInit {
 
     });
   }
+
+  poster(){
+    this.bailService.updatePost(this.router.snapshot.params._id , this.partage.value).subscribe(res =>{
+      this.partage = new FormGroup({
+        message : new FormControl(res["message"]),
+        body : new FormControl(res["body"]),
+        date : new FormControl(res["date"]),
+        loadBy: new FormControl(res["loadBy"]),
+      });
+
+    });
+  };
 
   selectImage(event){
     console.log(event);

@@ -1,6 +1,6 @@
 <div class="jumbotron">
-    <h2>Publications</h2>
-    <button class="btn btn-outline-info" routerLink="/accueil">retour</button>
+    <h2>Modifier la publication</h2>
+    <button class="btn btn-outline-info" routerLink="/profil-user/:{{userDisplayName}}">retour</button>
 </div>
 
 <form [formGroup]="partage">
@@ -11,7 +11,7 @@
         <input type="hidden" placeholder="loadBy" formControlName="loadBy"  ngModel={{userDisplayName}}>
     </div>
 
-    <button class="btn btn-outline-info">Publier</button>  
+    <button class="btn btn-outline-info" (click)="poster()">Publier</button>  
 </form>
 <br/> <br/>
 <form [formGroup]="addImagePro" >
