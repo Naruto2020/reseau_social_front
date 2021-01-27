@@ -152,6 +152,16 @@ export class BailService {
     return this.http.get(postUrl);
   }
 
+  curentPost(id):Observable<any>{
+    return this.http.get(`${postUrl}/${id}`);
+  }
+
+  updatePost(id, data){
+    return this.http.put(`${postUrl}/${id}`, data);
+  }
+  deletePost(id){
+    return this.http.delete(`${postUrl}/${id}`);
+  }
 
 
   /*deleteFriend(nom){

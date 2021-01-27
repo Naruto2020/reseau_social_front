@@ -11,7 +11,7 @@
         <input type="hidden" placeholder="loadBy" formControlName="loadBy"  ngModel={{userDisplayName}}>
     </div>
 
-    <button class="btn btn-outline-info" (click)="poster()">Publier</button>  
+    <button class="btn btn-outline-info">Publier</button>  
 </form>
 <br/> <br/>
 <form [formGroup]="addImagePro" >
@@ -21,7 +21,7 @@
       <br/>
       <input type="text" *ngIf class="form-control" formControlName="loadBy" placeholder="LoadBy" value="{{userDisplayName}}" >
       <br/> 
-      <button type="submit" value="Enregistrer" class="btn btn-primary" (click)="chargement1()">Télécharger</button> 
+      <button type="submit" value="Enregistrer" class="btn btn-primary">Télécharger</button> 
     </div>
 
 </form>

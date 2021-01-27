@@ -133,7 +133,18 @@
       <tr *ngFor="let post of listesPoste">
         <td>
           <hr/>
-          {{post.message}} <br/> <p>posté par : <strong> {{post.loadBy}} le {{post.date}}</strong>  </p> 
+          {{post.message}} &nbsp;         
+            <i
+            routerLink="/updateProfils/{{ post._id }}"
+            class="fa fa-edit"
+            style="font-size: 20px; color: grey"
+            ></i> &nbsp;
+            <i
+            routerLink="/profil-user/{{post._id}} "
+            class="fa fa-trash"
+            style="font-size: 20px; color: red"
+            ></i>
+          <br/> <p>posté par : <strong> {{post.loadBy}} le {{post.date}}</strong>  </p> 
         </td>
 
       </tr>

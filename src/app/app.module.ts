@@ -49,6 +49,7 @@ import { UserSetComponent } from './components/user-set/user-set.component';
 import { UserNotifComponent } from './components/user-notif/user-notif.component';
 import { AdminNotifComponent } from './components/admin-notif/admin-notif.component';
 import { PublicationsComponent } from './components/publications/publications.component';
+import { UpdatePublicationsComponent } from './components/update-publications/update-publications.component';
 
 
 
@@ -80,7 +81,8 @@ import { PublicationsComponent } from './components/publications/publications.co
     UserSetComponent,
     UserNotifComponent,
     AdminNotifComponent,
-    PublicationsComponent
+    PublicationsComponent,
+    UpdatePublicationsComponent
     
   ],
   imports: [
