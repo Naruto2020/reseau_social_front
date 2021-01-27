@@ -209,10 +209,9 @@ export class UserProfilComponent implements OnInit {
       }
   
       supprime(){
-        console.log("supprime");
+        //console.log("supprime");
         this.bailService.deletePost(this.router.snapshot.params._id).subscribe(res =>{
           this.bailService.displayPost().subscribe(res =>{
-            console.log("posteee",res);
             this.listesPoste = res;
          
           });

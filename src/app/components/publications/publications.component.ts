@@ -48,6 +48,7 @@ export class PublicationsComponent implements OnInit {
   poster(){
     this.bailService.publierMess(this.partage.value).subscribe(res =>{
       console.log(res)
+      this.partage.reset({});
       return res;
     });
   }
