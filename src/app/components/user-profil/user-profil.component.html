@@ -131,26 +131,26 @@
     <div class="container">
       <h2>Les publications </h2>
       <tr *ngFor="let post of listesPoste">
-        <td>
+        <td *ngIf="userDisplayName === post.loadBy">
           <hr/>
           {{post.message}} &nbsp;  &nbsp; &nbsp;       
             <i
             routerLink="/updateUser-publications/{{post._id}}"
             class="fa fa-edit"
             style="font-size: 20px; color: grey"
-            ></i> 
+            ></i> &nbsp; 
+            <button (click)="supprime()" style="border: transparent;">
+              <i
+              routerLink="/profil-user/{{post._id}}"
+              class="fa fa-trash"
+              style="font-size: 20px; color: red"
+              ></i>
+    
+            </button>
 
           <br/> <p>posté par : <strong> {{post.loadBy}} le {{post.date}}</strong>  </p> 
         </td>
         <td>
-          <button (click)="supprime()" style="border: transparent;">
-            <i
-            routerLink="/profil-user/{{post._id}}"
-            class="fa fa-trash"
-            style="font-size: 20px; color: red"
-            ></i>
-
-          </button>
         </td>
 
       </tr>
