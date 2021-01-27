@@ -67,7 +67,7 @@ const routes: Routes = [
   {path:"conectUser", component:UserConnectionComponent},
   {path:"accueil", component:UserHomeComponent, canActivate:[AuthUserGuard], data:['user']},
   {path:"menu-user", component:UserMenuComponent, canActivate:[AuthUserGuard], data:['user']},
-  {path:"profil-user/:username", component:UserProfilComponent, canActivate:[AuthUserGuard], data:['user']},
+  {path:"profil-user/:_id", component:UserProfilComponent, canActivate:[AuthUserGuard], data:['user']},
   {path:"profil-user-info", component:UserProfilFormComponent, canActivate:[AuthUserGuard], data:['user']},
   {path:"updateUsers/:_id", component:UserUpdateComponent, canActivate:[AuthUserGuard], data:['user']},
   {path:"profil-user-infoImg/:_id", component:UserSetComponent, canActivate:[AuthUserGuard], data:['user']},
