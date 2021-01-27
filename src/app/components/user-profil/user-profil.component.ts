@@ -64,18 +64,18 @@ export class UserProfilComponent implements OnInit {
   ngOnInit(): void {
     
     this.bailService.displayImage().subscribe((res)=>{
-      console.log(res)
+      //console.log(res)
        this.listeImages = res;
        //this.url = "";
-       console.log("ici c est img Back -->",  res[Object.keys(res)[Object.keys(res).length - 2]]);
-       console.log(Object.entries(res));
+       //console.log("ici c est img Back -->",  res[Object.keys(res)[Object.keys(res).length - 2]]);
+       //console.log(Object.entries(res));
        for(let i=0; i< Object.entries(res).length; i++){
-        console.log("haaa",Object.entries(res)[i]);
+        //console.log("haaa",Object.entries(res)[i]);
          let tab = Object.entries(res)[i];
          for(let j=0; j<tab.length; j++){
-           console.log("poll",tab[j]);
+           //console.log("poll",tab[j]);
            if(tab[j].loadBy === localStorage.getItem("loggedUser")){
-             console.log("imagero >>",`${this.imgSite}/${tab[j].photo}`);
+             //console.log("imagero >>",`${this.imgSite}/${tab[j].photo}`);
              this.url = `${this.imgSite}/${tab[j].photo}`;
             }
            
@@ -94,15 +94,15 @@ export class UserProfilComponent implements OnInit {
     this.bailService.displayImage().subscribe((res)=>{
       this.listeImagesPro = res;
       //this.url1 = "";
-      console.log("ici c est img profil -->",  res[Object.keys(res)[Object.keys(res).length - 1]].photo);
-      console.log("tableau...",Object.entries(res));
+      //console.log("ici c est img profil -->",  res[Object.keys(res)[Object.keys(res).length - 1]].photo);
+      //console.log("tableau...",Object.entries(res));
       for(let i=0; i< Object.entries(res).length; i++){
         let tab = Object.entries(res)[i];
-        console.log("qtf",tab);
+        //console.log("qtf",tab);
         for(let j=0; j<tab.length; j++){
-          console.log("testyyy",(tab[j]));
+          //console.log("testyyy",(tab[j]));
           if(tab[j].loadBy === localStorage.getItem("loggedUser")){
-            console.log("image >>",`${this.imgSite}/${tab[j].photo}`);
+            //console.log("image >>",`${this.imgSite}/${tab[j].photo}`);
             this.url1 = `${this.imgSite}/${tab[j].photo}`;
           }
           
@@ -133,7 +133,7 @@ export class UserProfilComponent implements OnInit {
         //console.log("yooo",newR[i]);
         let tab = newR[i];
         for(let j=0; j<tab.length;j++){
-          console.log(tab[j].username);
+          //console.log(tab[j].username);
           let obj = tab[j];
           //let objId = tab[j]._id;
           if(obj.username === localStorage.getItem("loggedUser")){
@@ -153,7 +153,7 @@ export class UserProfilComponent implements OnInit {
     });
 
     this.bailService.displayPost().subscribe(res =>{
-      console.log("posteee",res);
+      //console.log("posteee",res);
       this.listesPoste = res;
    
     });
@@ -169,7 +169,7 @@ export class UserProfilComponent implements OnInit {
     }
   
     selectImage(event){
-      console.log(event);
+      //console.log(event);
       if(event.target.files.length > 0){
           const file = event.target.files[0];
         return this.images = file;
@@ -184,10 +184,10 @@ export class UserProfilComponent implements OnInit {
         this.formData.append("photo", this.images);
         this.formData.append("loadBy", localStorage.getItem("loggedUser"));
         this.bailService.uploadImage(this.formData).subscribe(res =>{
-          console.log(res["photo"]);
+          //console.log(res["photo"]);
           this.alert = false;
           this.url =`${this.imgSite}/${res["photo"]}`;
-          console.log("chargement ...",this.url);
+          //console.log("chargement ...",this.url);
           return res;
   
         });
@@ -200,21 +200,23 @@ export class UserProfilComponent implements OnInit {
         this.formData1.append("photo",this.images);
         this.formData1.append("loadBy", localStorage.getItem("loggedUser"));
         this.bailService.uploadImage(this.formData1).subscribe(res =>{
-          console.log("Profil",res["photo"]);
+          //console.log("Profil",res["photo"]);
           this.alert1 = false;
           this.url1 = `${this.imgSite}/${res["photo"]}`;
-          console.log(this.url1);
+          //console.log(this.url1);
           return res;
         });
       }
   
       supprime(){
+        console.log("supprime");
         this.bailService.deletePost(this.router.snapshot.params._id).subscribe(res =>{
           this.bailService.displayPost().subscribe(res =>{
             console.log("posteee",res);
             this.listesPoste = res;
          
           });
+          console.log(res);
           return res;
 
         });
