@@ -14,6 +14,7 @@ const forgotPUrl = environment.emailPUrl;
 const photoUrl = environment.picUrl;
 const photoUrl1 = environment.picUrl1;
 const amisUrl = environment.searchUrl;
+const postUrl = environment.statusUrl
 
 @Injectable({
   providedIn: 'root'
@@ -144,11 +145,11 @@ export class BailService {
    * ******  ******* gestion des requêtes des publications  
    */
   publierMess(data):Observable<any>{
-    return this.http.post("http://127.0.0.1:3000/comptes/messagePublic", data);
+    return this.http.post(postUrl, data);
   }
 
   displayPost():Observable<any>{
-    return this.http.get("http://127.0.0.1:3000/comptes/messagePublic");
+    return this.http.get(postUrl);
   }
 
 
