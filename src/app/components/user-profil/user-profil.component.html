@@ -143,12 +143,14 @@
           <br/> <p>posté par : <strong> {{post.loadBy}} le {{post.date}}</strong>  </p> 
         </td>
         <td>
-          <i
-          routerLink="/profil-user/{{post._id}}"
-          (click)="supprime()"
-          class="fa fa-trash"
-          style="font-size: 20px; color: red"
-          ></i>
+          <button (click)="supprime()" style="border: transparent;">
+            <i
+            routerLink="/profil-user/{{post._id}}"
+            class="fa fa-trash"
+            style="font-size: 20px; color: red"
+            ></i>
+
+          </button>
         </td>
 
       </tr>
