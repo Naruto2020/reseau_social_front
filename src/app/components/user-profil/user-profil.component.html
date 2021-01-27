@@ -128,7 +128,18 @@
       </ul> -->
   
     </div>
-  </div>  
+    <div class="container">
+      <h2>Les publications </h2>
+      <tr *ngFor="let post of listesPoste">
+        <td>
+          <hr/>
+          {{post.message}} <br/> <p>posté par : <strong> {{post.loadBy}} le {{post.date}}</strong>  </p> 
+        </td>
+
+      </tr>
+
+    </div>
+</div>  
   
         
   

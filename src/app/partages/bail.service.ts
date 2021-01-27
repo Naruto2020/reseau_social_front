@@ -127,11 +127,11 @@ export class BailService {
     return this.http.delete(`${photoUrl1}/${id}`);
   }
 
-  /************************************************************
+  /********************************************************************
    * ******  ******* gestion des requêtes de recherche et d'ajout d'amis 
    */
 
-  // requêtes pour rechercher un utilisateur enregistrer 
+  // requêtes pour rechercher, enregistrer et supprimier un utilisateur de la liste d'amis 
   findFriends(nom):Observable<any>{
     return this.http.get(`${amisUrl}/${nom}`);
   }
@@ -139,8 +139,21 @@ export class BailService {
   addFriend(nom, data){
     return this.http.post(`${amisUrl}/${nom}`, data);
   }
-  ajoutAmis(data){
-    return this.http.post("http://127.0.0.1:3000/comptes/amis", data);
+
+  /********************************************************************
+   * ******  ******* gestion des requêtes des publications  
+   */
+  publierMess(data):Observable<any>{
+    return this.http.post("http://127.0.0.1:3000/comptes/messagePublic", data);
   }
 
+  displayPost():Observable<any>{
+    return this.http.get("http://127.0.0.1:3000/comptes/messagePublic");
+  }
+
+
+
+  /*deleteFriend(nom){
+    return this.http.delete(`http://127.0.0.1:3000/comptes/${nom}`);
+  }*/
 }

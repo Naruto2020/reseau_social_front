@@ -10,7 +10,7 @@
 
             <form class="form-inline my-2 my-lg-0" [formGroup]="goToUser">
               <input class="form-control mr-sm-2" type="search" placeholder="recherche" formControlName="nom" aria-label="recherche">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="connexion()">Search</button>
+              <button class="btn btn-outline-success my-2 my-sm-0 " type="submit" (click)="connexion()">Search</button>
               
             </form>
             <nav>
@@ -32,7 +32,7 @@
 
 </div>
 
-<div class="container" *ngIf="alert1">
+<div class="container recherche" *ngIf="alert1">
 
   <div class=" profilImg">  <img src="{{imgSite}}/{{userFoundImg}}" alt="" > 
   <h1>{{userFoundName}}</h1>
@@ -48,7 +48,7 @@
 
           <div *ngIf="pote2 !== userFoundName ; else info">
               
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"  (click)="demande()">+ {{pote1}} </button>
+            <button class="btn btn-outline-success my-2 my-sm-0 val" type="submit"  (click)="demande()">+ {{pote1}} </button>
           </div>
           <ng-template #info>
             <p>invitation reçue</p>
@@ -86,4 +86,22 @@
 
     </div>
 
-</div>
+  </div>
+  <div class="container poste">
+    <div class="pub">
+      <a routerLink="/publications"> ++ Vous souhaitez partager ?</a>
+    </div>
+    <br/>
+    <div>
+      <h2>Les publications </h2>
+      <tr *ngFor="let post of listesPoste">
+        <td>
+          <hr/>
+          {{post.message}} <br/> posté par :  <strong>{{post.loadBy}} le {{post.date}} </strong> 
+        </td>
+  
+      </tr>
+  
+    </div>
+  
+  </div>

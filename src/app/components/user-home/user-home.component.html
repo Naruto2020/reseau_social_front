@@ -31,8 +31,8 @@
     
 </div>
   
-<div class="container" *ngIf="alert1">
-<!-- *ngIf="alert1" -->
+<div class="container recherche" *ngIf="alert1">
+
     <div class=" profilImg">  <img src="{{imgSite}}/{{userFoundBack}}" alt="" > 
     <h1>{{userFoundName}}</h1>
     </div>
@@ -50,7 +50,7 @@
                 <button class="btn btn-outline-info my-2 my-sm-0" type="submit"  (click)="demande()">+ {{userFoundAge}}  </button>
             </div>
             <ng-template #info>
-              <p>invitation reçue</p>
+              <p class="mess">invitation reçue</p>
               <button class="btn btn-outline-info my-2 my-sm-0 btn2">valider</button>
               <button class="btn btn-outline-info my-2 my-sm-0 btn3">annuler</button>
             </ng-template>
@@ -85,6 +85,24 @@
         </div>
 
       </div>
+
+</div>
+<div class="container poste">
+  <div class="pub">
+    <a routerLink="/publications"> ++ Vous souhaitez partager ?</a>
+  </div>
+  <br/>
+  <div>
+    <h2>Les publications </h2>
+    <tr *ngFor="let post of listesPoste">
+      <td>
+        <hr/>
+        {{post.message}} <br/> posté par :  <strong>{{post.loadBy}} le {{post.date}} </strong> 
+      </td>
+
+    </tr>
+
+  </div>
 
 </div>
     

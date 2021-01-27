@@ -20,7 +20,7 @@ form input {
   font-size: 15px;
   margin-bottom: 10px;
 }
-form button {
+.head form button {
   display: none;
 }
 /*gesttion des logos secondaires*/
@@ -80,6 +80,10 @@ nav a:hover {
   top: 16%;
   text-align: center;
 }
+.statu {
+  margin-top: 50px;
+}
+
 /* Les media queries */
 /*  @media screen and (max-width: 1024px)*/
 

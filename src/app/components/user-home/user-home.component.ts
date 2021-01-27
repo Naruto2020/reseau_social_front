@@ -62,6 +62,7 @@ export class UserHomeComponent implements OnInit {
   listeImages:any;
   listeImagesPro:any;
   listesProfils:any;
+  listesPoste:any;
   friend:any;
 
 
@@ -70,9 +71,12 @@ export class UserHomeComponent implements OnInit {
   });
 
 
-  /*addAmis = new FormGroup({
-    amis : new FormControl(""),
-  });*/
+  partage = new FormGroup({
+    message : new FormControl(""),
+    date : new FormControl(""),
+    commentaires : new FormControl(""),
+    loadBy: new FormControl(""),
+  });
 
   constructor(private bailService:BailService, private route: Router, private router : ActivatedRoute) { }
 
@@ -126,6 +130,19 @@ export class UserHomeComponent implements OnInit {
 
     });
     
+    this.bailService.displayPost().subscribe(res =>{
+      console.log("posteee",res);
+      this.listesPoste = res;
+      // on transforme le l'objet en tableau key/value
+      let newR = Object.keys(res).map(function(cle) {
+        return [Number(cle), res[cle]];
+      });
+      //console.log("postiiit",newR);
+      for(let i=0; i<newR.length; i++){
+        
+
+      };
+    });
   
   }
 

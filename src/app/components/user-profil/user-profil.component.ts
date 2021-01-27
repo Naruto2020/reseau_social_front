@@ -37,11 +37,13 @@ export class UserProfilComponent implements OnInit {
   majTof:string;
 
   userFoundload;
+  userpostes;
  
 
   listeImages:any;
   listeImagesPro:any;
   listesProfils:any;
+  listesPoste:any;
 
   userDisplayName:string = "";
   compteur = 0;
@@ -148,6 +150,20 @@ export class UserProfilComponent implements OnInit {
         }
       }  
 
+    });
+
+    this.bailService.displayPost().subscribe(res =>{
+      console.log("posteee",res);
+      this.listesPoste = res;
+      // on transforme le l'objet en tableau key/value
+      let newR = Object.keys(res).map(function(cle) {
+        return [Number(cle), res[cle]];
+      });
+      //console.log("postiiit",newR);
+      for(let i=0; i<newR.length; i++){
+        
+
+      };
     });
     this.userDisplayName = localStorage.getItem("loggedUser");
   }

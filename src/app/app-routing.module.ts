@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { from } from 'rxjs';
 
 /******************************************************************************************
- * ****** ****** gestion des routes admin ***** *****
+ * ****** ****** gestion des imports admin ***** *****
  */
 import {AdministrationComponent} from './components/administration/administration.component';
 import {AdminAccountComponent} from './components/admin-account/admin-account.component';
@@ -20,8 +20,9 @@ import {ProfilFormComponent} from './components/profil-form/profil-form.componen
 import {ProfilSetComponent} from './components/profil-set/profil-set.component';
 import {AdminNotifComponent} from './components/admin-notif/admin-notif.component';
 
+
 /***********************************************************************************
- * ***** ***** gestion des routes utilisateurs ***** ****
+ * ***** ***** gestion des imports utilisateurs ***** ****
  */
 
 import {UtilisateurComponent} from './components/utilisateur/utilisateur.component';
@@ -34,6 +35,7 @@ import {UserProfilFormComponent} from './components/user-profil-form/user-profil
 import {UserUpdateComponent} from './components/user-update/user-update.component';
 import {UserSetComponent} from './components/user-set/user-set.component';
 import {UserNotifComponent} from './components/user-notif/user-notif.component';
+import {PublicationsComponent} from './components/publications/publications.component';
 
 import { AuthGuard} from './guards/auth.guard';
 import {AuthUserGuard} from './guards/auth-user.guard';
@@ -69,6 +71,7 @@ const routes: Routes = [
   {path:"updateUsers/:_id", component:UserUpdateComponent, canActivate:[AuthUserGuard], data:['user']},
   {path:"profil-user-infoImg/:_id", component:UserSetComponent, canActivate:[AuthUserGuard], data:['user']},
   {path:"notifications", component:UserNotifComponent, canActivate:[AuthUserGuard], data:['user']},
+  {path:"publications", component:PublicationsComponent, canActivate:[AuthUserGuard], data:['user']},
 ];
 
 @NgModule({

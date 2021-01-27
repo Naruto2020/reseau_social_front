@@ -51,6 +51,7 @@ export class HomeAdminComponent implements OnInit {
   listeImages:any;
   listeImagesPro:any;
   listesProfils:any;
+  listesPoste:any;
 
 
   goToUser = new FormGroup({
@@ -111,6 +112,20 @@ export class HomeAdminComponent implements OnInit {
         }
       }
 
+    });
+
+    this.bailService.displayPost().subscribe(res =>{
+      console.log("posteee",res);
+      this.listesPoste = res;
+      // on transforme le l'objet en tableau key/value
+      let newR = Object.keys(res).map(function(cle) {
+        return [Number(cle), res[cle]];
+      });
+      //console.log("postiiit",newR);
+      for(let i=0; i<newR.length; i++){
+        
+
+      };
     });
   }
 

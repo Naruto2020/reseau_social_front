@@ -39,7 +39,13 @@ export class UserNotifComponent implements OnInit {
   listeImages:any;
   listeImagesPro:any;
   listesProfils:any;
-  friend:any;
+
+  friendV = new FormGroup({
+    nom : new FormControl(''),
+  });
+  friendC = new FormGroup({
+    nom : new FormControl(''),
+  });
 
   constructor(private bailService:BailService, private route: Router, private router : ActivatedRoute) { }
 
@@ -104,4 +110,8 @@ export class UserNotifComponent implements OnInit {
     });
   }
 
+  cancel(){
+    
+    
+  }
 }

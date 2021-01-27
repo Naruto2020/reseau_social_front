@@ -1,0 +1,27 @@
+<div class="jumbotron">
+    <h2>Publications</h2>
+    <button class="btn btn-outline-info" routerLink="/accueil">retour</button>
+</div>
+
+<form [formGroup]="partage">
+    <div>
+        <textarea formControlName="message" id="" cols="30" rows="10"></textarea>
+    </div>
+    <div >
+        <input type="hidden" placeholder="loadBy" formControlName="loadBy"  ngModel={{userDisplayName}}>
+    </div>
+
+    <button class="btn btn-outline-info" (click)="poster()">Publier</button>  
+</form>
+<br/> <br/>
+<form [formGroup]="addImagePro" >
+    <div class="form-group">
+      <label for="exampleFormControlFile1"></label>
+      <input type="file"  multiple (change)="selectImage($event)"   >
+      <br/>
+      <input type="text" *ngIf class="form-control" formControlName="loadBy" placeholder="LoadBy" value="{{userDisplayName}}" >
+      <br/> 
+      <button type="submit" value="Enregistrer" class="btn btn-primary" (click)="chargement1()">Télécharger</button> 
+    </div>
+
+  </form>
