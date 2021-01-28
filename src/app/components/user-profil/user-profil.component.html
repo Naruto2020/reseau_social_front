@@ -154,10 +154,19 @@
         </td>
 
       </tr>
-      <tr *ngFor="let img of listeImagesPro">
+      <tr *ngFor="let imgPro of listeImagesPro">
         <td>
-          <span > <img src="{{imgSite}}/{{img.photo}}" alt=""></span>
-          <br/> <p>posté par : <strong> {{img.loadBy}}</strong>  </p> 
+          <span > <img src="{{imgSite}}/{{imgPro.photo}}" alt=""></span>  &nbsp;  &nbsp; &nbsp;
+         
+          <button (click)="supprime()" style="border: transparent;">
+            <i
+            routerLink="/profil-user/{{imgPro._id}}"
+            class="fa fa-trash"
+            style="font-size: 20px; color: red"
+            ></i>
+  
+          </button>
+          <br/> <p>posté par : <strong> {{imgPro.loadBy}}</strong>  </p> 
         </td>
 
       </tr>
