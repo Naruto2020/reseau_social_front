@@ -42,6 +42,7 @@ export class ProfilComponent implements OnInit {
   listeImages:any;
   listeImagesPro:any;
   listesProfils:any;
+  listesPoste:any;
 
   userDisplayName:string = "";
   userFoundload;
@@ -191,6 +192,20 @@ export class ProfilComponent implements OnInit {
         console.log(this.url1);
         return res;
       });
+    }
+
+    supprime(){
+      //console.log("supprime");
+      this.bailService.deletePost(this.router.snapshot.params._id).subscribe(res =>{
+        this.bailService.displayPost().subscribe(res =>{
+          this.listesPoste = res;
+       
+        });
+        console.log(res);
+        return res;
+
+      });
+
     }
 
     fermerAlert(){
