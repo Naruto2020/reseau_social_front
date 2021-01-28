@@ -83,7 +83,7 @@ export class UserProfilComponent implements OnInit {
        
         }
        {
-         //this.url = `http://127.0.0.1:3000/${res[Object.keys(res)[Object.keys(res).length - 1]].photo}`;
+         this.url = `http://127.0.0.1:3000/${res[Object.keys(res)[Object.keys(res).length - 1]].photo}`;
 
        }
   
@@ -109,7 +109,7 @@ export class UserProfilComponent implements OnInit {
          }
       
        }
-      //this.url1 = `http://127.0.0.1:3000/${res[Object.keys(res)[Object.keys(res).length - 1]].photo}`;
+      this.url1 = `http://127.0.0.1:3000/${res[Object.keys(res)[Object.keys(res).length - 1]].photo}`;
     });
      // gestion des notif  
     this.bailService.showProfils().subscribe((res) =>{
