@@ -31,7 +31,7 @@
     <div class="back"> <img [src]="url" alt="#" ></div>
     <div class="camera1"> <a routerLink="/profil-user/:{{userDisplayName}}" (click)="affiche()"><img src="../../../assets/images/camera.jpg" alt="logo caméra"></a></div>
   
-    <div class="imgProfil"> <img [src]="url1" alt="#"/> </div>
+    <div class="imgProfil"> <img [src]="url" alt="#"/> </div>
     <div class="camera2"> <a routerLink="/profil-user/:{{userDisplayName}}" (click)="affiche1()"> <img src="../../../assets/images/camera.jpg" alt="logo caméra"></a> </div>
     <br/> <br/> <br/> <br/>
     <div>
@@ -151,6 +151,13 @@
           <br/> <p>posté par : <strong> {{post.loadBy}} le {{post.date}}</strong>  </p> 
         </td>
         <td>
+        </td>
+
+      </tr>
+      <tr *ngFor="let img of listeImagesPro">
+        <td>
+          <span > <img src="{{imgSite}}/{{img.photo}}" alt=""></span>
+          <br/> <p>posté par : <strong> {{img.loadBy}}</strong>  </p> 
         </td>
 
       </tr>

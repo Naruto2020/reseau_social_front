@@ -145,6 +145,11 @@ export class ProfilComponent implements OnInit {
       }  
 
     });
+    this.bailService.displayPost().subscribe(res =>{
+      //console.log("posteee",res);
+      this.listesPoste = res;
+   
+    });
     this.userDisplayName = localStorage.getItem("loggedUser");
   }
   //on selectionne l'image à ajoutée 

@@ -91,7 +91,7 @@ export class UserProfilComponent implements OnInit {
 
 
     
-    this.bailService.displayImage().subscribe((res)=>{
+    this.bailService.displayImage1().subscribe((res)=>{
       this.listeImagesPro = res;
       //this.url1 = "";
       //console.log("ici c est img profil -->",  res[Object.keys(res)[Object.keys(res).length - 1]].photo);

@@ -51,6 +51,7 @@ import { AdminNotifComponent } from './components/admin-notif/admin-notif.compon
 import { PublicationsComponent } from './components/publications/publications.component';
 import { UpdatePublicationsComponent } from './components/update-publications/update-publications.component';
 import { AdminPublicationsComponent } from './components/admin-publications/admin-publications.component';
+import { UpdateAdminPublicationsComponent } from './components/update-admin-publications/update-admin-publications.component';
 
 
 
@@ -84,7 +85,8 @@ import { AdminPublicationsComponent } from './components/admin-publications/admi
     AdminNotifComponent,
     PublicationsComponent,
     UpdatePublicationsComponent,
-    AdminPublicationsComponent
+    AdminPublicationsComponent,
+    UpdateAdminPublicationsComponent
     
   ],
   imports: [

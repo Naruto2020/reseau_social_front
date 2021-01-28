@@ -20,6 +20,7 @@ import {ProfilFormComponent} from './components/profil-form/profil-form.componen
 import {ProfilSetComponent} from './components/profil-set/profil-set.component';
 import {AdminNotifComponent} from './components/admin-notif/admin-notif.component';
 import {AdminPublicationsComponent} from './components/admin-publications/admin-publications.component';
+import {UpdateAdminPublicationsComponent} from './components/update-admin-publications/update-admin-publications.component';
 
 
 /***********************************************************************************
@@ -56,11 +57,12 @@ const routes: Routes = [
   {path:"accueil_admin", component:HomeAdminComponent,canActivate:[AuthGuard], data:['admin']},
   {path:"createProfils", component:AddProfilComponent},
   {path:"menu", component:MenuComponent,canActivate:[AuthGuard], data:['admin']},
-  {path:"profil/:username", component:ProfilComponent,canActivate:[AuthGuard], data:['admin']},
+  {path:"profil/:_id", component:ProfilComponent,canActivate:[AuthGuard], data:['admin']},
   {path:"profil-info", component:ProfilFormComponent,canActivate:[AuthGuard], data:['admin']},
   {path:"profil-info-img/:_id", component:ProfilSetComponent,canActivate:[AuthGuard], data:['admin']},
   {path:"admin-notifications", component:AdminNotifComponent,canActivate:[AuthGuard], data:['admin']},
   {path:"admin-publications", component:AdminPublicationsComponent,canActivate:[AuthGuard], data:['admin']},
+  {path:"updateAdmin-publications/:_id", component:UpdateAdminPublicationsComponent,canActivate:[AuthGuard], data:['admin']},
   
   /* *** *** gestion des routes Utilisateur *** *** */
   
