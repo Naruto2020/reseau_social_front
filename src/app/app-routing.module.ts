@@ -19,6 +19,7 @@ import {ProfilComponent} from './components/profil/profil.component';
 import {ProfilFormComponent} from './components/profil-form/profil-form.component';
 import {ProfilSetComponent} from './components/profil-set/profil-set.component';
 import {AdminNotifComponent} from './components/admin-notif/admin-notif.component';
+import {AdminPublicationsComponent} from './components/admin-publications/admin-publications.component';
 
 
 /***********************************************************************************
@@ -59,6 +60,7 @@ const routes: Routes = [
   {path:"profil-info", component:ProfilFormComponent,canActivate:[AuthGuard], data:['admin']},
   {path:"profil-info-img/:_id", component:ProfilSetComponent,canActivate:[AuthGuard], data:['admin']},
   {path:"admin-notifications", component:AdminNotifComponent,canActivate:[AuthGuard], data:['admin']},
+  {path:"admin-publications", component:AdminPublicationsComponent,canActivate:[AuthGuard], data:['admin']},
   
   /* *** *** gestion des routes Utilisateur *** *** */
   

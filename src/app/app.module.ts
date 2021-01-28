@@ -50,6 +50,7 @@ import { UserNotifComponent } from './components/user-notif/user-notif.component
 import { AdminNotifComponent } from './components/admin-notif/admin-notif.component';
 import { PublicationsComponent } from './components/publications/publications.component';
 import { UpdatePublicationsComponent } from './components/update-publications/update-publications.component';
+import { AdminPublicationsComponent } from './components/admin-publications/admin-publications.component';
 
 
 
@@ -82,7 +83,8 @@ import { UpdatePublicationsComponent } from './components/update-publications/up
     UserNotifComponent,
     AdminNotifComponent,
     PublicationsComponent,
-    UpdatePublicationsComponent
+    UpdatePublicationsComponent,
+    AdminPublicationsComponent
     
   ],
   imports: [
