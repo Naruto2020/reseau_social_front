@@ -118,6 +118,7 @@ export class UserHomeComponent implements OnInit {
       for(let i=0; i< newR.length; i++){
         console.log("yooo",newR[i][1].amis);
         let tab = newR[i][1].amis;
+        //this.pote = tab;
         this.userFoundload = newR[i][1].username;
         if(this.userDisplayName === this.userFoundload){
           for(let j=0; j<tab.length;j++){
@@ -163,6 +164,9 @@ export class UserHomeComponent implements OnInit {
       this.userFoundChoix = res["preferences"];
       this.userFoundNom = res["nom"];
       this.userFoundAmis = res["amis"];
+      for(let amigo of this.userFoundAmis){
+        this.pote = amigo;
+      }
       this.alert1 = true;
       return res;
     });
@@ -180,10 +184,11 @@ export class UserHomeComponent implements OnInit {
         let tab = newR[i];
         //console.log(tab);
         for(let j=0; j<tab.length; j++){
-          console.log(tab[j].loadBy);
+          console.log("verifions",tab[j].loadBy);
           let obj = tab[j];
           if(obj.loadBy === this.userFoundName){
             this.userFoundBack = obj.photo;
+            console.log("retro",this.userFoundBack);
           }
         }
       }

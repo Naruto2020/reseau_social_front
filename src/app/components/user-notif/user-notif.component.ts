@@ -66,6 +66,9 @@ export class UserNotifComponent implements OnInit {
       for(let i=0; i< newR.length; i++){
         //console.log("yooo",newR[i][1].amis);
         let tab = newR[i][1].amis;
+        for(let ami of tab){
+           this.pote = ami;
+        }
         this.userFoundload = newR[i][1].username;
         console.log("pseudo", this.userFoundload);
         //console.log(this.userDisplayName);
@@ -108,6 +111,22 @@ export class UserNotifComponent implements OnInit {
         
       }
     });
+  }
+
+  addAmis = new FormGroup({
+    //sendBy : new FormControl(""),
+    //acceptBy : new FormControl("")
+    amis: new FormControl("")
+  });
+
+  valid(){
+    console.log("valid1",this.pote);
+    console.log("valid2", this.userDisplayName);
+    this.bailService.addFriend(this.pote, this.addAmis.value).subscribe(res =>{
+      console.log("alors", res);
+      return res;
+    });
+
   }
 
   cancel(){
