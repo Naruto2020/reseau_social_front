@@ -36,6 +36,7 @@ export class HomeAdminComponent implements OnInit {
   userFoundBack;
   userFoundNom;
   userFoundload;
+  userFoundAmis;
 
 
   aProp1:string;
@@ -145,7 +146,11 @@ export class HomeAdminComponent implements OnInit {
       this.userFoundGenre = res["genre"];
       this.userFoundAbout = res["presentation"];
       this.userFoundChoix = res["preferences"];
-      this.userFoundNom = res["nom"]
+      this.userFoundNom = res["nom"];
+      this.userFoundAmis = res["amis"];
+      for(let amigo of this.userFoundAmis){
+        this.pote = amigo;
+      }
       this.alert1 = true;
       return res;
 

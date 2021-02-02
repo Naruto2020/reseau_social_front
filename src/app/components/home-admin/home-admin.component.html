@@ -47,9 +47,9 @@
 
           <input class="form-control mr-sm-2"  type="hidden" placeholder=" {{userDisplayName}} "  formControlName="amis"  ngModel="{{userDisplayName}}">
 
-          <div *ngIf="pote2 !== userFoundName ; else info">
+          <div *ngIf="pote !== userDisplayName ; else info">
               
-            <button class="btn btn-outline-success my-2 my-sm-0 val" type="submit"  (click)="demande()">+ {{pote1}} </button>
+            <button class="btn btn-outline-success my-2 my-sm-0 val btn1" type="submit"  (click)="demande()">+ </button>
           </div>
           <ng-template #info>
             <p>invitation reçue</p>
