@@ -140,7 +140,7 @@ export class BailService {
   }
   
   addFriend(nom, data){
-    return this.http.post(`${followUrl}/${nom}`, data);
+    return this.http.patch(`${followUrl}/${nom}`, data);
   }
 
   /********************************************************************

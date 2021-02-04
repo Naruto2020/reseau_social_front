@@ -44,7 +44,8 @@ export class UserHomeComponent implements OnInit {
   userFoundImg;
   userFoundBack;
   userFoundNom;
-  userFoundAmis;
+  userFoundPrenom;
+  userFoundfollowing;
   userFoundload;
 
   aProp1:string;
@@ -163,8 +164,9 @@ export class UserHomeComponent implements OnInit {
       this.userFoundAbout = res["presentation"];
       this.userFoundChoix = res["preferences"];
       this.userFoundNom = res["nom"];
-      this.userFoundAmis = res["amis"];
-      for(let amigo of this.userFoundAmis){
+      this.userFoundPrenom = res["prenom"]
+      this.userFoundfollowing = res["followings"];
+      for(let amigo of this.userFoundfollowing){
         this.pote = amigo;
       }
       this.alert1 = true;
@@ -223,12 +225,12 @@ export class UserHomeComponent implements OnInit {
   addAmis = new FormGroup({
     //sendBy : new FormControl(""),
     //acceptBy : new FormControl("")
-    amis: new FormControl("")
+    userToFollow: new FormControl("")
   });
   
   demande(){
     //console.log("verification ...",this.userDisplayName);
-    console.log(this.userFoundNom);
+    console.log(this.userFoundName);
     
     console.log(this.addAmis.value);
     /*this.bailService.addFriend(this.goToUser.get("nom").value, this.addAmis.get("amis").value).subscribe(res =>{
