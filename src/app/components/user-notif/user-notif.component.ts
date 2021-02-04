@@ -35,6 +35,7 @@ export class UserNotifComponent implements OnInit {
   userFoundload;
 
   pote;
+  alert1:boolean = true;
 
   listeImages:any;
   listeImagesPro:any;
@@ -64,13 +65,17 @@ export class UserNotifComponent implements OnInit {
       //console.log(Object.entries(res));
       // on boucle sur le nouveau tableau pour recupérer chaque UT 
       for(let i=0; i< newR.length; i++){
-        //console.log("yooo",newR[i][1].amis);
+        console.log("yooo",newR[i][1].amis);
         let tab = newR[i][1].amis;
         for(let ami of tab){
-           this.pote = ami;
+          console.log("see", ami);
+           if(ami === this.userDisplayName){
+             this.alert1 = false;
+           }
         }
+        this.userFoundNom = newR[i][1].nom; 
         this.userFoundload = newR[i][1].username;
-        console.log("pseudo", this.userFoundload);
+        console.log("nom", this.userFoundNom);
         //console.log(this.userDisplayName);
         if(this.userDisplayName === this.userFoundload){
           this.userFoundName = tab;
@@ -120,10 +125,11 @@ export class UserNotifComponent implements OnInit {
   });
 
   valid(){
-    console.log("valid1",this.pote);
+    console.log("valid1",this.userFoundNom);
     console.log("valid2", this.userDisplayName);
-    this.bailService.addFriend(this.pote, this.addAmis.value).subscribe(res =>{
+    this.bailService.addFriend(this.userFoundNom, this.addAmis.value).subscribe(res =>{
       console.log("alors", res);
+      this.compteur -= 1;
       return res;
     });
 

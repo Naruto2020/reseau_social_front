@@ -8,7 +8,9 @@ const adressH5 = "https://swapengin.herokuapp.com/comptes/reset";
 const adressH6 = "https://swapengin.herokuapp.com/comptes/forgotPassword";
 const adressH7 = "https://swapengin.herokuapp.com/comptes";
 const adressH8 = "https://swapengin.herokuapp.com";
-const adressH9 = "https://swapengin.herokuapp.com/comptes/messagePublic"
+const adressH9 = "https://swapengin.herokuapp.com/comptes/messagePublic";
+const adressH10 = "https://swapengin.herokuapp.com/comptes/follow";
+const adressH11 = "https://swapengin.herokuapp.com/comptes/unfollow";
 
 export const environment = {
   production: true,
@@ -21,5 +23,7 @@ export const environment = {
   emailPUrl: adressH6 || "https://127.0.0.1:3000/comptes/forgotPassword",
   searchUrl : adressH7 || "https://127.0.0.1:3000/comptes",
   siteUrl : adressH8 || "https://127.0.0.1:3000",
-  statusUrl : adressH9 || "https://127.0.0.1:3000/comptes/messagePublic"
+  statusUrl : adressH9 || "https://127.0.0.1:3000/comptes/messagePublic",
+  searchUrl1 : adressH10 || "https://127.0.0.1:3000/comptes/follow",
+  searchUrl2 : adressH11 || "https://127.0.0.1:3000/comptes/unfollow",
 };

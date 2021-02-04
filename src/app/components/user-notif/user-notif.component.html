@@ -31,14 +31,14 @@
         
         <td>
           <hr/>
-          {{amigo}} &nbsp;
+          {{amigo}}&nbsp;
 
           <form [formGroup]="addAmis">
             <input class="form-control mr-sm-2"  type="hidden" placeholder=" {{userDisplayName}} "  formControlName="amis"  ngModel="{{userDisplayName}}">
 
           </form>
                 
-            <button type="submit" value="Enregistrer" class="btn btn-primary statu" (click)="valid()">Confirmer</button>            
+            <button *ngIf="alert1" type="submit" value="Enregistrer" class="btn btn-primary statu" (click)="valid()">Confirmer</button>            
             <button type="submit" value="supprimer" class="btn btn-secondary statu" (click)="cancel()">supprimer</button>
           
           

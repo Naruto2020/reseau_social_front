@@ -14,7 +14,9 @@ const forgotPUrl = environment.emailPUrl;
 const photoUrl = environment.picUrl;
 const photoUrl1 = environment.picUrl1;
 const amisUrl = environment.searchUrl;
-const postUrl = environment.statusUrl
+const postUrl = environment.statusUrl;
+const followUrl = environment.searchUrl1;
+const unfollowUrl = environment.searchUrl2;
 
 @Injectable({
   providedIn: 'root'
@@ -138,7 +140,7 @@ export class BailService {
   }
   
   addFriend(nom, data){
-    return this.http.post(`${amisUrl}/${nom}`, data);
+    return this.http.post(`${followUrl}/${nom}`, data);
   }
 
   /********************************************************************
