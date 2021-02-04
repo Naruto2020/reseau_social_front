@@ -117,8 +117,8 @@ export class UserHomeComponent implements OnInit {
       //console.log(Object.entries(res));
       // on boucle sur le nouveau tableau pour recupérer chaque UT 
       for(let i=0; i< newR.length; i++){
-        console.log("yooo",newR[i][1].amis);
-        let tab = newR[i][1].amis;
+        console.log("yooo",newR[i][1].followings);
+        let tab = newR[i][1].followings;
         //this.pote = tab;
         this.userFoundload = newR[i][1].username;
         if(this.userDisplayName === this.userFoundload){
