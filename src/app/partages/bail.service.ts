@@ -139,8 +139,8 @@ export class BailService {
     return this.http.get(`${amisUrl}/${nom}`);
   }
   
-  addFriend(nom, data){
-    return this.http.patch(`${followUrl}/${nom}`, data);
+  addFriend(username, data){
+    return this.http.patch(`${followUrl}/${username}`, data);
   }
 
   /********************************************************************
