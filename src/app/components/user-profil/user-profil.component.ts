@@ -37,6 +37,8 @@ export class UserProfilComponent implements OnInit {
   majTof:string;
 
   userFoundload;
+  userFoundName;
+  userFoundFol;
   userpostes;
  
 
@@ -123,10 +125,19 @@ export class UserProfilComponent implements OnInit {
       //console.log(Object.entries(res));
       for(let i=0; i< newR.length; i++){
         let tabA = newR[i][1].followers;
+        let tab1 = newR[i][1].followings;
         this.userFoundload = newR[i][1].username;
         if(this.userDisplayName === this.userFoundload){
+          this.userFoundName = tabA;
+          this.userFoundFol = tab1;
           for(let j=0; j<tabA.length;j++){
             this.compteur += 1;
+            for(let k=0; k<tab1.length; k++){
+              if(tab1[k] === tabA[j]){
+                this.compteur -=1;
+                
+              }
+            }
           }
 
         }

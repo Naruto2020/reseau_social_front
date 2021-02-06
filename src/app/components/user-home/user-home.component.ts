@@ -49,6 +49,8 @@ export class UserHomeComponent implements OnInit {
   userFoundfollowers;
   userFoundload;
   userFoundID;
+  userFollowers;
+  userFollowings;
 
   aProp1:string;
   aProp2:string;
@@ -122,16 +124,33 @@ export class UserHomeComponent implements OnInit {
         console.log("yooo",newR[i][1].followers);
         //console.log("yaa",newR[i][1]._id);
         let tab = newR[i][1].followers;
+        let tab0 = newR[i][1].followings;
         let tab1 = newR[i][1]._id;
+        // on parcour les tableau followers et followings 
+        /*for(let owers of tab){
+          this.userFollowers = owers;
+        }
+        for(let owings of tab0){
+          this.userFollowings = owings;
+        }*/
+        this.userFollowers = tab;
+        this.userFollowings = tab0;
         //this.pote = tab;
         this.userFoundload = newR[i][1].username;
         console.log("yel", this.userFoundload);
 
         if(this.userDisplayName === this.userFoundload){
+         // this.userFollowers = tab;
+          //this.userFollowings = tab0;
           this.userDisplayId = tab1;
           console.log("re",this.userDisplayId);
           for(let j=0; j<tab.length;j++){
             this.compteur +=1; 
+            for(let k=0; k<tab0.length; k++){
+              if(tab0[k] === tab[j]){
+                this.compteur -=1;
+              }
+            }
   
           }
 
@@ -251,15 +270,11 @@ export class UserHomeComponent implements OnInit {
     //console.log(this.userFoundNom);
     //console.log("falala ...",this.addAmis.get(this.addAmis.get("amis").value));
     //this.route.navigate["/nom"];
-    this.bailService.addFriend(this.userFoundID, this.addAmis.value).subscribe(res =>{
+    this.bailService.addFriend(this.userDisplayId, this.addAmis.value).subscribe(res =>{
       console.log(res);
       return res;
     });
 
-    
-    /*this.bailService.ajoutAmis(this.addAmis.value).subscribe(res =>{
-      console.log(res);
-    });*/
 
   }
 

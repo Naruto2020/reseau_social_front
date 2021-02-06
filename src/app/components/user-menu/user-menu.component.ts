@@ -45,10 +45,16 @@ export class UserMenuComponent implements OnInit {
           for(let i=0; i< newR.length; i++){
             console.log("yooo",newR[i][1].followers);
             let tab = newR[i][1].followers;
+            let tab1 = newR[i][1].followings;
             this.userFoundload = newR[i][1].username;
             if(this.userDisplayName === this.userFoundload){
               for(let j=0; j<tab.length;j++){
-                this.compteur +=1; 
+                this.compteur +=1;
+                for(let k=0; k<tab1.length; k++){
+                  if(tab1[k] === tab[j]){
+                    this.compteur -=1;
+                  }
+                } 
       
               }
     

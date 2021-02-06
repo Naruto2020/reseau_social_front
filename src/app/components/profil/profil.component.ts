@@ -46,8 +46,16 @@ export class ProfilComponent implements OnInit {
 
   userDisplayName:string = "";
   userFoundload;
+  userFoundName;
+  userFoundFol;
 
   addImage = new FormGroup({
+    _id : new FormControl(""),
+    photo : new FormControl(""),
+    loadBy : new FormControl("")
+  });
+
+  addImagePro = new FormGroup({
     _id : new FormControl(""),
     photo : new FormControl(""),
     loadBy : new FormControl("")
@@ -116,11 +124,20 @@ export class ProfilComponent implements OnInit {
       //console.log("new ...",newR);
       //console.log(Object.entries(res));
       for(let i=0; i< newR.length; i++){
-        let tabA = newR[i][1].amis;
+        let tabA = newR[i][1].followers;
+        let tab1 = newR[i][1].followings;
         this.userFoundload = newR[i][1].username;
         if(this.userDisplayName === this.userFoundload){
+          this.userFoundName = tabA;
+          this.userFoundFol = tab1;
           for(let j=0; j<tabA.length;j++){
             this.compteur += 1;
+            for(let k=0; k<tab1.length; k++){
+              if(tab1[k] === tabA[j]){
+                this.compteur -=1;
+                
+              }
+            }
           }
 
         }
@@ -187,14 +204,15 @@ export class ProfilComponent implements OnInit {
       
     }
 
+    formData1 = new FormData();
     chargement1(){
-      this.formData.append("photo",this.images);
-      this.formData.append("loadBy", localStorage.getItem("loggedUser"));
-      this.bailService.uploadImage(this.formData).subscribe(res =>{
-        console.log(res["photo"]);
+      this.formData1.append("photo",this.images);
+      this.formData1.append("loadBy", localStorage.getItem("loggedUser"));
+      this.bailService.uploadImage(this.formData1).subscribe(res =>{
+        //console.log("Profil",res["photo"]);
         this.alert1 = false;
         this.url1 = `${this.imgSite}/${res["photo"]}`;
-        console.log(this.url1);
+        //console.log(this.url1);
         return res;
       });
     }

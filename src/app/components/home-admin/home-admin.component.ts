@@ -23,6 +23,7 @@ export class HomeAdminComponent implements OnInit {
   classActive = 'active';
   userDisplayName:string = "";
   userDisName:string = "";
+  userDisplayId;
 
   alert1:boolean = false;
   compteur = 0;
@@ -36,7 +37,11 @@ export class HomeAdminComponent implements OnInit {
   userFoundBack;
   userFoundNom;
   userFoundload;
-  userFoundAmis;
+  userFoundPrenom;
+  userFoundfollowers;
+  userFoundID;
+  userFollowers;
+  userFollowings;
 
 
   aProp1:string;
@@ -53,10 +58,18 @@ export class HomeAdminComponent implements OnInit {
   listeImagesPro:any;
   listesProfils:any;
   listesPoste:any;
+  friend:any;
 
 
   goToUser = new FormGroup({
     nom : new FormControl(''),
+  });
+
+  partage = new FormGroup({
+    message : new FormControl(""),
+    date : new FormControl(""),
+    commentaires : new FormControl(""),
+    loadBy: new FormControl(""),
   });
 
   constructor(private bailService:BailService, private route: Router, private router : ActivatedRoute) {
@@ -101,12 +114,36 @@ export class HomeAdminComponent implements OnInit {
       //console.log(Object.entries(res));
       // on boucle sur le nouveau tableau pour recupérer chaque UT 
       for(let i=0; i< newR.length; i++){
-        console.log("yooo",newR[i][1].amis);
-        let tab = newR[i][1].amis;
+        console.log("yooo",newR[i][1].followers);
+        //console.log("yaa",newR[i][1]._id);
+        let tab = newR[i][1].followers;
+        let tab0 = newR[i][1].followings;
+        let tab1 = newR[i][1]._id;
+        // on parcour les tableau followers et followings 
+        /*for(let owers of tab){
+          this.userFollowers = owers;
+        }
+        for(let owings of tab0){
+          this.userFollowings = owings;
+        }*/
+        this.userFollowers = tab;
+        this.userFollowings = tab0;
+        //this.pote = tab;
         this.userFoundload = newR[i][1].username;
+        console.log("yel", this.userFoundload);
+
         if(this.userDisplayName === this.userFoundload){
+         // this.userFollowers = tab;
+          //this.userFollowings = tab0;
+          this.userDisplayId = tab1;
+          console.log("re",this.userDisplayId);
           for(let j=0; j<tab.length;j++){
             this.compteur +=1; 
+            for(let k=0; k<tab0.length; k++){
+              if(tab0[k] === tab[j]){
+                this.compteur -=1;
+              }
+            }
   
           }
 
@@ -147,8 +184,11 @@ export class HomeAdminComponent implements OnInit {
       this.userFoundAbout = res["presentation"];
       this.userFoundChoix = res["preferences"];
       this.userFoundNom = res["nom"];
-      this.userFoundAmis = res["amis"];
-      for(let amigo of this.userFoundAmis){
+      this.userFoundPrenom = res["prenom"]
+      this.userFoundfollowers = res["followers"];
+      this.userFoundID = res["_id"];
+      console.log("top",this.userFoundID);
+      for(let amigo of this.userFoundfollowers){
         this.pote = amigo;
       }
       this.alert1 = true;
@@ -207,13 +247,13 @@ export class HomeAdminComponent implements OnInit {
   addAmis = new FormGroup({
     //sendBy : new FormControl(""),
     //acceptBy : new FormControl("")
-    amis: new FormControl("")
+    idToFollow: new FormControl("")
   });
 
 
   demande(){
     //console.log("verification ...",this.userDisplayName);
-    console.log(this.userFoundNom);
+    console.log(this.userFoundID);
     
     console.log(this.addAmis.value);
     /*this.bailService.addFriend(this.goToUser.get("nom").value, this.addAmis.get("amis").value).subscribe(res =>{
@@ -224,14 +264,11 @@ export class HomeAdminComponent implements OnInit {
     //console.log(this.userFoundNom);
     //console.log("falala ...",this.addAmis.get(this.addAmis.get("amis").value));
     //this.route.navigate["/nom"];
-    this.bailService.addFriend(this.userFoundNom, this.addAmis.value).subscribe(res =>{
+    this.bailService.addFriend(this.userDisplayId, this.addAmis.value).subscribe(res =>{
       console.log(res);
       return res;
     });
 
-    /*this.bailService.ajoutAmis(this.addAmis.value).subscribe(res =>{
-      console.log(res);
-    });*/
 
   }
 

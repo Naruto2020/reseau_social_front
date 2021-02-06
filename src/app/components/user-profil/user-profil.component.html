@@ -76,23 +76,33 @@
   
       </div>
       <br/><br/>
-      
-  
-      <!-- <ul>
-        <li *ngFor="let pro of listesProfils">
-          <span *ngIf="userDisplayName == pro.username"> <a href=""><img src="../../../assets/images/genre.png"alt="#"></a>&nbsp; {{pro.genre}}</span> <br/> <br/>
-          <span *ngIf="userDisplayName == pro.username"> <a href=""><img src="../../../assets/images/aniv.png"alt="#"></a> &nbsp;  {{pro.age}}</span> <br/> <br/>
-          <span *ngIf="userDisplayName == pro.username"> <a href=""><img src="../../../assets/images/preferences.jpg" alt="#"></a>&nbsp; {{pro.preferences}}</span> <br/> <br/>
-          <span *ngIf="userDisplayName == pro.username"> <a href=""><img src="../../../assets/images/speech.png"alt="#"></a>&nbsp; {{pro.presentation}}</span> <br/> <br/>
-        </li>
-      </ul> -->
         
-      <div>
+      <div class="amigo">
         <h2>mes Amis</h2>
-        
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur culpa numquam possimus id
-        </p>
+        <i
+        routerLink=""
+        class="fa fa-edit"
+        style="font-size: 20px; color: grey"
+        ></i>
+        <tr *ngFor="let amigo of userFoundName | slice : - 3, let i = index">
+          <td>
+            <div *ngFor="let ami of userFoundFol |slice : -3">
+              <div *ngIf="ami === amigo">
+                <div *ngFor="let user of listesProfils | slice : - 3">
+                  <div *ngIf="amigo === user._id" class="dispo">
+                     <strong>{{user.username}}</strong>
+      
+                  </div>
+      
+                </div>
+  
+              </div>
+  
+            </div>
+
+          </td>
+
+        </tr>
   
       </div>
   
@@ -108,7 +118,12 @@
         <a routerLink="/profil-user-infoImg/:_id"> <img src="../../../assets/images/maj.jpg" alt=""></a> 
       </div> -->  
       <div class="maj1"> 
-        <a routerLink="/profil-user-infoImg/:_id"> <img src="../../../assets/images/maj.jpg" alt=""></a> 
+        <!--<a routerLink="/profil-user-infoImg/:_id"> <img src="../../../assets/images/maj.jpg" alt=""></a>--> 
+        <i
+        routerLink="/profil-user-infoImg/:_id"
+        class="fa fa-edit"
+        style="font-size: 20px; color: grey"
+        ></i>
       </div>  
       <ul class="album">
         <li *ngFor="let img of listeImages">

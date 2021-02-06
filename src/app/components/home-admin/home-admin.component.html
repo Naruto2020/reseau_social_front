@@ -45,17 +45,10 @@
         <h2>A propos</h2>
         <form [formGroup]="addAmis">
 
-          <input class="form-control mr-sm-2"  type="hidden" placeholder=" {{userDisplayName}} "  formControlName="amis"  ngModel="{{userDisplayName}}">
+          <input class="form-control mr-sm-2"  type="hidden" placeholder=" {{userFoundID}} "  formControlName="idToFollow"  ngModel="{{userFoundID}}"> 
+          
+          <button class="btn btn-outline-info my-2 my-sm-0 btn1" type="submit"  (click)="demande()">+</button>
 
-          <div *ngIf="pote !== userDisplayName ; else info">
-              
-            <button class="btn btn-outline-success my-2 my-sm-0 val btn1" type="submit"  (click)="demande()">+ </button>
-          </div>
-          <ng-template #info>
-            <p>invitation reçue</p>
-            <button class="btn btn-outline-info my-2 my-sm-0 btn2">valider</button>
-            <button class="btn btn-outline-info my-2 my-sm-0 btn3">annuler</button>
-          </ng-template>
         </form>
 
 

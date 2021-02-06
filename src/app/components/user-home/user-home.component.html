@@ -40,20 +40,12 @@
       <div class=" presentation">
         <div class="about">
 
-          <h2>A propos</h2>
+          <h2>A propos </h2>
           <form [formGroup]="addAmis">
 
-            <input class="form-control mr-sm-2"  type="hidden" placeholder=" {{userDisplayId}} "  formControlName="idToFollow"  ngModel="{{userDisplayId}}">
-              
-              <div *ngIf="pote != userDisplayName; else info">
-
-                <button class="btn btn-outline-info my-2 my-sm-0 btn1" type="submit"  (click)="demande()"> +</button>
-              </div>
-              <ng-template #info>
-                <p class="mess">invitation envoyée</p>
-                <button class="btn btn-outline-info my-2 my-sm-0 btn2">valider</button>
-                <button class="btn btn-outline-info my-2 my-sm-0 btn3">annuler</button>
-              </ng-template> 
+            <input class="form-control mr-sm-2"  type="hidden" placeholder=" {{userFoundID}} "  formControlName="idToFollow"  ngModel="{{userFoundID}}"> 
+            
+            <button class="btn btn-outline-info my-2 my-sm-0 btn1" type="submit"  (click)="demande()">+</button>
 
           </form>
             
@@ -94,7 +86,7 @@
   </div>
   <br/>
   <div>
-    <h1> Les publications</h1>
+    <h1> Les publications </h1>
     <tr *ngFor="let post of listesPoste">
       <td>
         <hr/>

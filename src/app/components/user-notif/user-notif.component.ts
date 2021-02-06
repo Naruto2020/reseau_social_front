@@ -68,6 +68,7 @@ export class UserNotifComponent implements OnInit {
       for(let i=0; i< newR.length; i++){
         console.log("yooo",newR[i][1].followers);
         let tab = newR[i][1].followers;
+        let tab1 = newR[i][1].followings;
         let tabID = newR[i][1]._id;
 
         //const index = tab.indexOf(tabID);
@@ -83,14 +84,19 @@ export class UserNotifComponent implements OnInit {
         //console.log(this.userDisplayName);
         if(this.userDisplayName === this.userFoundload){
           this.userFoundName = tab;
+          this.userFoundFol = tab1;
           this.userFoundId = tabID;
           //console.log("wath...",this.userFoundName);
           //console.log("id**", tabID);
           // gestion du compteur des notifications 
           for(let j=0; j<tab.length;j++){
             this.compteur +=1;    
-            this.userFoundFol = tab[j];
-            console.log("indiv",this.userFoundFol);
+            console.log("indiv",tab[j]);
+            for(let k=0; k<tab1.length; k++){
+              if(tab1[k] === tab[j]){
+                this.compteur -=1;
+              }
+            }
             //console.log("tsuip", this.userDisplayName);
             //console.log("isolaaaaa",this.userFoundName);
           }
@@ -128,13 +134,20 @@ export class UserNotifComponent implements OnInit {
   addAmis = new FormGroup({
     //sendBy : new FormControl(""),
     //acceptBy : new FormControl("")
+    idToFollow: new FormControl("")
+  });
+  pullAmis = new FormGroup({
+    //sendBy : new FormControl(""),
+    //acceptBy : new FormControl("")
     idToUnFollow: new FormControl("")
   });
 
   valid(){
-    console.log("valid1",this.userFoundNom);
-    console.log("valid2", this.userDisplayName);
-    this.bailService.addFriend(this.userFoundNom, this.addAmis.value).subscribe(res =>{
+    console.log(this.userFoundId);
+    
+    console.log(this.addAmis.value);
+    
+    this.bailService.addFriend(this.userFoundId, this.addAmis.value).subscribe(res =>{
       console.log("alors", res);
       this.compteur -= 1;
       return res;
@@ -143,7 +156,7 @@ export class UserNotifComponent implements OnInit {
   }
 
   cancel(){
-    this.bailService.cancelFriend(this.userFoundId, this.addAmis.value).subscribe(res =>{
+    this.bailService.cancelFriend(this.userFoundId, this.pullAmis.value).subscribe(res =>{
 
       console.log(res);
       return res;
