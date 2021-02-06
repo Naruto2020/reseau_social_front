@@ -43,7 +43,7 @@
           <h2>A propos</h2>
           <form [formGroup]="addAmis">
 
-            <input class="form-control mr-sm-2"  type="hidden" placeholder=" {{userDisplayName}} "  formControlName="userToFollow"  ngModel="{{userDisplayName}}">
+            <input class="form-control mr-sm-2"  type="hidden" placeholder=" {{userDisplayId}} "  formControlName="idToFollow"  ngModel="{{userDisplayId}}">
               
               <div *ngIf="pote != userDisplayName; else info">
 
@@ -94,7 +94,7 @@
   </div>
   <br/>
   <div>
-    <h2>Les publications </h2>
+    <h1> Les publications</h1>
     <tr *ngFor="let post of listesPoste">
       <td>
         <hr/>

@@ -43,8 +43,8 @@ export class UserMenuComponent implements OnInit {
           //console.log(Object.entries(res));
           // on boucle sur le nouveau tableau pour recupérer chaque UT 
           for(let i=0; i< newR.length; i++){
-            console.log("yooo",newR[i][1].amis);
-            let tab = newR[i][1].amis;
+            console.log("yooo",newR[i][1].followers);
+            let tab = newR[i][1].followers;
             this.userFoundload = newR[i][1].username;
             if(this.userDisplayName === this.userFoundload){
               for(let j=0; j<tab.length;j++){

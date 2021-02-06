@@ -1,3 +1,4 @@
+import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
@@ -52,6 +53,7 @@ import { PublicationsComponent } from './components/publications/publications.co
 import { UpdatePublicationsComponent } from './components/update-publications/update-publications.component';
 import { AdminPublicationsComponent } from './components/admin-publications/admin-publications.component';
 import { UpdateAdminPublicationsComponent } from './components/update-admin-publications/update-admin-publications.component';
+import {CustomHttpInterceptorService} from './partages/custom-http-interceptor.service';
 
 
 
@@ -106,7 +108,7 @@ import { UpdateAdminPublicationsComponent } from './components/update-admin-publ
     MaterialFileInputModule,
     //SocketIoModule.forRoot(config)
   ],
-  providers: [],
+  providers: [ {provide: HTTP_INTERCEPTORS, useClass: CustomHttpInterceptorService, multi: true},],
   bootstrap: [AppComponent],
   schemas : [CUSTOM_ELEMENTS_SCHEMA ]
 })

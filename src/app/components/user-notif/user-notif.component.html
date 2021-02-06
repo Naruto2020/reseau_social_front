@@ -27,22 +27,25 @@
           <br/> 
 
       </div> -->
-      <tr *ngFor="let amigo of userFoundName">
+      <tr *ngFor="let amigo of userFoundName, let i = index">
         
         <td>
-          <hr/>
-          {{amigo}}&nbsp;
+          <div *ngFor="let user of listesProfils">
 
-          <form [formGroup]="addAmis">
-            <input class="form-control mr-sm-2"  type="hidden" placeholder=" {{userDisplayName}} "  formControlName="amis"  ngModel="{{userDisplayName}}">
+            <span *ngIf="amigo === user._id">
+              {{user.username}}
+    
+              <form [formGroup]="addAmis">
+                <div>
+                  <input class="form-control mr-sm-2"  type="" placeholder=" {{amigo}} " formControlName="idToUnFollow"  ngModel="{{amigo}}">
 
-          </form>
-                
-            <button *ngIf="alert1" type="submit" value="Enregistrer" class="btn btn-primary statu" (click)="valid()">Confirmer</button>            
-            <button type="submit" value="supprimer" class="btn btn-secondary statu" (click)="cancel()">supprimer</button>
-          
-          
-
+                </div>
+                <button *ngIf="alert1" type="submit" value="Enregistrer" class="btn btn-primary statu" (click)="valid()">Confirmer</button>   &nbsp;         
+                <button type="submit" value="supprimer" class="btn btn-secondary statu" (click)="cancel()">supprimer</button>
+              </form>
+              <hr/>
+            </span>
+          </div>
         </td>
       </tr>
     </div>

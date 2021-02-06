@@ -30,6 +30,7 @@ export class UserHomeComponent implements OnInit {
   classActive = 'active';
   userDisplayName:string = "";
   userDisName:string = "";
+  userDisplayId;
 
   alert1:boolean = false;
   alert2:boolean = false;
@@ -45,8 +46,9 @@ export class UserHomeComponent implements OnInit {
   userFoundBack;
   userFoundNom;
   userFoundPrenom;
-  userFoundfollowing;
+  userFoundfollowers;
   userFoundload;
+  userFoundID;
 
   aProp1:string;
   aProp2:string;
@@ -117,11 +119,17 @@ export class UserHomeComponent implements OnInit {
       //console.log(Object.entries(res));
       // on boucle sur le nouveau tableau pour recupérer chaque UT 
       for(let i=0; i< newR.length; i++){
-        console.log("yooo",newR[i][1].followings);
-        let tab = newR[i][1].followings;
+        console.log("yooo",newR[i][1].followers);
+        //console.log("yaa",newR[i][1]._id);
+        let tab = newR[i][1].followers;
+        let tab1 = newR[i][1]._id;
         //this.pote = tab;
         this.userFoundload = newR[i][1].username;
+        console.log("yel", this.userFoundload);
+
         if(this.userDisplayName === this.userFoundload){
+          this.userDisplayId = tab1;
+          console.log("re",this.userDisplayId);
           for(let j=0; j<tab.length;j++){
             this.compteur +=1; 
   
@@ -165,8 +173,10 @@ export class UserHomeComponent implements OnInit {
       this.userFoundChoix = res["preferences"];
       this.userFoundNom = res["nom"];
       this.userFoundPrenom = res["prenom"]
-      this.userFoundfollowing = res["followings"];
-      for(let amigo of this.userFoundfollowing){
+      this.userFoundfollowers = res["followers"];
+      this.userFoundID = res["_id"];
+      console.log("top",this.userFoundID);
+      for(let amigo of this.userFoundfollowers){
         this.pote = amigo;
       }
       this.alert1 = true;
@@ -225,12 +235,12 @@ export class UserHomeComponent implements OnInit {
   addAmis = new FormGroup({
     //sendBy : new FormControl(""),
     //acceptBy : new FormControl("")
-    userToFollow: new FormControl("")
+    idToFollow: new FormControl("")
   });
   
   demande(){
     //console.log("verification ...",this.userDisplayName);
-    console.log(this.userFoundName);
+    console.log(this.userFoundID);
     
     console.log(this.addAmis.value);
     /*this.bailService.addFriend(this.goToUser.get("nom").value, this.addAmis.get("amis").value).subscribe(res =>{
@@ -241,7 +251,7 @@ export class UserHomeComponent implements OnInit {
     //console.log(this.userFoundNom);
     //console.log("falala ...",this.addAmis.get(this.addAmis.get("amis").value));
     //this.route.navigate["/nom"];
-    this.bailService.addFriend(this.userFoundNom, this.addAmis.value).subscribe(res =>{
+    this.bailService.addFriend(this.userFoundID, this.addAmis.value).subscribe(res =>{
       console.log(res);
       return res;
     });

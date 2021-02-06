@@ -139,8 +139,16 @@ export class BailService {
     return this.http.get(`${amisUrl}/${nom}`);
   }
   
-  addFriend(username, data){
+  /*addFriend(username, data){
     return this.http.patch(`${followUrl}/${username}`, data);
+  }*/
+  addFriend(id, data){
+    let headers = new HttpHeaders({ 'Access-Control-Allow-Origin': '*','Access-Control-Allow-Methods': 'OPTIONS,POST,GET,PATCH','content-type': 'application/json'}  )
+    return this.http.patch(`http://127.0.0.1:3000/comptes/users/follow/${id}`, data, {'headers':headers});
+  }
+  cancelFriend(id,data):Observable<any>{
+    let headers = new HttpHeaders({ 'Access-Control-Allow-Origin': '*','Access-Control-Allow-Methods': 'OPTIONS,POST,GET,PATCH','content-type': 'application/json'}  )
+    return this.http.patch(`http://127.0.0.1:3000/comptes/users/unfollow/${id}`, data, {'headers':headers})
   }
 
   /********************************************************************

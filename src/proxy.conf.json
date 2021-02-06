@@ -1,6 +1,6 @@
 {
     "/api/*": {
-        "target":  "https://swapengin.herokuapp.com/comptes/users",
+        "target":  "http://127.0.0.1:3000/comptes/users",
         "secure": false,
         "logLevel": "debug"
     }

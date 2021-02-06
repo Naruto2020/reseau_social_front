@@ -31,7 +31,8 @@ export class UserNotifComponent implements OnInit {
   userFoundImgA;
   userFoundBack;
   userFoundNom;
-  userFoundAmis;
+  userFoundId;
+  userFoundFol;
   userFoundload;
 
   pote;
@@ -65,25 +66,31 @@ export class UserNotifComponent implements OnInit {
       //console.log(Object.entries(res));
       // on boucle sur le nouveau tableau pour recupérer chaque UT 
       for(let i=0; i< newR.length; i++){
-        console.log("yooo",newR[i][1].amis);
-        let tab = newR[i][1].amis;
-        for(let ami of tab){
-          console.log("see", ami);
+        console.log("yooo",newR[i][1].followers);
+        let tab = newR[i][1].followers;
+        let tabID = newR[i][1]._id;
+
+        //const index = tab.indexOf(tabID);
+        /*for(let ami of tab){
+          console.log("see",ami);
            if(ami === this.userDisplayName){
              this.alert1 = false;
            }
-        }
+        }*/
         this.userFoundNom = newR[i][1].nom; 
         this.userFoundload = newR[i][1].username;
         console.log("nom", this.userFoundNom);
         //console.log(this.userDisplayName);
         if(this.userDisplayName === this.userFoundload){
           this.userFoundName = tab;
-          console.log("wath...",this.userFoundName);
+          this.userFoundId = tabID;
+          //console.log("wath...",this.userFoundName);
+          //console.log("id**", tabID);
           // gestion du compteur des notifications 
           for(let j=0; j<tab.length;j++){
             this.compteur +=1;    
-            //console.log("indiv",tab[j]);
+            this.userFoundFol = tab[j];
+            console.log("indiv",this.userFoundFol);
             //console.log("tsuip", this.userDisplayName);
             //console.log("isolaaaaa",this.userFoundName);
           }
@@ -121,7 +128,7 @@ export class UserNotifComponent implements OnInit {
   addAmis = new FormGroup({
     //sendBy : new FormControl(""),
     //acceptBy : new FormControl("")
-    amis: new FormControl("")
+    idToUnFollow: new FormControl("")
   });
 
   valid(){
@@ -136,7 +143,11 @@ export class UserNotifComponent implements OnInit {
   }
 
   cancel(){
-    
+    this.bailService.cancelFriend(this.userFoundId, this.addAmis.value).subscribe(res =>{
+
+      console.log(res);
+      return res;
+    });
     
   }
 }

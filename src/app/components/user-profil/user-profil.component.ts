@@ -122,7 +122,7 @@ export class UserProfilComponent implements OnInit {
       //console.log("new ...",newR);
       //console.log(Object.entries(res));
       for(let i=0; i< newR.length; i++){
-        let tabA = newR[i][1].amis;
+        let tabA = newR[i][1].followers;
         this.userFoundload = newR[i][1].username;
         if(this.userDisplayName === this.userFoundload){
           for(let j=0; j<tabA.length;j++){
