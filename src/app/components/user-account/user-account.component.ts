@@ -53,10 +53,10 @@ export class UserAccountComponent implements OnInit {
   }
 
      //creation du fomulaire et ajout des valeurs saisies par l'utilisateur 
-   //formData = new FormData();
+   formData = new FormData();
    soumettre(){  
-    //this.formData.append("photo", this.images);
-   /* this.formData.append("nom", this.addProfil.get('nom').value);
+    this.formData.append("photo", this.images);
+    this.formData.append("nom", this.addProfil.get('nom').value);
     this.formData.append("prenom", this.addProfil.get('prenom').value);
     this.formData.append("pseudo", this.addProfil.get('pseudo').value);
     this.formData.append("mail", this.addProfil.get('mail').value);
@@ -66,7 +66,7 @@ export class UserAccountComponent implements OnInit {
     this.formData.append("genre", this.addProfil.get('genre').value);
     this.formData.append("preferences", this.addProfil.get('preferences').value);
     this.formData.append("niveau", this.addProfil.get('niveau').value);
-    this.formData.append("presentation", this.addProfil.get('presentation').value);*/
+    this.formData.append("presentation", this.addProfil.get('presentation').value);
     //console.log(this.formData);
 
     // gestion de la validation des champs
@@ -94,7 +94,7 @@ export class UserAccountComponent implements OnInit {
     }*/
 
     //recupération de l'observable et souscription au services pour afficher la liste
-    this.bailService.createProfil(this.addProfil.value).subscribe((res)=>{
+    this.bailService.createProfil(this.formData).subscribe((res)=>{
       
       // on affiche la l'alerte si tout est ok 
       this.alert = true;
