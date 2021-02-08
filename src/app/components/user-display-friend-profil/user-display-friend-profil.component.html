@@ -2,7 +2,7 @@
 
     <div class="jumbotron">
         
-        <button type="button" class="btn btn-info" routerLink="/user-display-friends" >Retour</button>
+        <button type="button" class="btn btn-info retour" routerLink="/user-display-friends" >Retour</button>
         <div class="col-12 pt-1 head">
               
           <a class="text" routerLink="/profil-user/:_id"> <img src="../../../assets/images/profil.png" alt="#" /> {{titre}} <br/> {{friendName}}</a>
@@ -10,10 +10,13 @@
         </div>
     
     </div>
-    <div class="back"> <img [src]="url" alt="#" ></div>
+    <div class="back"> <img [src]="url" alt="" ></div>
+    <div class="camera1"> <a routerLink="/profil-user/:{{userDisplayName}}"><img src="../../../assets/images/camera.jpg" alt="logo caméra"></a></div>
   
-    <div class="imgProfil"> <img [src]="url" alt="#"/> </div>
-
+    <div class="imgProfil"> <img [src]="url" alt=""/> </div>
+    <div class="camera2"> <a routerLink="/profil-user/:{{userDisplayName}}"> <img src="../../../assets/images/camera.jpg" alt="logo caméra"></a> </div>
+    <br/> <br/> <br/> <br/>
+    <div>
       <form [formGroup]="addImage" *ngIf="alert">
         <div class="form-group">
           <label for="exampleFormControlFile1"></label>
@@ -30,6 +33,7 @@
     <div>
       <h1>{{friendName}}</h1>
     </div> 
+    <br>
   
     <div class="container presentation">
       <div>
@@ -63,10 +67,10 @@
           </td>
 
         </tr>
-    </div>
+      </div>
 
-    <br/><br/>
-  
+      <br/><br/>
+    </div>
     <div class="container images">     
       <h2>Mes photos</h2>
       <br/><br/> 
@@ -95,7 +99,7 @@
     <div class="container">
       <h2>Les publications </h2>
       <tr *ngFor="let post of listesPoste">
-        <td *ngIf="userDisplayName === post.loadBy">
+        <td *ngIf="friendName === post.loadBy">
           <hr/>
           {{post.message}} &nbsp;  &nbsp; &nbsp;       
 
