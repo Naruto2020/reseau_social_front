@@ -58,9 +58,9 @@ export class UserAccountComponent implements OnInit {
     this.formData.append("photo", this.images);
     this.formData.append("nom", this.addProfil.get('nom').value);
     this.formData.append("prenom", this.addProfil.get('prenom').value);
-    this.formData.append("pseudo", this.addProfil.get('pseudo').value);
+    this.formData.append("username", this.addProfil.get('username').value);
     this.formData.append("mail", this.addProfil.get('mail').value);
-    this.formData.append("mdp", this.addProfil.get('mdp').value);
+    this.formData.append("password", this.addProfil.get('password').value);
     this.formData.append("age", this.addProfil.get('age').value);
     this.formData.append("coordonnees", this.addProfil.get('coordonnees').value);
     this.formData.append("genre", this.addProfil.get('genre').value);
