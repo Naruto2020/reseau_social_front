@@ -193,7 +193,7 @@ export class UserProfilComponent implements OnInit {
     chargement(){
       this.formData.append("photo", this.images);
       this.formData.append("loadBy", localStorage.getItem("loggedUser"));
-      this.bailService.uploadImage(this.formData).subscribe(res =>{
+      this.bailService.createProfil(this.formData).subscribe(res =>{
         this.alert = false;
         this.url = `http://127.0.0.1:3000/${res["photo"]}`;
         console.log("chargement ...",this.url);
