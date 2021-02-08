@@ -224,9 +224,11 @@ h2 {
 .amigo i {
   position: absolute;
   left: 82%;
+  top: 137%;
 }
 .dispo {
-  margin-left: 900%;
+  margin-left: 700%;
+  font-size: 1.3em;
 }
 
 /* *** *** Les media queries *** *** */

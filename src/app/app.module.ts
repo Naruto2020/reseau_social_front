@@ -54,6 +54,8 @@ import { UpdatePublicationsComponent } from './components/update-publications/up
 import { AdminPublicationsComponent } from './components/admin-publications/admin-publications.component';
 import { UpdateAdminPublicationsComponent } from './components/update-admin-publications/update-admin-publications.component';
 import {CustomHttpInterceptorService} from './partages/custom-http-interceptor.service';
+import { UserDisplayFriendsComponent } from './components/user-display-friends/user-display-friends.component';
+import { UserDisplayFriendProfilComponent } from './components/user-display-friend-profil/user-display-friend-profil.component';
 
 
 
@@ -88,7 +90,9 @@ import {CustomHttpInterceptorService} from './partages/custom-http-interceptor.s
     PublicationsComponent,
     UpdatePublicationsComponent,
     AdminPublicationsComponent,
-    UpdateAdminPublicationsComponent
+    UpdateAdminPublicationsComponent,
+    UserDisplayFriendsComponent,
+    UserDisplayFriendProfilComponent
     
   ],
   imports: [

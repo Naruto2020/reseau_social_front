@@ -65,8 +65,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Swap-It:build",
-            "proxyConfig": "src/proxy.conf.json"
+            "browserTarget": "Swap-It:build"
           },
           "configurations": {
             "production": {

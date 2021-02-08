@@ -9,11 +9,11 @@ import {BailService} from '../../partages/bail.service';
 import {environment} from 'src/environments/environment';
 
 @Component({
-  selector: 'app-user-profil',
-  templateUrl: './user-profil.component.html',
-  styleUrls: ['./user-profil.component.css']
+  selector: 'app-user-display-friends',
+  templateUrl: './user-display-friends.component.html',
+  styleUrls: ['./user-display-friends.component.css']
 })
-export class UserProfilComponent implements OnInit {
+export class UserDisplayFriendsComponent implements OnInit {
 
   titre:String = "$wap-It";
   imgSite:string = environment.siteUrl;
@@ -64,7 +64,7 @@ export class UserProfilComponent implements OnInit {
   constructor(private bailService:BailService, private router: ActivatedRoute, private route: Router) { }
 
   ngOnInit(): void {
-    
+
     this.bailService.displayImage().subscribe((res)=>{
       //console.log(res)
        this.listeImages = res;
@@ -163,76 +163,44 @@ export class UserProfilComponent implements OnInit {
 
     });
 
-    this.bailService.displayPost().subscribe(res =>{
-      //console.log("posteee",res);
-      this.listesPoste = res;
-   
-    });
     this.userDisplayName = localStorage.getItem("loggedUser");
   }
-
-    //on selectionne l'image à ajoutée 
-    affiche(){
-      this.alert = true;
-    }
-    affiche1(){
-      this.alert1 = true;
-    }
-  
-    selectImage(event){
-      console.log(event);
-      if(event.target.files.length > 0){
-          const file = event.target.files[0];
-        return this.images = file;
-      }
-        
-    }
-  
-    //creation du fomulaire et ajout des valeurs saisies par l'utilisateur 
-    formData = new FormData();
-    chargement(){
-      this.formData.append("photo", this.images);
-      this.formData.append("loadBy", localStorage.getItem("loggedUser"));
-      this.bailService.uploadImage(this.formData).subscribe(res =>{
-        this.alert = false;
-        this.url = `http://127.0.0.1:3000/${res["photo"]}`;
-        console.log("chargement ...",this.url);
-        return res
-      });
-
-    }
-
-  
-      formData1 = new FormData();
-      chargement1(){
-        this.formData1.append("photo",this.images);
-        this.formData1.append("loadBy", localStorage.getItem("loggedUser"));
-        this.bailService.uploadImage1(this.formData1).subscribe(res =>{
-          //console.log("Profil",res["photo"]);
-          this.alert1 = false;
-          this.url1 = `${this.imgSite}/${res["photo"]}`;
-          //console.log(this.url1);
-          return res;
-        });
-      }
-  
-      supprime(){
-        //console.log("supprime");
-        this.bailService.deletePost(this.router.snapshot.params._id).subscribe(res =>{
-          this.bailService.displayPost().subscribe(res =>{
-            this.listesPoste = res;
-         
+    
+      //creation du fomulaire et ajout des valeurs saisies par l'utilisateur 
+      formData = new FormData();
+      chargement(){
+          
+          this.formData.append("photo", this.images);
+          this.formData.append("loadBy", localStorage.getItem("loggedUser"));
+          this.bailService.uploadImage(this.formData).subscribe(res =>{
+            //console.log(res["photo"]);
+            this.alert = false;
+            this.url =`${this.imgSite}/${res["photo"]}`;
+            //console.log("chargement ...",this.url);
+            return res;
+    
           });
-          console.log(res);
-          return res;
-
-        });
-
-      }
-
-      fermerAlert(){
-        this.alert = false;
-        this.alert1 = false;
-      }
+    
+          
+        }
+    
+        formData1 = new FormData();
+        chargement1(){
+          this.formData1.append("photo",this.images);
+          this.formData1.append("loadBy", localStorage.getItem("loggedUser"));
+          this.bailService.uploadImage(this.formData1).subscribe(res =>{
+            //console.log("Profil",res["photo"]);
+            this.alert1 = false;
+            this.url1 = `${this.imgSite}/${res["photo"]}`;
+            //console.log(this.url1);
+            return res;
+          });
+        }
+    
+  
+        fermerAlert(){
+          this.alert = false;
+          this.alert1 = false;
+        }
 
 }

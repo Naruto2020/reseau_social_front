@@ -146,9 +146,9 @@ nav a:hover {
 
 /* profil et amis*/
 /*.presentation {
-    display: flex;
-    justify-content: space-between;
-  }*/
+      display: flex;
+      justify-content: space-between;
+    }*/
 
 .presentation div {
   border: 1px solid grey;
@@ -160,8 +160,8 @@ nav a:hover {
 }
 
 /*.presentation ul li {
-    list-style: none;
-  }*/
+      list-style: none;
+    }*/
 
 .presentation div img {
   height: 40px;
@@ -182,8 +182,8 @@ h1 {
 
 .images .album {
   /*border: 1px solid gray;
-    border-radius: 5px;
-    margin: 5px;*/
+      border-radius: 5px;
+      margin: 5px;*/
   width: 100%;
   height: 100%;
 }
@@ -217,7 +217,6 @@ h2 {
   top: 16%;
   text-align: center;
 }
-
 .amigo div {
   border: none;
   color: blue;
@@ -225,10 +224,11 @@ h2 {
 .amigo i {
   position: absolute;
   left: 82%;
-  top: 135%;
+  top: 137%;
 }
 .dispo {
-  margin-left: 900%;
+  margin-left: 700%;
+  font-size: 1.3em;
 }
 
 /* *** *** Les media queries *** *** */
@@ -375,8 +375,8 @@ h2 {
     margin: 12px;
   }
   /*.form-inline input {
-      font-size: 10px;
-    }*/
+        font-size: 10px;
+      }*/
   .head form input {
     position: absolute;
     top: 60px;
@@ -466,6 +466,7 @@ h2 {
   .presentation div img {
     height: 20px;
   }
+
   .notif {
     background-color: red;
     border-radius: 12px;

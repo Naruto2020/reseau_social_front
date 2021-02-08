@@ -93,7 +93,8 @@ export class BailService {
   
   // requête pour charger l'image background
   uploadImage(data){
-    return this.http.post(photoUrl,data);
+    
+    return this.http.post("http://127.0.0.1:3000/comptes/images",data);
   }
   // pour afficher l'images back
   displayImage(){

@@ -1,0 +1,146 @@
+<div class="container">
+
+    <div class="jumbotron">
+        
+        <button type="button" class="btn btn-info" routerLink="/user-display-friends" >Retour</button>
+        <div class="col-12 pt-1 head">
+              
+          <a class="text" routerLink="/profil-user/:_id"> <img src="../../../assets/images/profil.png" alt="#" /> {{titre}} <br/> {{friendName}}</a>
+           
+        </div>
+    
+    </div>
+    <div class="back"> <img [src]="url" alt="#" ></div>
+  
+    <div class="imgProfil"> <img [src]="url" alt="#"/> </div>
+
+      <form [formGroup]="addImage" *ngIf="alert">
+        <div class="form-group">
+          <label for="exampleFormControlFile1"></label>
+          <input type="file"  multiple (change)="selectImage($event)"   >
+          <br/>
+          <input type="text" *ngIf class="form-control" formControlName="loadBy" placeholder="LoadBy" value="{{userDisplayName}}" >
+          <br/> <br/> <br/> <br/>
+          <button type="submit" value="Enregistrer" class="btn btn-primary" (click)="chargement()">Télécharger</button> &nbsp;
+          <button type="submit" value="fermer" class="btn btn-primary" (click)="fermerAlert()">fermer</button>
+        </div>
+  
+      </form>
+    </div>
+    <div>
+      <h1>{{friendName}}</h1>
+    </div> 
+  
+    <div class="container presentation">
+      <div>
+        <h2>A propos</h2>
+        <span> <a routerLink="/profil-user-info"><img src="../../../assets/images/genre.png"alt="#"></a>  &nbsp; {{friendGenre}}</span> <br/>
+        <span> <a routerLink="/profil-user-info"><img src="../../../assets/images/aniv.png"alt="#"></a> &nbsp; {{friendAge}} </span> <br/>
+        <span> <a routerLink="/profil-user-info"><img src="../../../assets/images/preferences.jpg" alt="#"></a>&nbsp;{{friendPreferences}} </span><br/> <br/>
+        <span> <a routerLink="/profil-user-info"><img src="../../../assets/images/speech.png"alt="#"></a>&nbsp;{{friendPresentation}} </span> 
+  
+      </div>
+      <br/><br/>
+        
+      <div class="amigo">
+        <h2>mes Amis</h2>
+        <tr *ngFor="let amigo of friendFollowers | slice : - 3, let i = index">
+          <td>
+            <div *ngFor="let ami of friendFollowings |slice : -3">
+              <div *ngIf="ami === amigo">
+                <div *ngFor="let user of listesProfils | slice : - 3">
+                  <div *ngIf="amigo === user._id" class="dispo">
+                     <strong>{{user.username}}</strong>
+      
+                  </div>
+      
+                </div>
+  
+              </div>
+  
+            </div>
+
+          </td>
+
+        </tr>
+    </div>
+
+    <br/><br/>
+  
+    <div class="container images">     
+      <h2>Mes photos</h2>
+      <br/><br/> 
+      <!-- <div class="maj"> 
+        <a routerLink="/profil-user-infoImg/:_id"> <img src="../../../assets/images/maj.jpg" alt=""></a> 
+      </div> -->  
+
+      <ul class="album">
+        <li *ngFor="let img of listeImages">
+          
+         <span *ngIf="userDisplayName == img.loadBy"> <a routerLink="/profil-user-infoImg/:_id"><img src="{{imgSite}}/{{img.photo}}" alt="#"></a></span>
+         &nbsp; 
+        </li>          
+      </ul>
+      <br/><br/>
+      <!-- <ul class="album">
+        <li *ngFor="let img of listeImagesPro">
+          
+         <span *ngIf="userDisplayName == img.loadBy"> <a routerLink="/profil-user-infoImg/:_id"><img src="{{imgSite}}/{{img.photo}}" alt=""></a></span>
+         &nbsp;
+          
+        </li>
+      </ul> -->
+  
+    </div>
+    <div class="container">
+      <h2>Les publications </h2>
+      <tr *ngFor="let post of listesPoste">
+        <td *ngIf="userDisplayName === post.loadBy">
+          <hr/>
+          {{post.message}} &nbsp;  &nbsp; &nbsp;       
+
+          <br/> <p>posté par : <strong> {{post.loadBy}} le {{post.date}}</strong>  </p> 
+        </td>
+        <td>
+        </td>
+
+      </tr>
+      <tr *ngFor="let imgPro of listeImagesPro">
+        <td>
+          <span > <img src="{{imgSite}}/{{imgPro.photo}}" alt=""></span>  &nbsp;  &nbsp; &nbsp;
+         
+          <button (click)="supprime()" style="border: transparent;">
+            <i
+            routerLink="/profil-user/{{imgPro._id}}"
+            class="fa fa-trash"
+            style="font-size: 20px; color: red"
+            ></i>
+  
+          </button>
+          <br/> <p>posté par : <strong> {{imgPro.loadBy}}</strong>  </p> 
+        </td>
+
+      </tr>
+
+    </div>
+</div>  
+  
+        
+  
+  
+  
+      
+    
+  
+  
+    
+  
+  
+      
+  
+          
+  
+  
+  
+  
+

@@ -1,0 +1,107 @@
+<div class="container">
+
+    <div class="jumbotron"> 
+        
+        <div class="col-12 pt-1 head">
+          
+          <a class="text" routerLink="/profil-user/:_id"> <img src="../../../assets/images/profil.png" alt="#" /> {{titre}}</a>
+
+          <form class="form-inline my-2 my-lg-0" *ngIf>
+            <input class="form-control mr-sm-2" type="search" placeholder="recherche" aria-label="recherche">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            
+          </form>
+          <nav>
+            <ul>
+              <li><a routerLink="/accueil"><img src="../../../assets/images/home.jpg" alt="#"></a></li>
+              <li class="deroul"><a routerLink="/user-display-friends"><img src="../../../assets/images/reseaux.png" alt="#"></a></li>
+              <li><a routerLink="/menu-user"><img src="../../../assets/images/messages.png" alt="#"></a></li>
+              <li><a routerLink="/notifications"><img src="../../../assets/images/notif.png" alt="#"></a></li>
+              <li ><a routerLink="/menu-user"><img src="../../../assets/images/menu.png" alt="#"></a>
+
+              </li>
+            </ul>
+          </nav>
+
+        </div>
+        <div class="notif" *ngIf="compteur !== 0"><span>{{compteur}}</span> </div>
+    </div>
+
+  
+    <div class="container presentation">
+      <!-- <div>
+        <h2>A propos</h2>
+        <span> <a routerLink="/profil-user-info"><img src="../../../assets/images/genre.png"alt="#"></a>  &nbsp; {{aProp1}}</span> <br/>
+        <span> <a routerLink="/profil-user-info"><img src="../../../assets/images/aniv.png"alt="#"></a> &nbsp; {{aProp2}} </span> <br/>
+        <span> <a routerLink="/profil-user-info"><img src="../../../assets/images/preferences.jpg" alt="#"></a>&nbsp;{{aProp3}} </span><br/> <br/>
+        <span> <a routerLink="/profil-user-info"><img src="../../../assets/images/speech.png"alt="#"></a>&nbsp;{{aProp4}} </span> 
+  
+      </div>
+      <br/><br/> -->
+        
+      <div class="amigo">
+        <h2>Liste Amis</h2>
+        <table class="table">
+            <tbody>
+                <tr *ngFor="let amigo of userFoundName , let i = index">
+                    <div *ngFor="let ami of userFoundFol">
+                      <div *ngIf="ami === amigo">
+                        <div *ngFor="let user of listesProfils">
+                          <div *ngIf="amigo === user._id" class="dispo">
+                            <!--<strong>{{user.username}} &nbsp; {{user.genre}} &nbsp; {{user.presentation}} </strong> -->
+                             
+                            <td> {{user.username}}</td>
+                            <td> {{user.genre}} </td>
+                            <td> {{user.age}} </td>
+                            <td> {{user.preferences}} </td>
+                            <td> {{user.presentation}} </td>
+                            <td>
+                                <i
+                                routerLink="/user-display-friend-profil/{{user._id}}"
+                                class="fa fa-edit"
+                                style="font-size: 20px; color: grey"
+                                ></i>
+                            </td>
+              
+                          </div>
+              
+                        </div>
+          
+                      </div>
+          
+                    </div>
+        
+                </tr>
+
+            </tbody>
+        </table>
+        
+  
+      </div>
+  
+      
+    </div>
+
+    <br/><br/>
+  
+</div>  
+  
+        
+  
+  
+  
+      
+    
+  
+  
+    
+  
+  
+      
+  
+          
+  
+  
+  
+  
+

@@ -79,8 +79,8 @@ export class AddProfilComponent implements OnInit {
    //creation du fomulaire et ajout des valeurs saisies par l'utilisateur 
    //formData = new FormData();
   soumettre(){  
-    //this.formData.append("photo", this.images);
-   /* this.formData.append("nom", this.addProfil.get('nom').value);
+    /*this.formData.append("photo", this.images);
+    this.formData.append("nom", this.addProfil.get('nom').value);
     this.formData.append("prenom", this.addProfil.get('prenom').value);
     this.formData.append("pseudo", this.addProfil.get('pseudo').value);
     this.formData.append("mail", this.addProfil.get('mail').value);
@@ -90,8 +90,8 @@ export class AddProfilComponent implements OnInit {
     this.formData.append("genre", this.addProfil.get('genre').value);
     this.formData.append("preferences", this.addProfil.get('preferences').value);
     this.formData.append("niveau", this.addProfil.get('niveau').value);
-    this.formData.append("presentation", this.addProfil.get('presentation').value);*/
-    //console.log(this.formData);
+    this.formData.append("presentation", this.addProfil.get('presentation').value);
+    console.log(this.formData);*/
 
     // gestion de la validation des champs
     /*if(!this.images){
