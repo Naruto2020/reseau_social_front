@@ -88,15 +88,15 @@
   <br/>
   <div>
     <h1> Les publications </h1>
-    <tr *ngFor="let post of listesPoste">
-      <td>
-        <hr/>
-        {{post.message}} <br/> <strong>{{post.loadBy}} le {{post.date}} </strong>  
-        <button *ngIf="post.loadBy" class="btn btn-outline-info my-2 my-sm-0 bou" type="submit" (click)="ajout()">+ Like</button>
-      </td>
-      <td> 
-      </td> 
-    </tr>
+    <div class="publi">
+      <tr *ngFor="let post of listesPoste">
+        <td>
+          <hr/>
+          {{post.message}} <br/> <strong>{{post.loadBy}} le {{post.date}} </strong>  
+          <button *ngIf="post.loadBy" class="btn btn-outline-info my-2 my-sm-0 bou" type="submit" (click)="ajout()">+ Like</button>
+        </td> 
+      </tr>
+    </div>
     <div *ngIf="visu">
 
       <form [formGroup]="likers">
@@ -108,14 +108,14 @@
       </form>
 
     </div>
-    <div *ngFor="let user of listesProfils">
+    <div *ngFor="let user of listesProfils" class="post">
       <div *ngIf="postLike === user._id">
         <span>aimé par {{user.username}} </span>
   
       </div>
 
     </div>
-    <div class="notif" *ngIf="compteur1 !== 0" style="color: red;"><span>{{compteur1}}</span> </div>
+    <div class="likes" *ngIf="compteur1 !== 0" style="color: red;"><span>{{compteur1}}</span> </div>
 
   </div>
 

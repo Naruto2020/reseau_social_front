@@ -184,6 +184,7 @@ export class UserHomeComponent implements OnInit {
         this.postLikers = newR[i][1].likers;
         for(let lik of tabLikers){
           this.postLike = lik;
+          this.compteur1 += 1;
           console.log("id like",this.postLikers);
           console.log("id user",this.userDisplayId);
         }
@@ -306,7 +307,6 @@ export class UserHomeComponent implements OnInit {
     this.bailService.likesPost(this.postId, this.likers.value).subscribe(res =>{
       console.log(res);
       this.visu = false
-      this.compteur1 += 1;
       return res;
     });
 
