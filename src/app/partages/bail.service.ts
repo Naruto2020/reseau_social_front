@@ -17,6 +17,8 @@ const amisUrl = environment.searchUrl;
 const postUrl = environment.statusUrl;
 const followUrl = environment.searchUrl1;
 const unfollowUrl = environment.searchUrl2;
+const likeUrl = environment.aimeUrl;
+const unlikeUrl = environment.aimeUrl1;
 
 @Injectable({
   providedIn: 'root'
@@ -179,10 +181,10 @@ export class BailService {
    * ******  ******* gestion des requêtes Like 
    */
   likesPost(id, data):Observable<any>{
-    return this.http.patch(`http://127.0.0.1:3000/comptes/messagePublic/likePost/${id}`, data);
+    return this.http.patch(`${likeUrl}/${id}`, data);
   }
 
   unlikesPost(id, data):Observable<any>{
-    return this.http.patch(`http://127.0.0.1:3000/comptes/messagePublic/likePost/${id}`, data);
+    return this.http.patch(`${unlikeUrl}/${id}`, data);
   }
 }

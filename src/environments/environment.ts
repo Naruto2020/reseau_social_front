@@ -14,6 +14,8 @@ const adressH8 = "http://swapengin.herokuapp.com";
 const adressH9 = "http://swapengin.herokuapp.com/comptes/messagePublic";
 const adressH10 = "http://swapengin.herokuapp.com/comptes/users/follow";
 const adressH11 = "http://swapengin.herokuapp.com/comptes/users/unfollow";
+const adressH12 = "http://swapengin.herokuapp.com/comptes/messagePublic/likePost";
+const adressH13 = "http://swapengin.herokuapp.com/comptes/messagePublic/unlikePost";
 
 
 export const environment = {
@@ -29,7 +31,9 @@ export const environment = {
   siteUrl : adressH8 || "http://127.0.0.1:3000",
   statusUrl : adressH9 || "http://127.0.0.1:3000/comptes/messagePublic",
   searchUrl1 : adressH10 || "http://127.0.0.1:3000/comptes/users/follow",
-  searchUrl2 : adressH11 || "http://127.0.0.1:3000/comptes/users/unfollow"
+  searchUrl2 : adressH11 || "http://127.0.0.1:3000/comptes/users/unfollow",
+  aimeUrl : adressH12 || "http://127.0.0.1:3000/comptes/messagePublic/likePost",
+  aimeUrl1 : adressH13 || "http://127.0.0.1:3000/comptes/messagePublic/unlikePost"
 };
 
 /*
