@@ -187,8 +187,8 @@ export class UserHomeComponent implements OnInit {
           console.log("id like",this.postLikers);
           console.log("id user",this.userDisplayId);
         }
-        console.log("publications",tabPost);
         this.postId = tabPost;
+        console.log("id post : ",this.postId);
 
       };
     });
@@ -302,10 +302,11 @@ export class UserHomeComponent implements OnInit {
 
   }
   good(){
-    console.log(this.likers.value);
+    console.log("value:",this.likers.value);
     this.bailService.likesPost(this.postId, this.likers.value).subscribe(res =>{
       console.log(res);
       this.visu = false
+      this.compteur1 += 1;
       return res;
     });
 

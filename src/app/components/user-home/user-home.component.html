@@ -92,20 +92,18 @@
       <td>
         <hr/>
         {{post.message}} <br/> <strong>{{post.loadBy}} le {{post.date}} </strong>  
+        <button *ngIf="post.loadBy" class="btn btn-outline-info my-2 my-sm-0 bou" type="submit" (click)="ajout()">+ Like</button>
       </td>
-      <td>
-        
-        <button class="btn btn-outline-info my-2 my-sm-0 bou" type="submit" (click)="ajout()">+ Like</button>
-      </td>
-      
+      <td> 
+      </td> 
     </tr>
     <div *ngIf="visu">
 
       <form [formGroup]="likers">
         <div >
-          <input type="hidden" placeholder="idToLike" formControlName="idToLike" ngModel={{userDisplayId}} >
+          <input type="" placeholder="idToLike" formControlName="idToLike" ngModel={{userDisplayId}} >
         </div>
-        <button class="btn btn-outline-info my-2 my-sm-0 " type="submit"  (click)="good()">j'aime</button>
+        <button class="btn btn-outline-info my-2 my-sm-0 " type="submit"  (click)="good()">j'aime {{userDisplayId}} vs {{postId}} </button>
 
       </form>
 
@@ -117,6 +115,7 @@
       </div>
 
     </div>
+    <div class="notif" *ngIf="compteur1 !== 0" style="color: red;"><span>{{compteur1}}</span> </div>
 
   </div>
 
