@@ -93,6 +93,16 @@
         <hr/>
         {{post.message}} <br/> posté par :  <strong>{{post.loadBy}} le {{post.date}} </strong> 
       </td>
+      <td>
+        <form [formGroup]="likers">
+          <div >
+            <input type="" placeholder="idToLike" formControlName="idToLike" ngModel={{userDisplayId}} >
+          </div>
+          <button class="btn btn-outline-info my-2 my-sm-0 btn1" type="submit"  (click)="ajout()">+ Likes</button>
+    
+        </form>
+        
+      </td>
 
     </tr>
 

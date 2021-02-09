@@ -145,11 +145,11 @@ export class BailService {
   }*/
   addFriend(id, data){
     let headers = new HttpHeaders({ 'Access-Control-Allow-Origin': '*','Access-Control-Allow-Methods': 'OPTIONS,POST,GET,PATCH','content-type': 'application/json'}  )
-    return this.http.patch(`http://127.0.0.1:3000/comptes/users/follow/${id}`, data, {'headers':headers});
+    return this.http.patch(`${followUrl}/${id}`, data, {'headers':headers});
   }
   cancelFriend(id,data):Observable<any>{
     let headers = new HttpHeaders({ 'Access-Control-Allow-Origin': '*','Access-Control-Allow-Methods': 'OPTIONS,POST,GET,PATCH','content-type': 'application/json'}  )
-    return this.http.patch(`http://127.0.0.1:3000/comptes/users/unfollow/${id}`, data, {'headers':headers})
+    return this.http.patch(`${unfollowUrl}/${id}`, data, {'headers':headers})
   }
 
   /********************************************************************
@@ -174,6 +174,13 @@ export class BailService {
     return this.http.delete(`${postUrl}/${id}`);
   }
 
+
+    /********************************************************************
+   * ******  ******* gestion des requêtes Like 
+   */
+  likesPost(id, data):Observable<any>{
+    return this.http.patch(`http://127.0.0.1:3000/comptes/messagePublic/likePost/${id}`, data);
+  }
 
   /*deleteFriend(nom){
     return this.http.delete(`http://127.0.0.1:3000/comptes/${nom}`);

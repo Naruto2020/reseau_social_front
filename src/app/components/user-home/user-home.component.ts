@@ -52,6 +52,9 @@ export class UserHomeComponent implements OnInit {
   userFollowers;
   userFollowings;
 
+
+  postId;
+
   aProp1:string;
   aProp2:string;
   aProp3:string;
@@ -73,6 +76,9 @@ export class UserHomeComponent implements OnInit {
 
   goToUser = new FormGroup({
     nom : new FormControl(''),
+  });
+  likers = new FormGroup({
+    idToLike : new FormControl(''),
   });
 
 
@@ -168,7 +174,9 @@ export class UserHomeComponent implements OnInit {
       });
       //console.log("postiiit",newR);
       for(let i=0; i<newR.length; i++){
-        
+        let tabPost = newR[i][1]._id;
+        console.log("publications",tabPost);
+        this.postId = tabPost;
 
       };
     });
@@ -275,6 +283,14 @@ export class UserHomeComponent implements OnInit {
       return res;
     });
 
+
+  }
+  ajout(){
+    console.log(this.likers.value);
+    this.bailService.likesPost(this.postId, this.likers.value).subscribe(res =>{
+      console.log(res);
+      return res;
+    });
 
   }
 
