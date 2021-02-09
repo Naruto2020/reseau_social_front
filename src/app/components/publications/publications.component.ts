@@ -45,13 +45,6 @@ export class PublicationsComponent implements OnInit {
     loadBy : new FormControl("")
   });
 
-  partage = new FormGroup({
-    message : new FormControl(""),
-    postId : new FormControl(""),
-    date : new FormControl(""),
-    loadBy: new FormControl(""),
-  });
-
   constructor(private bailService:BailService, private route: Router, private router : ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -108,6 +101,13 @@ export class PublicationsComponent implements OnInit {
 
     });
   }
+
+  partage = new FormGroup({
+    postId : new FormControl(""),
+    message : new FormControl(""),
+    date : new FormControl(""),
+    loadBy: new FormControl(""),
+  });
 
   poster(){
     this.bailService.publierMess(this.partage.value).subscribe(res =>{
