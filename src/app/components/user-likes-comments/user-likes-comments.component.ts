@@ -10,33 +10,16 @@ import {BailService} from '../../partages/bail.service';
 import {environment} from 'src/environments/environment';
 
 @Component({
-  selector: 'app-user-home',
-  templateUrl: './user-home.component.html',
-  styleUrls: ['./user-home.component.css']
+  selector: 'app-user-likes-comments',
+  templateUrl: './user-likes-comments.component.html',
+  styleUrls: ['./user-likes-comments.component.css']
 })
-export class UserHomeComponent implements OnInit {
+export class UserLikesCommentsComponent implements OnInit {
 
-  goToProfil = new FormGroup({
-    username : new FormControl(""),
-
-  });
-
-
-
-  titre:String = "$wap-It";
-
-  imgSite:string = environment.siteUrl;
-  
-  classActive = 'active';
   userDisplayName:string = "";
   userDisName:string = "";
   userDisplayId;
 
-  alert1:boolean = false;
-  alert2:boolean = false;
-  visu:boolean = false;
-
-  alredy:boolean = true;
 
   userFoundName;
   userFoundAge;
@@ -54,51 +37,29 @@ export class UserHomeComponent implements OnInit {
   userFollowings;
 
 
-  postId;
-  postLikers;
-  postLike;
-
-  aProp1:string;
-  aProp2:string;
-  aProp3:string;
-  aProp4:string;
-  aProp5:string;
-  pote;
-  pote1;
-  pote2;
-
-  compteur = 0;
-  compteur1 = 0;
-
-  
   listeImages:any;
   listeImagesPro:any;
   listesProfils:any;
   listesPoste:any;
   friend:any;
 
+  postId;
+  postLikers;
+  postLike;
 
-  goToUser = new FormGroup({
-    nom : new FormControl(''),
-  });
+
+  compteur = 0;
+  compteur1 = 0;
+
 
   likers = new FormGroup({
     idToLike : new FormControl(''),
-  });
-
-
-  partage = new FormGroup({
-    message : new FormControl(""),
-    date : new FormControl(""),
-    commentaires : new FormControl(""),
-    loadBy: new FormControl(""),
   });
 
   constructor(private bailService:BailService, private route: Router, private router : ActivatedRoute) { }
 
   ngOnInit(): void {
 
-    
     this.userDisplayName = localStorage.getItem("loggedUser");
     this.userDisName = sessionStorage.getItem("loggedUser");
     
@@ -169,7 +130,8 @@ export class UserHomeComponent implements OnInit {
       }
 
     });
-    
+
+    // gestion des poste
     this.bailService.displayPost().subscribe(res =>{
       console.log("posteee",res);
       this.listesPoste = res;
@@ -192,124 +154,15 @@ export class UserHomeComponent implements OnInit {
 
       };
     });
-  
   }
 
-
-  
-  
-  connexion(){
-    console.log(this.goToUser.get("nom").value);
-    this.bailService.findFriends(this.goToUser.get("nom").value).subscribe(res =>{
-     //console.log(this.goToUser.get("nom").value);
-    
-      console.log("losaaaa",res);
-      this.goToUser.reset({});
-      this.userFoundName = res["username"];
-      this.userFoundAge = res["age"];
-      this.userFoundGenre = res["genre"];
-      this.userFoundAbout = res["presentation"];
-      this.userFoundChoix = res["preferences"];
-      this.userFoundNom = res["nom"];
-      this.userFoundPrenom = res["prenom"]
-      this.userFoundfollowers = res["followers"];
-      this.userFoundID = res["_id"];
-      console.log("top",this.userFoundID);
-      for(let amigo of this.userFoundfollowers){
-        this.pote = amigo;
-      }
-      this.alert1 = true;
-      return res;
-    });
-    
-    this.bailService.displayImage().subscribe((res) =>{
-      this.listeImages = res;
-      console.log("ici -->",this.userFoundName);
-      //this.listesProfils = res;
-      // on transforme le l'objet en tableau key/value
-      let newR = Object.keys(res).map(function(cle) {
-        return [Number(cle), res[cle]];
-      });
-      console.log("new ...",newR);
-      for(let i=0; i<newR.length; i++){
-        let tab = newR[i];
-        //console.log(tab);
-        for(let j=0; j<tab.length; j++){
-          console.log("verifions",tab[j].loadBy);
-          let obj = tab[j];
-          if(obj.loadBy === this.userFoundName){
-            this.userFoundBack = obj.photo;
-            console.log("retro",this.userFoundBack);
-          }
-        }
-      }
-    });
-
-    /*this.bailService.displayImage1().subscribe((res) =>{
-      this.listeImagesPro = res;
-      console.log(this.userFoundName);
-      //this.listesProfils = res;
-      // on transforme le l'objet en tableau key/value
-      let newR = Object.keys(res).map(function(cle) {
-        return [Number(cle), res[cle]];
-      });
-      console.log("new ...",newR);
-      for(let i=0; i<newR.length; i++){
-        let tab = newR[i];
-        //console.log(tab);
-        for(let j=0; j<tab.length; j++){
-          console.log(tab[j].loadBy);
-          let obj = tab[j];
-          if(obj.loadBy === this.userFoundName){
-            this.userFoundImg = obj.photo;
-          }
-        }
-      }
-    });*/
-    
-    //this.route.navigate(["/{}"]);
-    
-  }
-
-  addAmis = new FormGroup({
-    //sendBy : new FormControl(""),
-    //acceptBy : new FormControl("")
-    idToFollow: new FormControl("")
-  });
-  
-  demande(){
-    //console.log("verification ...",this.userDisplayName);
-    console.log(this.userFoundID);
-    
-    console.log(this.addAmis.value);
-    /*this.bailService.addFriend(this.goToUser.get("nom").value, this.addAmis.get("amis").value).subscribe(res =>{
-      console.log(res);
-      return res;
-    });*/
-
-    //console.log(this.userFoundNom);
-    //console.log("falala ...",this.addAmis.get(this.addAmis.get("amis").value));
-    //this.route.navigate["/nom"];
-    this.bailService.addFriend(this.userDisplayId, this.addAmis.value).subscribe(res =>{
-      console.log(res);
-      return res;
-    });
-
-
-  }
-  ajout(){
-    this.visu = true;
-
-  }
   good(){
     console.log(this.likers.value);
     this.bailService.likesPost(this.postId, this.likers.value).subscribe(res =>{
       console.log(res);
-      this.visu = false
       return res;
     });
 
   }
 
-  
 }

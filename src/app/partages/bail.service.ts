@@ -182,7 +182,7 @@ export class BailService {
     return this.http.patch(`http://127.0.0.1:3000/comptes/messagePublic/likePost/${id}`, data);
   }
 
-  /*deleteFriend(nom){
-    return this.http.delete(`http://127.0.0.1:3000/comptes/${nom}`);
-  }*/
+  unlikesPost(id, data):Observable<any>{
+    return this.http.patch(`http://127.0.0.1:3000/comptes/messagePublic/likePost/${id}`, data);
+  }
 }

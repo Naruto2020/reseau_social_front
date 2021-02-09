@@ -282,6 +282,9 @@ h1 {
     font-size: 1em;
     top: 30%;
   }
+  .bou {
+    margin-left: 100px;
+  }
   h2 {
     display: none;
   }

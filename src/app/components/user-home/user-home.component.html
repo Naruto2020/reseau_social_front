@@ -91,20 +91,32 @@
     <tr *ngFor="let post of listesPoste">
       <td>
         <hr/>
-        {{post.message}} <br/> posté par :  <strong>{{post.loadBy}} le {{post.date}} </strong> 
+        {{post.message}} <br/> <strong>{{post.loadBy}} le {{post.date}} </strong>  
       </td>
       <td>
-        <form [formGroup]="likers">
-          <div >
-            <input type="" placeholder="idToLike" formControlName="idToLike" ngModel={{userDisplayId}} >
-          </div>
-          <button class="btn btn-outline-info my-2 my-sm-0 btn1" type="submit"  (click)="ajout()">+ Likes</button>
-    
-        </form>
         
+        <button class="btn btn-outline-info my-2 my-sm-0 bou" type="submit" (click)="ajout()">+ Like</button>
       </td>
-
+      
     </tr>
+    <div *ngIf="visu">
+
+      <form [formGroup]="likers">
+        <div >
+          <input type="hidden" placeholder="idToLike" formControlName="idToLike" ngModel={{userDisplayId}} >
+        </div>
+        <button class="btn btn-outline-info my-2 my-sm-0 " type="submit"  (click)="good()">j'aime</button>
+
+      </form>
+
+    </div>
+    <div *ngFor="let user of listesProfils">
+      <div *ngIf="postLike === user._id">
+        <span>aimé par {{user.username}} </span>
+  
+      </div>
+
+    </div>
 
   </div>
 

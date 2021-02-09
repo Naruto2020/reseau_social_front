@@ -1,0 +1,17 @@
+<div class="jumbotron">
+    <h2>Likes and Comments</h2>
+    <button class="btn btn-outline-info" routerLink="/accueil">retour</button>
+</div>
+<div class="container">
+    <form [formGroup]="likers">
+        <div >
+          <input type="" placeholder="idToLike" formControlName="idToLike" ngModel={{userDisplayId}} >
+        </div>
+        <button class="btn btn-outline-info my-2 my-sm-0 bou" type="submit"  (click)="good()">+ Like</button>
+        
+      </form>
+
+</div>
+
+
+

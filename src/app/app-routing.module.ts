@@ -41,6 +41,7 @@ import {PublicationsComponent} from './components/publications/publications.comp
 import {UpdatePublicationsComponent} from './components/update-publications/update-publications.component';
 import {UserDisplayFriendsComponent} from './components/user-display-friends/user-display-friends.component';
 import {UserDisplayFriendProfilComponent} from './components/user-display-friend-profil/user-display-friend-profil.component';
+import {UserLikesCommentsComponent} from './components/user-likes-comments/user-likes-comments.component';
 
 import { AuthGuard} from './guards/auth.guard';
 import {AuthUserGuard} from './guards/auth-user.guard';
@@ -82,6 +83,7 @@ const routes: Routes = [
   {path:"updateUser-publications/:_id", component:UpdatePublicationsComponent, canActivate:[AuthUserGuard], data:['user']},
   {path:"user-display-friends", component:UserDisplayFriendsComponent, canActivate:[AuthUserGuard], data:['user']},
   {path:"user-display-friend-profil/:_id", component:UserDisplayFriendProfilComponent, canActivate:[AuthUserGuard], data:['user']},
+  {path:"user-Likes-Comments/:_id", component:UserLikesCommentsComponent, canActivate:[AuthUserGuard], data:['user']},
 ];
 
 @NgModule({
