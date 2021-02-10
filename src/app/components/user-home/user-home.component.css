@@ -186,7 +186,7 @@ h1 {
 .likes {
   position: absolute;
   left: 45%;
-  top: 60%;
+  top: 64.3%;
   border: solid 1px skyblue;
   width: 20px;
   height: 20px;
@@ -356,8 +356,8 @@ h1 {
 
   .likes {
     position: absolute;
-    left: 52%;
-    top: 45%;
+    left: 51%;
+    top: 47%;
     border: solid 1px skyblue;
     width: 20px;
     height: 20px;
@@ -515,12 +515,12 @@ h1 {
 
   .likes {
     position: absolute;
-    left: 52%;
-    top: 63%;
+    left: 46%;
+    top: 66%;
     border: solid 1px skyblue;
-    width: 20px;
-    height: 20px;
-    border-radius: 20px;
+    width: 17px;
+    height: 17px;
+    border-radius: 17px;
     background-color: skyblue;
     text-align: center;
   }
