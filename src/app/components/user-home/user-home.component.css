@@ -185,8 +185,8 @@ h1 {
 
 .likes {
   position: absolute;
-  left: 35%;
-  top: 64.3%;
+  left: 38%;
+  top: 61%;
   border: solid 1px skyblue;
   width: 20px;
   height: 20px;
@@ -209,7 +209,7 @@ h1 {
   margin-left: 200px;
 }
 .covert {
-  padding-left: 160px;
+  padding-left: 180px;
 }
 .comments {
   border: solid 1px transparent;
