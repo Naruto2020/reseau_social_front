@@ -85,6 +85,9 @@ export class UserHomeComponent implements OnInit {
   likers = new FormGroup({
     idToLike : new FormControl(''),
   });
+  unlikers = new FormGroup({
+    idToUnLike : new FormControl(''),
+  });
 
 
   partage = new FormGroup({
@@ -305,6 +308,15 @@ export class UserHomeComponent implements OnInit {
   good(){
     console.log("value:",this.likers.value);
     this.bailService.likesPost(this.postId, this.likers.value).subscribe(res =>{
+      console.log(res);
+      this.visu = false
+      return res;
+    });
+
+  }
+  bad(){
+    console.log("value:",this.likers.value);
+    this.bailService.unlikesPost(this.postId, this.unlikers.value).subscribe(res =>{
       console.log(res);
       this.visu = false
       return res;
