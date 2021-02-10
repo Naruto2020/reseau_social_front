@@ -35,6 +35,7 @@ export class UserHomeComponent implements OnInit {
   alert1:boolean = false;
   alert2:boolean = false;
   visu:boolean = false;
+  visu1:boolean = false;
 
   alredy:boolean = true;
 
@@ -57,6 +58,7 @@ export class UserHomeComponent implements OnInit {
   postId;
   postLikers;
   postLike;
+  postComments;
 
   aProp1:string;
   aProp2:string;
@@ -89,11 +91,22 @@ export class UserHomeComponent implements OnInit {
     idToUnLike : new FormControl(''),
   });
 
+  comment = new FormGroup({
+    commenterId: new FormControl(""),
+    commenterPseudo : new FormControl(""),
+    text : new FormControl(""),
+    date : new FormControl(""),
+  });
+
 
   partage = new FormGroup({
+    postId: new FormControl(""),
     message : new FormControl(""),
+    picture : new FormControl(""),
+    video : new FormControl(""),
     date : new FormControl(""),
-    commentaires : new FormControl(""),
+    likers : new FormControl(""),
+    comments : new FormControl(""),
     loadBy: new FormControl(""),
   });
 
@@ -184,10 +197,14 @@ export class UserHomeComponent implements OnInit {
       for(let i=0; i<newR.length; i++){
         let tabPost = newR[i][1]._id;
         let tabLikers = newR[i][1].likers;
+        let tabComments = newR[i][1].comments;
+        this.postComments = newR[i][1].comments;
+        console.log("tab com:", tabComments);
         this.postLikers = newR[i][1].likers;
         for(let lik of tabLikers){
           this.postLike = lik;
           this.compteur1 += 1;
+          //console.log("tab com :",this.postLikers);
           console.log("id like",this.postLikers);
           console.log("id user",this.userDisplayId);
         }
@@ -318,11 +335,29 @@ export class UserHomeComponent implements OnInit {
     console.log("value:",this.likers.value);
     this.bailService.unlikesPost(this.postId, this.unlikers.value).subscribe(res =>{
       console.log(res);
-      this.visu = false
+      this.visu = false;
       return res;
     });
 
   }
+  add(){
+    this.visu1 = true;
+  }
+
+  myCom(){
+    this.bailService.commentsPost(this.postId, this.comment.value).subscribe(res =>{
+      console.log(res);
+      this.visu = false;
+      this.comment.reset({});
+      return res;
+    });
+  }
+
+  close(){
+    this.visu = false;
+    this.visu1 = false;
+  }
+
 
   
 }

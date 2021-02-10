@@ -19,6 +19,7 @@ const followUrl = environment.searchUrl1;
 const unfollowUrl = environment.searchUrl2;
 const likeUrl = environment.aimeUrl;
 const unlikeUrl = environment.aimeUrl1;
+const commentsUrl = environment.comUrl1;
 
 @Injectable({
   providedIn: 'root'
@@ -187,4 +188,14 @@ export class BailService {
   unlikesPost(id, data):Observable<any>{
     return this.http.patch(`${unlikeUrl}/${id}`, data);
   }
+
+      /********************************************************************
+   * ******  ******* gestion des requêtes comments 
+   */
+
+   commentsPost(id, data):Observable<any>{
+     return this.http.patch(`${commentsUrl}/${id}`, data);
+   }
+
+
 }

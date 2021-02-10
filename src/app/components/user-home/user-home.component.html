@@ -94,7 +94,8 @@
           <hr/>
           <span *ngIf="post.message">  {{post.message}} <br/> <strong>{{post.loadBy}} le {{post.date}} </strong>  </span>
             
-          <button *ngIf="post.loadBy" class="btn btn-outline-info my-2 my-sm-0 bou" type="submit" (click)="ajout()">+ Like</button>
+          <button *ngIf="post.loadBy" class="btn btn-outline-info my-2 my-sm-0 bou" type="submit" (click)="ajout()">+ Like</button> 
+          <button *ngIf="post.loadBy" class="btn btn-outline-info my-2 my-sm-0 bou" type="submit" (click)="add()">+ Commentaires</button>
         </td> 
       </tr>
     </div>
@@ -102,17 +103,19 @@
 
       <form [formGroup]="likers">
         <div >
-          <input type="" placeholder="idToLike" formControlName="idToLike" ngModel={{userDisplayId}} >
+          <input type="hidden" placeholder="idToLike" formControlName="idToLike" ngModel={{userDisplayId}} >
         </div>
-        <button class="btn btn-outline-info my-2 my-sm-0 " type="submit"  (click)="good()">j'aime {{userDisplayId}} vs {{postId}} </button>
+        <button class="btn btn-outline-info my-2 my-sm-0 " type="submit"  (click)="good()">j'aime</button>
+        <button class="btn btn-outline-info my-2 my-sm-0 " type="submit"  (click)="close()">x</button>
 
       </form>
       <br/>
       <form [formGroup]="unlikers">
         <div >
-          <input type="" placeholder="idToUnLike" formControlName="idToUnLike" ngModel={{userDisplayId}} >
+          <input type="hidden" placeholder="idToUnLike" formControlName="idToUnLike" ngModel={{userDisplayId}} >
         </div>
-        <button class="btn btn-outline-info my-2 my-sm-0 " type="submit"  (click)="bad()">j'aime pas {{userDisplayId}} vs {{postId}} </button>
+        <button class="btn btn-outline-info my-2 my-sm-0 " type="submit"  (click)="bad()">j'aime plus</button>
+        <button class="btn btn-outline-info my-2 my-sm-0 " type="submit"  (click)="close()">x</button>
 
       </form>
 
@@ -125,8 +128,49 @@
 
     </div>
     <div class="likes" *ngIf="compteur1 !== 0" style="color: red;"><span>{{compteur1}}</span> </div>
-
-  </div>
-
-</div>
     
+    <div *ngIf="visu1">
+      
+      <form [formGroup]="comment">
+        <div >
+          <input type="" placeholder="commenterId" formControlName="commenterId" ngModel={{userDisplayId}}>
+        </div>
+        <div >
+          <input type="" placeholder="commenterPseudo" formControlName="commenterPseudo" ngModel={{userDisplayName}} >
+        </div>
+        <div>
+          <textarea formControlName="text" id="" cols="30" rows="10"></textarea>
+        </div>
+        <button class="btn btn-outline-info my-2 my-sm-0 " type="submit"  (click)="myCom()">✔</button>
+        <button class="btn btn-outline-info my-2 my-sm-0 " type="submit"  (click)="close()">fermer</button>
+        
+      </form>
+      
+      
+      <!--<form [formGroup]="unlikers">
+        <div >
+          <input type="hidden" placeholder="idToUnLike" formControlName="idToUnLike" ngModel={{userDisplayId}} >
+        </div>
+        <button class="btn btn-outline-info my-2 my-sm-0 " type="submit"  (click)="bad()">X</button>
+        <button class="btn btn-outline-info my-2 my-sm-0 " type="submit"  (click)="close()">fermer</button>
+        
+      </form>-->
+      
+    </div>
+    <br>
+    <div class="covert">
+      <tr *ngFor="let com of postComments">    
+        <div class="comments">
+          <strong> {{com.commenterPseudo}} le  {{com.date}} </strong> <br>
+          <span> {{com.text}} </span> 
+    
+        </div> 
+        <br>
+      </tr>
+    </div>
+    
+    
+  </div>
+  
+</div>
+
