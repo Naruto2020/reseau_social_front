@@ -186,7 +186,7 @@ h1 {
 .likes {
   position: absolute;
   left: 38%;
-  top: 61%;
+  top: 60%;
   border: solid 1px skyblue;
   width: 20px;
   height: 20px;
@@ -209,7 +209,7 @@ h1 {
   margin-left: 200px;
 }
 .covert {
-  padding-left: 180px;
+  padding-left: 200px;
 }
 .comments {
   border: solid 1px transparent;
@@ -365,7 +365,7 @@ h1 {
   .likes {
     position: absolute;
     left: 51%;
-    top: 47%;
+    top: 45%;
     border: solid 1px skyblue;
     width: 20px;
     height: 20px;
@@ -375,14 +375,14 @@ h1 {
   }
 
   .publi {
-    margin-left: 250px;
+    margin-left: 180px;
   }
 
   .publi button {
-    margin-left: 0px;
+    margin-left: 10px;
   }
   .post {
-    margin-left: 250px;
+    margin-left: 180px;
   }
 }
 
@@ -523,8 +523,8 @@ h1 {
 
   .likes {
     position: absolute;
-    left: 46%;
-    top: 66%;
+    left: 40%;
+    top: 69.2%;
     border: solid 1px skyblue;
     width: 17px;
     height: 17px;
@@ -534,7 +534,7 @@ h1 {
   }
 
   .publi {
-    margin-left: 50px;
+    margin-left: 20px;
   }
 
   .publi button {
@@ -542,6 +542,9 @@ h1 {
     margin-left: 0px;
   }
   .post {
-    margin-left: 50px;
+    margin-left: 25px;
+  }
+  .covert {
+    padding-left: 80px;
   }
 }
