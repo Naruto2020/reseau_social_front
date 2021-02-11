@@ -91,7 +91,7 @@
     <div class="publi">
       <tr *ngFor="let post of listesPoste">
         <td>
-          <hr/>
+          
           <span *ngIf="post.message">  {{post.message}} <br/> <strong>{{post.loadBy}} le {{post.date}} </strong>  </span>
             
           <button *ngIf="post.loadBy" class="btn btn-outline-info my-2 my-sm-0 bou" type="submit" (click)="ajout()">+ Like</button> 
