@@ -352,6 +352,9 @@ export class UserHomeComponent implements OnInit {
       return res;
     });
   }
+  supprime(){
+    console.log("resisss");
+  }
 
   close(){
     this.visu = false;

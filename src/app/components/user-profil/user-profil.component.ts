@@ -27,6 +27,7 @@ export class UserProfilComponent implements OnInit {
 
   alert:boolean = false;
   alert1:boolean = false;
+  alert3 :boolean = false;
   connecter:boolean = false;
 
   aProp1:string;
@@ -40,30 +41,47 @@ export class UserProfilComponent implements OnInit {
   userFoundName;
   userFoundFol;
   userpostes;
- 
+  userDisplayId;
 
+  postComments;
+  postLikers;
+  postLike;
+  postId;
+
+  idComment;
+ 
   listeImages:any;
   listeImagesPro:any;
   listesProfils:any;
   listesPoste:any;
 
   userDisplayName:string = "";
+
   compteur = 0;
+  compteur1 = 0;
 
   addImage = new FormGroup({
     _id : new FormControl(""),
     photo : new FormControl(""),
     loadBy : new FormControl("")
   });
+
   addImagePro = new FormGroup({
     _id : new FormControl(""),
     photo : new FormControl(""),
     loadBy : new FormControl("")
   });
 
+  supCom = new FormGroup({
+    _id : new FormControl(""),
+  });
+
   constructor(private bailService:BailService, private router: ActivatedRoute, private route: Router) { }
 
   ngOnInit(): void {
+
+    this.userDisplayName = localStorage.getItem("loggedUser");
+    //this.userDisName = sessionStorage.getItem("loggedUser");
     
     this.bailService.displayImage().subscribe((res)=>{
       //console.log(res)
@@ -163,11 +181,42 @@ export class UserProfilComponent implements OnInit {
 
     });
 
+    // gestion des postes 
     this.bailService.displayPost().subscribe(res =>{
-      //console.log("posteee",res);
+      console.log("posteee",res);
       this.listesPoste = res;
-   
+      // on transforme le l'objet en tableau key/value
+      let newR = Object.keys(res).map(function(cle) {
+        return [Number(cle), res[cle]];
+      });
+      //console.log("postiiit",newR);
+      for(let i=0; i<newR.length; i++){
+        let tabPost = newR[i][1]._id;
+        let tabLikers = newR[i][1].likers;
+        let tabComments = newR[i][1].comments;
+        let tabPostload = newR[i][1].loadBy;
+        if(tabPostload === this.userDisplayName){
+          this.alert3 = true;
+        }
+        this.postComments = newR[i][1].comments;
+        for(let com of this.postComments){
+          this.idComment = com._id;
+          console.log("_iddd",this.idComment)
+        }
+        this.postLikers = newR[i][1].likers;
+        for(let lik of tabLikers){
+          this.postLike = lik;
+          this.compteur1 += 1;
+          //console.log("tab com :",this.postLikers);
+          console.log("id like",this.postLikers);
+          console.log("id user",this.userDisplayId);
+        }
+        this.postId = tabPost;
+        console.log("id post : ",this.postId);
+
+      };
     });
+
     this.userDisplayName = localStorage.getItem("loggedUser");
   }
 
@@ -226,6 +275,14 @@ export class UserProfilComponent implements OnInit {
           console.log(res);
           return res;
 
+        });
+
+      }
+
+      cancelCom(){
+        this.bailService.deletecommentsPost(this.router.snapshot.params._id, this.supCom.value).subscribe(res =>{
+          console.log(res);
+          //return res;
         });
 
       }

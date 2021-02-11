@@ -216,7 +216,9 @@ h1 {
   background-color: skyblue;
   border-radius: 5px;
 }
-
+.comments button {
+  margin-left: 22px;
+}
 /* *** *** Les media queries *** *** */
 /*  @media screen and (max-width: 1024px)*/
 @media all and (min-width: 768px) and (max-width: 1024px) {

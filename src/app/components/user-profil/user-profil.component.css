@@ -231,6 +231,43 @@ h2 {
   font-size: 1.3em;
 }
 
+.likes {
+  position: absolute;
+  left: 38%;
+  top: 60%;
+  border: solid 1px skyblue;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  background-color: skyblue;
+  text-align: center;
+}
+.likes span {
+  position: absolute;
+  left: 35%;
+  top: -2%;
+  font-weight: bold;
+  font-size: 0.8em;
+}
+.publi {
+  margin-left: 200px;
+}
+
+.post {
+  margin-left: 200px;
+}
+.covert {
+  padding-left: 200px;
+}
+.comments {
+  border: solid 1px transparent;
+  background-color: skyblue;
+  border-radius: 5px;
+}
+.comments button {
+  margin-left: 22px;
+}
+
 /* *** *** Les media queries *** *** */
 @media all and (min-width: 768px) and (max-width: 1024px) {
   .head {

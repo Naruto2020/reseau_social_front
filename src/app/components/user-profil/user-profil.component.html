@@ -145,30 +145,33 @@
     </div>
     <div class="container">
       <h2>Les publications </h2>
-      <tr *ngFor="let post of listesPoste">
-        <td *ngIf="userDisplayName === post.loadBy">
-          <hr/>
-          {{post.message}} &nbsp;  &nbsp; &nbsp;       
-            <i
-            routerLink="/updateUser-publications/{{post._id}}"
-            class="fa fa-edit"
-            style="font-size: 20px; color: grey"
-            ></i> &nbsp; 
-            <button (click)="supprime()" style="border: transparent;">
+      <div class="publi">
+        <tr *ngFor="let post of listesPoste">
+          <td *ngIf="userDisplayName === post.loadBy">
+            <hr/>
+            {{post.message}} &nbsp;  &nbsp; &nbsp;       
               <i
-              routerLink="/profil-user/{{post._id}}"
-              class="fa fa-trash"
-              style="font-size: 20px; color: red"
-              ></i>
-    
-            </button>
+              routerLink="/updateUser-publications/{{post._id}}"
+              class="fa fa-edit"
+              style="font-size: 20px; color: grey"
+              ></i> &nbsp; 
+              <button (click)="supprime()" style="border: transparent;">
+                <i
+                routerLink="/profil-user/{{post._id}}"
+                class="fa fa-trash"
+                style="font-size: 20px; color: red"
+                ></i>
+      
+              </button>
+  
+            <br/> <p>posté par : <strong> {{post.loadBy}} le {{post.date}}</strong>  </p> 
+          </td>
+          <td>
+          </td>
+  
+        </tr>
 
-          <br/> <p>posté par : <strong> {{post.loadBy}} le {{post.date}}</strong>  </p> 
-        </td>
-        <td>
-        </td>
-
-      </tr>
+      </div>
       <tr *ngFor="let imgPro of listeImagesPro">
         <td>
           <span > <img src="{{imgSite}}/{{imgPro.photo}}" alt=""></span>  &nbsp;  &nbsp; &nbsp;
@@ -185,6 +188,31 @@
         </td>
 
       </tr>
+
+      <br>
+      <div class="covert">
+        <tr *ngFor="let com of postComments">
+            <div class="comments" *ngIf="alert3">
+              <strong> {{com.commenterPseudo}} le  {{com.timestamp}} </strong> <br>
+              <span> {{com.text}} </span> 
+              <span>
+                <form [formGroup]="supCom">
+                  <input type="" placeholder="commentId" formControlName="_id" ngModel={{idComment}} >
+                  <button (click)="cancelCom()" style="border: transparent;">
+                    <i
+                    routerLink="/profil-user/{{postId}}"
+                    class="fa fa-trash"
+                    style="font-size: 12px; color: red"
+                    ></i>
+          
+                  </button>
+
+                </form>
+              </span>
+            </div> 
+          <br>
+        </tr>
+      </div>
 
     </div>
 </div>  
