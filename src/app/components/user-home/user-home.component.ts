@@ -87,6 +87,7 @@ export class UserHomeComponent implements OnInit {
   likers = new FormGroup({
     idToLike : new FormControl(''),
   });
+
   unlikers = new FormGroup({
     idToUnLike : new FormControl(''),
   });
@@ -351,9 +352,6 @@ export class UserHomeComponent implements OnInit {
       this.comment.reset({});
       return res;
     });
-  }
-  supprime(){
-    console.log("resisss");
   }
 
   close(){
