@@ -253,7 +253,7 @@ export class UserProfilComponent implements OnInit {
 
   
       formData1 = new FormData();
-      chargement1(){
+      /*chargement(){
         this.formData1.append("photo",this.images);
         this.formData1.append("loadBy", localStorage.getItem("loggedUser"));
         this.bailService.uploadImage(this.formData1).subscribe(res =>{
@@ -263,7 +263,7 @@ export class UserProfilComponent implements OnInit {
           //console.log(this.url1);
           return res;
         });
-      }
+      }*/
   
       supprime(){
         //console.log("supprime");
