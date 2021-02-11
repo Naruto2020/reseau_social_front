@@ -32,7 +32,7 @@
     <div class="camera1"> <a routerLink="/profil-user/:{{userDisplayName}}" (click)="affiche()"><img src="../../../assets/images/camera.jpg" alt="logo caméra"></a></div>
   
     <div class="imgProfil"> <img [src]="url" alt=""/> </div>
-    <div class="camera2"> <a routerLink="/profil-user/:{{userDisplayName}}" (click)="affiche1()"> <img src="../../../assets/images/camera.jpg" alt="logo caméra"></a> </div>
+    <div class="camera2"> <a routerLink="/profil-user/:{{userDisplayName}}" (click)="affiche()"> <img src="../../../assets/images/camera.jpg" alt="logo caméra"></a> </div>
     <br/> <br/> <br/> <br/>
     <div>
       <form [formGroup]="addImage" *ngIf="alert">
@@ -56,7 +56,7 @@
           <br/>
           <input type="text" *ngIf class="form-control" formControlName="loadBy" placeholder="LoadBy" value="{{userDisplayName}}" >
           <br/> <br/> <br/> <br/>
-          <button type="submit" value="Enregistrer" class="btn btn-primary" (click)="chargement1()">Télécharger</button> &nbsp;
+          <button type="submit" value="Enregistrer" class="btn btn-primary" (click)="chargement()">Télécharger</button> &nbsp;
           <button type="submit" value="fermer" class="btn btn-primary" (click)="fermerAlert()">fermer</button>
         </div>
   
@@ -197,7 +197,7 @@
               <span> {{com.text}} </span> 
               <span>
                 <form [formGroup]="supCom">
-                  <input type="" placeholder="commentId" formControlName="_id" ngModel={{idComment}} >
+                  <input type="hidden" placeholder="commentId" formControlName="commentId" ngModel={{idComment}} >
                   <button (click)="cancelCom()" style="border: transparent;">
                     <i
                     routerLink="/profil-user/{{postId}}"

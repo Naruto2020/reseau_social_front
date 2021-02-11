@@ -73,7 +73,7 @@ export class UserProfilComponent implements OnInit {
   });
 
   supCom = new FormGroup({
-    _id : new FormControl(""),
+    commentId : new FormControl(""),
   });
 
   constructor(private bailService:BailService, private router: ActivatedRoute, private route: Router) { }
@@ -244,7 +244,7 @@ export class UserProfilComponent implements OnInit {
       this.formData.append("loadBy", localStorage.getItem("loggedUser"));
       this.bailService.uploadImage(this.formData).subscribe(res =>{
         this.alert = false;
-        this.url = `http://127.0.0.1:3000/${res["photo"]}`;
+        this.url = `${this.imgSite}/${res["photo"]}`;
         console.log("chargement ...",this.url);
         return res
       });
@@ -281,8 +281,11 @@ export class UserProfilComponent implements OnInit {
 
       cancelCom(){
         this.bailService.deletecommentsPost(this.router.snapshot.params._id, this.supCom.value).subscribe(res =>{
+          this.bailService.displayPost().subscribe(res =>{
+            this.listesPoste = res;
+          });
           console.log(res);
-          //return res;
+          return res;
         });
 
       }
