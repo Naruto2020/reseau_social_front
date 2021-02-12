@@ -122,12 +122,12 @@
     </div>
     <div *ngFor="let user of listesProfils" class="post">
       <div *ngIf="postLike === user._id">
-        <span>aimé par {{user.username}} </span>
+        <span>aimé par {{user.username}} <span class="likes" *ngIf="compteur1 !== 0" style="color: red;"> {{compteur1}} </span> </span>
   
       </div>
+      <!--<div class="likes" *ngIf="compteur1 !== 0" style="color: red;"><span>{{compteur1}}</span> </div>-->
 
     </div>
-    <div class="likes" *ngIf="compteur1 !== 0" style="color: red;"><span>{{compteur1}}</span> </div>
     
     <div *ngIf="visu1">
       
