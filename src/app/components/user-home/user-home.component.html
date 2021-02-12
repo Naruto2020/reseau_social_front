@@ -133,10 +133,10 @@
       
       <form [formGroup]="comment">
         <div >
-          <input type="" placeholder="commenterId" formControlName="commenterId" ngModel={{userDisplayId}}>
+          <input type="hidden" placeholder="commenterId" formControlName="commenterId" ngModel={{userDisplayId}}>
         </div>
         <div >
-          <input type="" placeholder="commenterPseudo" formControlName="commenterPseudo" ngModel={{userDisplayName}} >
+          <input type="hidden" placeholder="commenterPseudo" formControlName="commenterPseudo" ngModel={{userDisplayName}} >
         </div>
         <div>
           <textarea formControlName="text" id="" cols="30" rows="10"></textarea>
