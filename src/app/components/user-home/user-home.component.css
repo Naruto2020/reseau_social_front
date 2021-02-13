@@ -365,9 +365,9 @@ h1 {
   }
 
   .likes {
-    position: absolute;
+    /*position: absolute;
     left: 51%;
-    top: 45%;
+    top: 45%;*/
     border: solid 1px skyblue;
     width: 20px;
     height: 20px;
@@ -524,9 +524,9 @@ h1 {
   }
 
   .likes {
-    position: absolute;
+    /*position: absolute;
     left: 40%;
-    top: 69.2%;
+    top: 69.2%;*/
     border: solid 1px skyblue;
     width: 17px;
     height: 17px;
